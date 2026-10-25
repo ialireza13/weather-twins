@@ -19,7 +19,7 @@ normals (1970-2000, gauge-interpolated).
 
 Reads precipitation_era5 / snowfall_era5 from data/daily/*.csv and writes
 precipitation_sum / snowfall_sum next to them. Choices are logged in
-data/rain_stations.csv.
+data/rain_stations.csv (cities) and data/rain_stations_regions.csv (US climate divisions).
 
 Usage: .venv/bin/python rainfall.py
 """
@@ -40,6 +40,7 @@ import climate
 
 CACHE = climate.DATA_DIR / "cache" / "rain"
 LOG_PATH = climate.DATA_DIR / "rain_stations.csv"
+REGIONS_LOG_PATH = climate.DATA_DIR / "rain_stations_regions.csv"
 GHCN = "https://www.ncei.noaa.gov/pub/data/ghcn/daily"
 ISD_HISTORY = "https://www.ncei.noaa.gov/pub/data/noaa/isd-history.csv"
 ACCESS = "https://www.ncei.noaa.gov/access/services/data/v1"
@@ -263,11 +264,10 @@ def worldclim_normals(cities: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(out, index=cities["slug"].to_numpy(), columns=range(1, 13))
 
 
-def correct_all() -> None:
+def correct_all(cities: pd.DataFrame, log_path) -> None:
     start, end = climate.START_DATE, climate.END_DATE
     y0, y1 = int(start[:4]), int(end[:4])
     catalogs = [ghcn_catalog(y0, y1), gsod_catalog(y0, y1)]
-    cities = climate.all_cities()
     cities = cities[[climate.daily_path(s).exists() for s in cities["slug"]]]
     normals = worldclim_normals(cities)
 
@@ -305,9 +305,11 @@ def correct_all() -> None:
     with ThreadPoolExecutor(6) as pool:
         rows = list(pool.map(work, [c for _, c in cities.iterrows()]))
     log = pd.DataFrame(rows)
-    log.round(1).to_csv(LOG_PATH, index=False)
+    log.round(1).to_csv(log_path, index=False)
     print(log["source"].value_counts().to_string())
 
 
 if __name__ == "__main__":
-    correct_all()
+    correct_all(climate.all_cities(), LOG_PATH)
+    if (climate.DATA_DIR / "us_regions.csv").exists():
+        correct_all(climate.load_regions(), REGIONS_LOG_PATH)

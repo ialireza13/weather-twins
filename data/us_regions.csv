@@ -1,0 +1,345 @@
+slug,id,name,state,st,division,town,country,cc,lat,lon,elevation
+region-3505,3505,New Mexico: Central Valley,New Mexico,NM,Central Valley,Albuquerque,United States,US,35.08449,-106.65114,1513.0
+region-3506,3506,New Mexico: Central Highlands,New Mexico,NM,Central Highlands,Ruidoso,United States,US,33.33175,-105.67304,2057.0
+region-1601,1601,Idaho: Panhandle,Idaho,ID,Panhandle,Coeur d'Alene,United States,US,47.67768,-116.78047,668.0
+region-1602,1602,Idaho: North Central Prairies,Idaho,ID,North Central Prairies,Moscow,United States,US,46.73239,-117.00017,788.0
+region-1604,1604,Idaho: Central Mountains,Idaho,ID,Central Mountains,Hailey,United States,US,43.51963,-114.31532,1622.0
+region-1605,1605,Idaho: Southwestern Valleys,Idaho,ID,Southwestern Valleys,Meridian,United States,US,43.61211,-116.39151,796.0
+region-1607,1607,Idaho: Central Plains,Idaho,ID,Central Plains,Jerome,United States,US,42.72407,-114.51865,1149.0
+region-1606,1606,Idaho: Southwestern Highlands,Idaho,ID,Southwestern Highlands,,United States,US,42.75557,-116.45642,1864.0
+region-1610,1610,Idaho: Eastern Highlands,Idaho,ID,Eastern Highlands,Conda,United States,US,42.72825,-111.53245,1889.0
+region-1608,1608,Idaho: Northeastern Valleys,Idaho,ID,Northeastern Valleys,,United States,US,44.63295,-113.66244,3067.0
+region-5301,5301,Washington: West Olympic Coast,Washington,WA,West Olympic Coast,Aberdeen,United States,US,46.97537,-123.81572,4.0
+region-5304,5304,Washington: E Olympic Cascade Foothills,Washington,WA,E Olympic Cascade Foothills,Battle Ground,United States,US,45.78095,-122.53343,93.0
+region-5302,5302,Washington: NE Olympic San Juan,Washington,WA,NE Olympic San Juan,Sequim,United States,US,48.07963,-123.10234,56.0
+region-5303,5303,Washington: Puget Sound Lowlands,Washington,WA,Puget Sound Lowlands,Bellevue,United States,US,47.61038,-122.20068,28.0
+region-5306,5306,Washington: East Slope Cascades,Washington,WA,East Slope Cascades,,United States,US,47.34029,-120.91183,1033.0
+region-5305,5305,Washington: Cascade Mountains West,Washington,WA,Cascade Mountains West,,United States,US,47.32258,-121.6188,823.0
+region-5308,5308,Washington: Central Basin,Washington,WA,Central Basin,Tri-Cities,United States,US,46.2454,-119.19617,106.0
+region-5307,5307,Washington: Okanogan Big Bend,Washington,WA,Okanogan Big Bend,,United States,US,48.035,-119.48208,695.0
+region-5309,5309,Washington: Northeastern,Washington,WA,Northeastern,Spokane,United States,US,47.65966,-117.42908,530.0
+region-5310,5310,Washington: Palouse Blue Mountains,Washington,WA,Palouse Blue Mountains,Pullman,United States,US,46.73127,-117.17962,713.0
+region-0401,0401,Arizona: Northwest,Arizona,AZ,Northwest,Kingman,United States,US,35.18944,-114.05301,1024.0
+region-0402,0402,Arizona: Northeast,Arizona,AZ,Northeast,Winslow,United States,US,35.02419,-110.69736,1480.0
+region-0405,0405,Arizona: Southwest,Arizona,AZ,Southwest,Yuma,United States,US,32.72532,-114.6244,43.0
+region-0403,0403,Arizona: North Central,Arizona,AZ,North Central,Prescott Valley,United States,US,34.61002,-112.31572,1529.0
+region-0406,0406,Arizona: South Central,Arizona,AZ,South Central,Phoenix,United States,US,33.44838,-112.07404,366.0
+region-0404,0404,Arizona: East Central,Arizona,AZ,East Central,Payson,United States,US,34.23087,-111.32514,1498.0
+region-0407,0407,Arizona: Southeast,Arizona,AZ,Southeast,Drexel Heights,United States,US,32.14119,-111.02843,770.0
+region-0101,0101,Alabama: Northern Valley,Alabama,AL,Northern Valley,Huntsville,United States,US,34.7304,-86.58594,200.0
+region-0103,0103,Alabama: Upper Plains,Alabama,AL,Upper Plains,Tuscaloosa,United States,US,33.20984,-87.56917,69.0
+region-0102,0102,Alabama: Appalachian Mountain,Alabama,AL,Appalachian Mountain,Center Point,United States,US,33.64566,-86.6836,256.0
+region-0104,0104,Alabama: Eastern Valley,Alabama,AL,Eastern Valley,Gadsden,United States,US,34.01434,-86.00639,168.0
+region-0105,0105,Alabama: Piedmont Plateau,Alabama,AL,Piedmont Plateau,Opelika,United States,US,32.64541,-85.37828,254.0
+region-0106,0106,Alabama: Prairie,Alabama,AL,Prairie,Selma,United States,US,32.40736,-87.0211,45.0
+region-0107,0107,Alabama: Coastal Plain,Alabama,AL,Coastal Plain,Dothan,United States,US,31.22323,-85.39049,102.0
+region-0108,0108,Alabama: Gulf,Alabama,AL,Gulf,Foley,United States,US,30.40659,-87.6836,31.0
+region-0501,0501,Arkansas: Northwest,Arkansas,AR,Northwest,Fayetteville,United States,US,36.06258,-94.15743,436.0
+region-0502,0502,Arkansas: North Central,Arkansas,AR,North Central,Mountain Home,United States,US,36.33534,-92.38516,250.0
+region-0503,0503,Arkansas: Northeast,Arkansas,AR,Northeast,Jonesboro,United States,US,35.8423,-90.70428,96.0
+region-0504,0504,Arkansas: West Central,Arkansas,AR,West Central,Clarksville,United States,US,35.47147,-93.46657,118.0
+region-0505,0505,Arkansas: Central,Arkansas,AR,Central,Little Rock,United States,US,34.74648,-92.28959,105.0
+region-0506,0506,Arkansas: East Central,Arkansas,AR,East Central,Forrest City,United States,US,35.00815,-90.78983,78.0
+region-0508,0508,Arkansas: South Central,Arkansas,AR,South Central,Camden,United States,US,33.58456,-92.83433,64.0
+region-0509,0509,Arkansas: Southeast,Arkansas,AR,Southeast,Pine Bluff,United States,US,34.22843,-92.0032,68.0
+region-0507,0507,Arkansas: Southwest,Arkansas,AR,Southwest,Texarkana,United States,US,33.44179,-94.03769,118.0
+region-1002,1002,Delaware: Southern,Delaware,DE,Southern,Dover,United States,US,39.15817,-75.52437,11.0
+region-1001,1001,Delaware: Northern,Delaware,DE,Northern,Wilmington,United States,US,39.74595,-75.54659,37.0
+region-1201,1201,Florida: Northwest,Florida,FL,Northwest,Tallahassee,United States,US,30.43826,-84.28073,71.0
+region-1202,1202,Florida: North,Florida,FL,North,Jacksonville,United States,US,30.33218,-81.65565,12.0
+region-1203,1203,Florida: North Central,Florida,FL,North Central,Deltona,United States,US,28.90054,-81.26367,13.0
+region-1308,1308,Georgia: South Central,Georgia,GA,South Central,Tifton,United States,US,31.45046,-83.5085,109.0
+region-1307,1307,Georgia: Southwest,Georgia,GA,Southwest,Camilla,United States,US,31.23129,-84.21046,58.0
+region-1309,1309,Georgia: Southeast,Georgia,GA,Southeast,Hinesville,United States,US,31.84688,-81.59595,24.0
+region-1304,1304,Georgia: West Central,Georgia,GA,West Central,LaGrange,United States,US,33.03929,-85.03133,243.0
+region-1305,1305,Georgia: Central,Georgia,GA,Central,Macon,United States,US,32.84069,-83.6324,118.0
+region-1306,1306,Georgia: East Central,Georgia,GA,East Central,Statesboro,United States,US,32.44879,-81.78317,82.0
+region-1301,1301,Georgia: Northwest,Georgia,GA,Northwest,Rome,United States,US,34.25704,-85.16467,190.0
+region-1302,1302,Georgia: North Central,Georgia,GA,North Central,Sandy Springs,United States,US,33.92427,-84.37854,333.0
+region-1204,1204,Florida: South Central,Florida,FL,South Central,Winter Haven,United States,US,28.02224,-81.73286,54.0
+region-1205,1205,Florida: Everglades,Florida,FL,Everglades,Immokalee,United States,US,26.41869,-81.4173,12.0
+region-1206,1206,Florida: Lower East Coast,Florida,FL,Lower East Coast,Hialeah,United States,US,25.8576,-80.27811,8.0
+region-1207,1207,Florida: Keys,Florida,FL,Keys,Key West,United States,US,24.55524,-81.78163,2.0
+region-1701,1701,Illinois: Northwest,Illinois,IL,Northwest,Freeport,United States,US,42.29669,-89.62123,237.0
+region-1702,1702,Illinois: Northeast,Illinois,IL,Northeast,Aurora,United States,US,41.76058,-88.32007,210.0
+region-1704,1704,Illinois: Central,Illinois,IL,Central,Peoria,United States,US,40.69365,-89.58899,165.0
+region-1705,1705,Illinois: East,Illinois,IL,East,Champaign,United States,US,40.11642,-88.24338,228.0
+region-1706,1706,Illinois: West Southwest,Illinois,IL,West Southwest,Jacksonville,United States,US,39.73394,-90.22901,190.0
+region-1707,1707,Illinois: East Southeast,Illinois,IL,East Southeast,Charleston,United States,US,39.49615,-88.17615,208.0
+region-1709,1709,Illinois: Southeast,Illinois,IL,Southeast,Mount Vernon,United States,US,38.31727,-88.90312,155.0
+region-1708,1708,Illinois: Southwest,Illinois,IL,Southwest,Waterloo,United States,US,38.33589,-90.14983,216.0
+region-1801,1801,Indiana: Northwest,Indiana,IN,Northwest,Lakes of the Four Seasons,United States,US,41.41032,-87.21309,237.0
+region-1802,1802,Indiana: North Central,Indiana,IN,North Central,Goshen,United States,US,41.58227,-85.83444,242.0
+region-1803,1803,Indiana: Northeast,Indiana,IN,Northeast,Fort Wayne,United States,US,41.1306,-85.12886,250.0
+region-1804,1804,Indiana: West Central,Indiana,IN,West Central,Brazil,United States,US,39.52365,-87.12502,199.0
+region-1805,1805,Indiana: Central,Indiana,IN,Central,Indianapolis,United States,US,39.76838,-86.15804,248.0
+region-1806,1806,Indiana: East Central,Indiana,IN,East Central,Muncie,United States,US,40.19338,-85.38636,292.0
+region-1807,1807,Indiana: Southwest,Indiana,IN,Southwest,Jasper,United States,US,38.39144,-86.93111,146.0
+region-1808,1808,Indiana: South Central,Indiana,IN,South Central,Bloomington,United States,US,39.16533,-86.52639,243.0
+region-1809,1809,Indiana: Southeast,Indiana,IN,Southeast,North Vernon,United States,US,39.00617,-85.62358,220.0
+region-1902,1902,Iowa: North Central,Iowa,IA,North Central,Mason City,United States,US,43.15357,-93.20104,348.0
+region-1903,1903,Iowa: Northeast,Iowa,IA,Northeast,Oelwein,United States,US,42.67332,-91.9135,317.0
+region-1904,1904,Iowa: West Central,Iowa,IA,West Central,Carroll,United States,US,42.06582,-94.86693,385.0
+region-1905,1905,Iowa: Central,Iowa,IA,Central,Ames,United States,US,42.03471,-93.61994,292.0
+region-1906,1906,Iowa: East Central,Iowa,IA,East Central,Cedar Rapids,United States,US,42.00833,-91.64407,251.0
+region-1907,1907,Iowa: Southwest,Iowa,IA,Southwest,Red Oak,United States,US,41.00972,-95.22555,320.0
+region-1908,1908,Iowa: South Central,Iowa,IA,South Central,Indianola,United States,US,41.35805,-93.55744,294.0
+region-1909,1909,Iowa: Southeast,Iowa,IA,Southeast,Ottumwa,United States,US,41.02001,-92.4113,205.0
+region-2001,2001,Kansas: Northwest,Kansas,KS,Northwest,Colby,United States,US,39.39584,-101.05238,967.0
+region-2003,2003,Kansas: Northeast,Kansas,KS,Northeast,Kansas City,United States,US,39.11417,-94.62746,272.0
+region-2004,2004,Kansas: West Central,Kansas,KS,West Central,,United States,US,38.70104,-100.82183,894.0
+region-2005,2005,Kansas: Central,Kansas,KS,Central,Hays,United States,US,38.87918,-99.32677,624.0
+region-2006,2006,Kansas: East Central,Kansas,KS,East Central,Emporia,United States,US,38.4039,-96.18166,353.0
+region-2007,2007,Kansas: Southwest,Kansas,KS,Southwest,Dodge City,United States,US,37.7528,-100.01708,767.0
+region-2008,2008,Kansas: South Central,Kansas,KS,South Central,Pratt,United States,US,37.64391,-98.73759,582.0
+region-2009,2009,Kansas: Southeast,Kansas,KS,Southeast,El Dorado,United States,US,37.81724,-96.86225,418.0
+region-2408,2408,Maryland: Allegheny Plateau,Maryland,MD,Allegheny Plateau,,United States,US,39.46257,-79.29434,779.0
+region-2407,2407,Maryland: Appalachian Mountain,Maryland,MD,Appalachian Mountain,Hagerstown,United States,US,39.64176,-77.71999,168.0
+region-2406,2406,Maryland: Northern Central,Maryland,MD,Northern Central,Germantown,United States,US,39.17316,-77.27165,137.0
+region-2405,2405,Maryland: Northeastern Shore,Maryland,MD,Northeastern Shore,Stevensville,United States,US,38.98067,-76.3144,5.0
+region-2404,2404,Maryland: Upper Southern,Maryland,MD,Upper Southern,Bowie,United States,US,38.94278,-76.73028,43.0
+region-2402,2402,Maryland: Central Eastern Shore,Maryland,MD,Central Eastern Shore,Easton,United States,US,38.77428,-76.07633,12.0
+region-2401,2401,Maryland: Southeastern Shore,Maryland,MD,Southeastern Shore,Salisbury,United States,US,38.36067,-75.59937,10.0
+region-5101,5101,Virginia: Tidewater,Virginia,VA,Tidewater,Suffolk,United States,US,36.72836,-76.58496,22.0
+region-5104,5104,Virginia: Northern,Virginia,VA,Northern,Centreville,United States,US,38.84039,-77.42888,110.0
+region-5105,5105,Virginia: Central Mountain,Virginia,VA,Central Mountain,Harrisonburg,United States,US,38.44957,-78.86892,406.0
+region-5102,5102,Virginia: Eastern Piedmont,Virginia,VA,Eastern Piedmont,Richmond,United States,US,37.55376,-77.46026,68.0
+region-5103,5103,Virginia: Western Piedmont,Virginia,VA,Western Piedmont,Lynchburg,United States,US,37.41375,-79.14225,199.0
+region-5106,5106,Virginia: Southwestern Mountain,Virginia,VA,Southwestern Mountain,Christiansburg,United States,US,37.12985,-80.40894,637.0
+region-2101,2101,Kentucky: Western,Kentucky,KY,Western,Hopkinsville,United States,US,36.86561,-87.49117,159.0
+region-2102,2102,Kentucky: Central,Kentucky,KY,Central,Elizabethtown,United States,US,37.69395,-85.85913,222.0
+region-2103,2103,Kentucky: Blue Grass,Kentucky,KY,Blue Grass,Lexington,United States,US,37.98869,-84.47772,298.0
+region-2104,2104,Kentucky: Eastern,Kentucky,KY,Eastern,London,United States,US,37.12898,-84.08326,379.0
+region-2201,2201,Louisiana: Northwest,Louisiana,LA,Northwest,Shreveport,United States,US,32.52515,-93.75018,50.0
+region-2202,2202,Louisiana: North Central,Louisiana,LA,North Central,Ruston,United States,US,32.52321,-92.63793,104.0
+region-2203,2203,Louisiana: Northeast,Louisiana,LA,Northeast,Bastrop,United States,US,32.77828,-91.91144,41.0
+region-2205,2205,Louisiana: Central,Louisiana,LA,Central,Alexandria,United States,US,31.31129,-92.44514,27.0
+region-2206,2206,Louisiana: East Central,Louisiana,LA,East Central,Central,United States,US,30.55435,-91.03677,25.0
+region-2207,2207,Louisiana: Southwest,Louisiana,LA,Southwest,Lake Charles,United States,US,30.21309,-93.2044,6.0
+region-2209,2209,Louisiana: Southeast,Louisiana,LA,Southeast,New Orleans,United States,US,29.95465,-90.07507,18.0
+region-2601,2601,Michigan: West Upper,Michigan,MI,West Upper,Ishpeming,United States,US,46.48855,-87.66764,431.0
+region-2602,2602,Michigan: East Upper,Michigan,MI,East Upper,Sault Ste. Marie,United States,US,46.4953,-84.34532,186.0
+region-2603,2603,Michigan: Northwest,Michigan,MI,Northwest,Traverse City,United States,US,44.76306,-85.62063,180.0
+region-2604,2604,Michigan: Northeast Lower,Michigan,MI,Northeast Lower,Alpena,United States,US,45.06168,-83.43275,178.0
+region-2605,2605,Michigan: West Central Lower,Michigan,MI,West Central Lower,Muskegon,United States,US,43.23418,-86.24839,192.0
+region-2606,2606,Michigan: Central Lower,Michigan,MI,Central Lower,Mount Pleasant,United States,US,43.59781,-84.76751,236.0
+region-2607,2607,Michigan: East Central Lower,Michigan,MI,East Central Lower,Saginaw,United States,US,43.41947,-83.95081,178.0
+region-2608,2608,Michigan: Southwest Lower,Michigan,MI,Southwest Lower,Grand Rapids,United States,US,42.96336,-85.66809,205.0
+region-2609,2609,Michigan: South Central Lower,Michigan,MI,South Central Lower,Lansing,United States,US,42.73253,-84.55553,260.0
+region-2610,2610,Michigan: Southeast Lower,Michigan,MI,Southeast Lower,Ann Arbor,United States,US,42.27756,-83.74088,271.0
+region-2701,2701,Minnesota: Northwest,Minnesota,MN,Northwest,Thief River Falls,United States,US,48.11914,-96.18115,345.0
+region-2702,2702,Minnesota: North Central,Minnesota,MN,North Central,Bemidji,United States,US,47.47356,-94.88028,416.0
+region-2703,2703,Minnesota: Northeast,Minnesota,MN,Northeast,Virginia,United States,US,47.52326,-92.53657,439.0
+region-2705,2705,Minnesota: Central,Minnesota,MN,Central,Saint Cloud,United States,US,45.5608,-94.16249,318.0
+region-2706,2706,Minnesota: East Central,Minnesota,MN,East Central,Brooklyn Park,United States,US,45.09413,-93.35634,263.0
+region-2707,2707,Minnesota: Southwest,Minnesota,MN,Southwest,Marshall,United States,US,44.4469,-95.78835,353.0
+region-2708,2708,Minnesota: South Central,Minnesota,MN,South Central,Mankato,United States,US,44.15906,-94.00915,245.0
+region-2709,2709,Minnesota: Southeast,Minnesota,MN,Southeast,Rochester,United States,US,44.02163,-92.4699,314.0
+region-2801,2801,Mississippi: Upper Delta,Mississippi,MS,Upper Delta,Clarksdale,United States,US,34.20011,-90.57093,54.0
+region-2802,2802,Mississippi: North Central,Mississippi,MS,North Central,Oxford,United States,US,34.3665,-89.51925,155.0
+region-2803,2803,Mississippi: Northeast,Mississippi,MS,Northeast,Booneville,United States,US,34.65815,-88.56672,159.0
+region-2804,2804,Mississippi: Lower Delta,Mississippi,MS,Lower Delta,Yazoo City,United States,US,32.85513,-90.40565,37.0
+region-2805,2805,Mississippi: Central,Mississippi,MS,Central,Kosciusko,United States,US,33.058,-89.58956,149.0
+region-2806,2806,Mississippi: East Central,Mississippi,MS,East Central,Starkville,United States,US,33.45049,-88.81961,104.0
+region-2807,2807,Mississippi: Southwest,Mississippi,MS,Southwest,Brookhaven,United States,US,31.57906,-90.44065,153.0
+region-2808,2808,Mississippi: South Central,Mississippi,MS,South Central,Holly Springs,United States,US,31.31573,-89.97786,99.0
+region-2809,2809,Mississippi: Southeast,Mississippi,MS,Southeast,Meridian,United States,US,32.36431,-88.70366,103.0
+region-2810,2810,Mississippi: Coastal,Mississippi,MS,Coastal,Carriere,United States,US,30.61686,-89.65256,56.0
+region-2901,2901,Missouri: Northwest Prairie,Missouri,MO,Northwest Prairie,Excelsior Springs,United States,US,39.33917,-94.22606,242.0
+region-2904,2904,Missouri: West Ozarks,Missouri,MO,West Ozarks,Springfield,United States,US,37.21533,-93.29824,399.0
+region-2905,2905,Missouri: East Ozarks,Missouri,MO,East Ozarks,Farmington,United States,US,37.78088,-90.42179,284.0
+region-2906,2906,Missouri: Bootheel,Missouri,MO,Bootheel,Poplar Bluff,United States,US,36.757,-90.39289,116.0
+region-3001,3001,Montana: Western,Montana,MT,Western,Kalispell,United States,US,48.19579,-114.31291,904.0
+region-3003,3003,Montana: North Central,Montana,MT,North Central,Havre,United States,US,48.55,-109.68409,770.0
+region-3006,3006,Montana: Northeastern,Montana,MT,Northeastern,Sidney,United States,US,47.71668,-104.15633,591.0
+region-3004,3004,Montana: Central,Montana,MT,Central,Lewistown,United States,US,47.06247,-109.42824,1202.0
+region-3002,3002,Montana: Southwestern,Montana,MT,Southwestern,Belgrade,United States,US,45.77604,-111.1769,1358.0
+region-3005,3005,Montana: South Central,Montana,MT,South Central,Billings,United States,US,45.78329,-108.50069,954.0
+region-3007,3007,Montana: Southeastern,Montana,MT,Southeastern,Miles City,United States,US,46.40834,-105.84056,718.0
+region-3801,3801,North Dakota: Northwest,North Dakota,ND,Northwest,Minot,United States,US,48.23251,-101.29627,491.0
+region-3802,3802,North Dakota: North Central,North Dakota,ND,North Central,,United States,US,48.41915,-100.2766,448.0
+region-3804,3804,North Dakota: West Central,North Dakota,ND,West Central,Watford City,United States,US,47.80224,-103.28325,647.0
+region-3805,3805,North Dakota: Central,North Dakota,ND,Central,Jamestown,United States,US,46.91054,-98.70844,427.0
+region-3806,3806,North Dakota: East Central,North Dakota,ND,East Central,Valley City,United States,US,46.92331,-98.00315,372.0
+region-3808,3808,North Dakota: South Central,North Dakota,ND,South Central,Bismarck,United States,US,46.80833,-100.78374,520.0
+region-3809,3809,North Dakota: Southeast,North Dakota,ND,Southeast,Wahpeton,United States,US,46.26524,-96.60591,294.0
+region-3101,3101,Nebraska: Panhandle,Nebraska,NE,Panhandle,Scottsbluff,United States,US,41.86663,-103.66717,1187.0
+region-3102,3102,Nebraska: North Central,Nebraska,NE,North Central,,United States,US,42.19546,-100.17005,827.0
+region-3103,3103,Nebraska: Northeast,Nebraska,NE,Northeast,Norfolk,United States,US,42.02834,-97.417,463.0
+region-3107,3107,Nebraska: Southwest,Nebraska,NE,Southwest,North Platte,United States,US,41.12389,-100.76542,856.0
+region-3105,3105,Nebraska: Central,Nebraska,NE,Central,Grand Island,United States,US,40.92501,-98.34201,573.0
+region-3106,3106,Nebraska: East Central,Nebraska,NE,East Central,Fremont,United States,US,41.43333,-96.49808,366.0
+region-3108,3108,Nebraska: South Central,Nebraska,NE,South Central,Holdrege,United States,US,40.44029,-99.36982,716.0
+region-3109,3109,Nebraska: Southeast,Nebraska,NE,Southeast,Beatrice,United States,US,40.26806,-96.74697,395.0
+region-4001,4001,Oklahoma: Panhandle,Oklahoma,OK,Panhandle,Guymon,United States,US,36.6828,-101.48155,954.0
+region-4002,4002,Oklahoma: North Central,Oklahoma,OK,North Central,Enid,United States,US,36.39559,-97.87839,388.0
+region-1603,1603,Idaho: North Central Canyons,Idaho,ID,North Central Canyons,Lewiston Orchards,United States,US,46.38044,-116.97543,435.0
+region-1609,1609,Idaho: Upper Snake River Plains,Idaho,ID,Upper Snake River Plains,Rexburg,United States,US,43.82602,-111.78969,1485.0
+region-1303,1303,Georgia: Northeast,Georgia,GA,Northeast,Toccoa,United States,US,34.57732,-83.33239,306.0
+region-1703,1703,Illinois: West,Illinois,IL,West,Macomb,United States,US,40.45921,-90.6718,216.0
+region-1901,1901,Iowa: Northwest,Iowa,IA,Northwest,Spencer,United States,US,43.14136,-95.14444,402.0
+region-2002,2002,Kansas: North Central,Kansas,KS,North Central,Concordia,United States,US,39.57084,-97.66254,423.0
+region-2403,2403,Maryland: Lower Southern,Maryland,MD,Lower Southern,California,United States,US,38.3004,-76.50745,36.0
+region-2204,2204,Louisiana: West Central,Louisiana,LA,West Central,Fort Polk South,United States,US,31.0511,-93.21578,92.0
+region-2208,2208,Louisiana: South Central,Louisiana,LA,South Central,New Iberia,United States,US,30.00354,-91.81873,10.0
+region-2704,2704,Minnesota: West Central,Minnesota,MN,West Central,Fergus Falls,United States,US,46.28302,-96.07756,361.0
+region-2902,2902,Missouri: Northeast Prairie,Missouri,MO,Northeast Prairie,Washington,United States,US,38.55811,-91.01209,171.0
+region-3807,3807,North Dakota: Southwest,North Dakota,ND,Southwest,Dickinson,United States,US,46.87918,-102.78962,733.0
+region-4210,4210,Pennsylvania: Northwest Plateau,Pennsylvania,PA,Northwest Plateau,Meadville,United States,US,41.64144,-80.15145,337.0
+region-2502,2502,Massachusettes: Central,Massachusettes,MA,Central,Worcester,United States,US,42.26259,-71.80229,164.0
+region-0903,0903,Connecticut: Coastal,Connecticut,CT,Coastal,North Stamford,United States,US,41.13815,-73.54346,76.0
+region-2903,2903,Missouri: West Central Plains,Missouri,MO,West Central Plains,Clinton,United States,US,38.36863,-93.77827,247.0
+region-4506,4506,South Carolina: Central,South Carolina,SC,Central,Columbia,United States,US,34.00071,-81.03481,97.0
+region-4003,4003,Oklahoma: Northeast,Oklahoma,OK,Northeast,Bartlesville,United States,US,36.74731,-95.98082,217.0
+region-4004,4004,Oklahoma: West Central,Oklahoma,OK,West Central,Elk City,United States,US,35.41199,-99.40426,590.0
+region-4005,4005,Oklahoma: Central,Oklahoma,OK,Central,Oklahoma City,United States,US,35.46756,-97.51643,395.0
+region-4006,4006,Oklahoma: East Central,Oklahoma,OK,East Central,McAlester,United States,US,34.93343,-95.76971,225.0
+region-4007,4007,Oklahoma: Southwest,Oklahoma,OK,Southwest,Lawton,United States,US,34.60869,-98.39033,342.0
+region-4008,4008,Oklahoma: South Central,Oklahoma,OK,South Central,Ardmore,United States,US,34.17426,-97.14363,267.0
+region-4009,4009,Oklahoma: Southeast,Oklahoma,OK,Southeast,Poteau,United States,US,35.05371,-94.62356,153.0
+region-3701,3701,North Carolina: Southern Mountains,North Carolina,NC,Southern Mountains,Asheville,United States,US,35.60095,-82.55402,650.0
+region-3702,3702,North Carolina: Northern Mountains,North Carolina,NC,Northern Mountains,Boone,United States,US,36.21679,-81.67455,984.0
+region-3705,3705,North Carolina: Southern Piedmont,North Carolina,NC,Southern Piedmont,Charlotte,United States,US,35.22709,-80.84313,272.0
+region-3704,3704,North Carolina: Central Piedmont,North Carolina,NC,Central Piedmont,Raleigh,United States,US,35.7721,-78.63861,99.0
+region-3703,3703,North Carolina: Northern Piedmont,North Carolina,NC,Northern Piedmont,Greensboro,United States,US,36.07264,-79.79198,260.0
+region-3708,3708,North Carolina: Northern Coastal Plain,North Carolina,NC,Northern Coastal Plain,Tarboro,United States,US,35.89682,-77.5358,15.0
+region-3707,3707,North Carolina: Central Coastal Plain,North Carolina,NC,Central Coastal Plain,Greenville,United States,US,35.61266,-77.36635,19.0
+region-3706,3706,North Carolina: Southern Coastal Plain,North Carolina,NC,Southern Coastal Plain,Fayetteville,United States,US,35.05266,-78.87836,33.0
+region-4505,4505,South Carolina: West Central,South Carolina,SC,West Central,Aiken,United States,US,33.56042,-81.71955,161.0
+region-4501,4501,South Carolina: Mountain,South Carolina,SC,Mountain,,United States,US,34.92966,-83.02391,346.0
+region-4502,4502,South Carolina: Northwest,South Carolina,SC,Northwest,Spartanburg,United States,US,34.94957,-81.93205,248.0
+region-4503,4503,South Carolina: North Central,South Carolina,SC,North Central,York,United States,US,34.9943,-81.24202,233.0
+region-4504,4504,South Carolina: Northeast,South Carolina,SC,Northeast,Florence,United States,US,34.19543,-79.76256,45.0
+region-4206,4206,Pennsylvania: Upper Susquehanna,Pennsylvania,PA,Upper Susquehanna,Sayre,United States,US,41.97896,-76.5155,238.0
+region-4201,4201,Pennsylvania: Pocono Mountains,Pennsylvania,PA,Pocono Mountains,Scranton,United States,US,41.40916,-75.6649,238.0
+region-4207,4207,Pennsylvania: Central Mountains,Pennsylvania,PA,Central Mountains,Saint Marys,United States,US,41.42784,-78.56086,507.0
+region-4205,4205,Pennsylvania: Middle Susquehanna,Pennsylvania,PA,Middle Susquehanna,Williamsport,United States,US,41.24119,-77.00108,162.0
+region-4209,4209,Pennsylvania: Southwest Plateau,Pennsylvania,PA,Southwest Plateau,Pittsburgh,United States,US,40.44062,-79.99589,239.0
+region-4208,4208,Pennsylvania: South Central Mountains,Pennsylvania,PA,South Central Mountains,Altoona,United States,US,40.51868,-78.39474,359.0
+region-4204,4204,Pennsylvania: Lower Susquehanna,Pennsylvania,PA,Lower Susquehanna,Chambersburg,United States,US,39.93759,-77.6611,191.0
+region-4203,4203,Pennsylvania: Southeastern Piedmont,Pennsylvania,PA,Southeastern Piedmont,Reading,United States,US,40.33565,-75.92687,83.0
+region-4202,4202,Pennsylvania: East Central Mountains,Pennsylvania,PA,East Central Mountains,Allentown,United States,US,40.60843,-75.49018,107.0
+region-3901,3901,Ohio: Northwest,Ohio,OH,Northwest,Bowling Green,United States,US,41.37477,-83.65132,213.0
+region-3902,3902,Ohio: North Central,Ohio,OH,North Central,Tiffin,United States,US,41.1145,-83.17797,227.0
+region-3907,3907,Ohio: Northeast Hills,Ohio,OH,Northeast Hills,New Philadelphia,United States,US,40.48979,-81.44567,277.0
+region-3910,3910,Ohio: Southeast,Ohio,OH,Southeast,Zanesville,United States,US,39.94035,-82.01319,207.0
+region-3909,3909,Ohio: South Central,Ohio,OH,South Central,Chillicothe,United States,US,39.33312,-82.9824,196.0
+region-3908,3908,Ohio: Southwest,Ohio,OH,Southwest,Hamilton,United States,US,39.3995,-84.56134,186.0
+region-3904,3904,Ohio: West Central,Ohio,OH,West Central,Sidney,United States,US,40.28422,-84.1555,293.0
+region-3905,3905,Ohio: Central,Ohio,OH,Central,Columbus,United States,US,39.96118,-82.99879,242.0
+region-3906,3906,Ohio: East Central,Ohio,OH,East Central,Wooster,United States,US,40.80517,-81.93646,303.0
+region-3903,3903,Ohio: Northeast,Ohio,OH,Northeast,Cuyahoga Falls,United States,US,41.13394,-81.48456,310.0
+region-5501,5501,Wisconsin: Northwest,Wisconsin,WI,Northwest,Rice Lake,United States,US,45.50607,-91.73823,349.0
+region-5502,5502,Wisconsin: North Central,Wisconsin,WI,North Central,Wausau,United States,US,44.95914,-89.63012,371.0
+region-5503,5503,Wisconsin: Northeast,Wisconsin,WI,Northeast,Marinette,United States,US,45.09998,-87.63066,182.0
+region-5504,5504,Wisconsin: West Central,Wisconsin,WI,West Central,Menomonie,United States,US,44.87552,-91.91934,269.0
+region-5505,5505,Wisconsin: Central,Wisconsin,WI,Central,Wisconsin Rapids,United States,US,44.38358,-89.81735,314.0
+region-5506,5506,Wisconsin: East Central,Wisconsin,WI,East Central,Appleton,United States,US,44.26193,-88.41538,243.0
+region-5507,5507,Wisconsin: Southwest,Wisconsin,WI,Southwest,Platteville,United States,US,42.73416,-90.47846,300.0
+region-5508,5508,Wisconsin: South Central,Wisconsin,WI,South Central,Madison,United States,US,43.07305,-89.40123,272.0
+region-5509,5509,Wisconsin: Southeast,Wisconsin,WI,Southeast,Waukesha,United States,US,43.01168,-88.23148,252.0
+region-4704,4704,Tennessee: Western,Tennessee,TN,Western,Jackson,United States,US,35.61452,-88.81395,126.0
+region-4703,4703,Tennessee: Middle,Tennessee,TN,Middle,Nashville,United States,US,36.16589,-86.78444,171.0
+region-4702,4702,Tennessee: Cumberland Plateau,Tennessee,TN,Cumberland Plateau,Crossville,United States,US,35.94896,-85.0269,565.0
+region-4701,4701,Tennessee: Eastern,Tennessee,TN,Eastern,Knoxville,United States,US,35.96064,-83.92074,277.0
+region-4801,4801,Texas: High Plains,Texas,TX,High Plains,Amarillo,United States,US,35.222,-101.8313,1124.0
+region-4802,4802,Texas: Low Rolling Plains,Texas,TX,Low Rolling Plains,Snyder,United States,US,32.71789,-100.91762,709.0
+region-4803,4803,Texas: North Central,Texas,TX,North Central,Dallas,United States,US,32.78306,-96.80667,139.0
+region-4804,4804,Texas: East Texas,Texas,TX,East Texas,Tyler,United States,US,32.35126,-95.30106,174.0
+region-4805,4805,Texas: Trans Pecos,Texas,TX,Trans Pecos,Pecos,United States,US,31.42291,-103.49323,791.0
+region-4806,4806,Texas: Edwards Plateau,Texas,TX,Edwards Plateau,Fredericksburg,United States,US,30.2752,-98.87198,519.0
+region-4807,4807,Texas: South Central,Texas,TX,South Central,San Antonio,United States,US,29.42412,-98.49363,202.0
+region-4809,4809,Texas: Southern,Texas,TX,Southern,Crystal City,United States,US,28.67748,-99.82811,171.0
+region-4808,4808,Texas: Upper Coast,Texas,TX,Upper Coast,Houston,United States,US,29.76328,-95.36327,30.0
+region-4810,4810,Texas: Lower Valley,Texas,TX,Lower Valley,Edinburg,United States,US,26.30174,-98.16334,35.0
+region-4601,4601,South Dakota: Northwest,South Dakota,SD,Northwest,Belle Fourche,United States,US,44.67137,-103.85215,921.0
+region-4602,4602,South Dakota: North Central,South Dakota,SD,North Central,,United States,US,45.418,-100.27936,491.0
+region-4603,4603,South Dakota: Northeast,South Dakota,SD,Northeast,Aberdeen,United States,US,45.4647,-98.48648,397.0
+region-4604,4604,South Dakota: Black Hills,South Dakota,SD,Black Hills,Rapid City,United States,US,44.08054,-103.23101,990.0
+region-4606,4606,South Dakota: Central,South Dakota,SD,Central,Pierre,United States,US,44.36832,-100.35097,450.0
+region-4607,4607,South Dakota: East Central,South Dakota,SD,East Central,Brookings,United States,US,44.31136,-96.79839,493.0
+region-4609,4609,South Dakota: Southeast,South Dakota,SD,Southeast,Mitchell,United States,US,43.70943,-98.0298,398.0
+region-4608,4608,South Dakota: South Central,South Dakota,SD,South Central,,United States,US,43.444,-100.2825,617.0
+region-4605,4605,South Dakota: Southwest,South Dakota,SD,Southwest,Box Elder,United States,US,44.11249,-103.06823,924.0
+region-2301,2301,Maine: Northern,Maine,ME,Northern,Presque Isle,United States,US,46.68115,-68.01586,140.0
+region-2302,2302,Maine: Southern Interior,Maine,ME,Southern Interior,Bangor,United States,US,44.79884,-68.77265,7.0
+region-2303,2303,Maine: Coastal,Maine,ME,Coastal,Biddeford,United States,US,43.49258,-70.45338,23.0
+region-3301,3301,New Hampshire: Northern,New Hampshire,NH,Northern,Berlin,United States,US,44.46867,-71.18508,312.0
+region-3302,3302,New Hampshire: Southern,New Hampshire,NH,Southern,Manchester,United States,US,42.99564,-71.45479,81.0
+region-5002,5002,Vermont: Western,Vermont,VT,Western,South Burlington,United States,US,44.46699,-73.17096,95.0
+region-5003,5003,Vermont: Southeastern,Vermont,VT,Southeastern,Hartford,United States,US,43.66063,-72.33842,126.0
+region-5001,5001,Vermont: Northeastern,Vermont,VT,Northeastern,Barre,United States,US,44.19701,-72.50205,187.0
+region-2501,2501,Massachusettes: Western,Massachusettes,MA,Western,Pittsfield,United States,US,42.45008,-73.24538,304.0
+region-3803,3803,North Dakota: Northeast,North Dakota,ND,Northeast,Grand Forks,United States,US,47.92526,-97.03285,256.0
+region-4507,4507,South Carolina: Southern,South Carolina,SC,Southern,Summerville,United States,US,33.0185,-80.17565,25.0
+region-2503,2503,Massachusettes: Coastal,Massachusettes,MA,Coastal,Brockton,United States,US,42.08343,-71.01838,37.0
+region-0901,0901,Connecticut: Northwest,Connecticut,CT,Northwest,West Torrington,United States,US,41.81843,-73.14372,201.0
+region-0902,0902,Connecticut: Central,Connecticut,CT,Central,Hartford,United States,US,41.76371,-72.68509,27.0
+region-4401,4401,Rhode Island: All,Rhode Island,RI,All,Coventry,United States,US,41.7001,-71.68284,112.0
+region-3608,3608,New York: St. Lawrence Valley,New York,NY,St. Lawrence Valley,Potsdam,United States,US,44.66978,-74.98131,132.0
+region-3609,3609,New York: Great Lakes,New York,NY,Great Lakes,Rochester,United States,US,43.15478,-77.61556,156.0
+region-3603,3603,New York: Northern Plateau,New York,NY,Northern Plateau,Saranac Lake,United States,US,44.3295,-74.13127,469.0
+region-3607,3607,New York: Champlain Valley,New York,NY,Champlain Valley,Plattsburgh,United States,US,44.69949,-73.45291,45.0
+region-3605,3605,New York: Hudson Valley,New York,NY,Hudson Valley,Albany,United States,US,42.65258,-73.75623,50.0
+region-3606,3606,New York: Mohawk Valley,New York,NY,Mohawk Valley,Utica,United States,US,43.1009,-75.23266,143.0
+region-3601,3601,New York: Western Plateau,New York,NY,Western Plateau,Corning,United States,US,42.14285,-77.05469,289.0
+region-3602,3602,New York: Eastern Plateau,New York,NY,Eastern Plateau,Oneonta,United States,US,42.45286,-75.06377,343.0
+region-3604,3604,New York: Coastal,New York,NY,Coastal,Brooklyn,United States,US,40.6501,-73.94958,18.0
+region-3401,3401,New Jersey: Northern,New Jersey,NJ,Northern,Paterson,United States,US,40.91677,-74.17181,35.0
+region-3402,3402,New Jersey: Southern,New Jersey,NJ,Southern,Vineland,United States,US,39.48623,-75.02573,34.0
+region-3403,3403,New Jersey: Coastal,New Jersey,NJ,Coastal,Long Branch,United States,US,40.30428,-73.99236,9.0
+region-3610,3610,New York: Central Lakes,New York,NY,Central Lakes,Syracuse,United States,US,43.04812,-76.14742,129.0
+region-5401,5401,West Virginia: Northwestern,West Virginia,WV,Northwestern,Parkersburg,United States,US,39.26674,-81.56151,199.0
+region-5403,5403,West Virginia: Southwestern,West Virginia,WV,Southwestern,Charleston,United States,US,38.34982,-81.63262,198.0
+region-5402,5402,West Virginia: North Central,West Virginia,WV,North Central,Fairmont,United States,US,39.48508,-80.14258,302.0
+region-5404,5404,West Virginia: Central,West Virginia,WV,Central,Beckley,United States,US,37.77817,-81.18816,738.0
+region-5405,5405,West Virginia: Southern,West Virginia,WV,Southern,Princeton,United States,US,37.36623,-81.10259,744.0
+region-5406,5406,West Virginia: Northeastern,West Virginia,WV,Northeastern,Martinsburg,United States,US,39.45621,-77.96389,139.0
+region-0804,0804,Colorado: Platte Drainage Basin,Colorado,CO,Platte Drainage Basin,Denver,United States,US,39.73915,-104.9847,1636.0
+region-0802,0802,Colorado: Colorado Drainage Basin,Colorado,CO,Colorado Drainage Basin,Grand Junction,United States,US,39.06387,-108.55065,1403.0
+region-0805,0805,Colorado: Rio Grande Drainage Basin,Colorado,CO,Rio Grande Drainage Basin,Alamosa,United States,US,37.46945,-105.87002,2303.0
+region-0801,0801,Colorado: Arkansas Drainage Basin,Colorado,CO,Arkansas Drainage Basin,Pueblo,United States,US,38.25445,-104.60914,1430.0
+region-0803,0803,Colorado: Kansas Drainage Basin,Colorado,CO,Kansas Drainage Basin,,United States,US,39.68141,-102.70201,1306.0
+region-0607,0607,California: Southeast Desert Basin,California,CA,Southeast Desert Basin,Twentynine Palms,United States,US,34.13556,-116.05417,607.0
+region-0603,0603,California: Northeast Interior Basins,California,CA,Northeast Interior Basins,Truckee,United States,US,39.32796,-120.18325,1774.0
+region-0602,0602,California: Sacramento Drainage,California,CA,Sacramento Drainage,Chico,United States,US,39.72849,-121.83748,64.0
+region-0605,0605,California: San Joaquin Drainage,California,CA,San Joaquin Drainage,Fresno,United States,US,36.74773,-119.77237,99.0
+region-0601,0601,California: North Coast Drainage,California,CA,North Coast Drainage,Santa Rosa,United States,US,38.44047,-122.71443,55.0
+region-0604,0604,California: Central Coast Drainage,California,CA,Central Coast Drainage,Pleasanton,United States,US,37.66243,-121.87468,107.0
+region-0606,0606,California: South Coast Drainage,California,CA,South Coast Drainage,Los Angeles,United States,US,34.05223,-118.24368,96.0
+region-3203,3203,Nevada: South Central,Nevada,NV,South Central,,United States,US,37.59325,-116.03118,1783.0
+region-3202,3202,Nevada: Northeastern,Nevada,NV,Northeastern,Elko,United States,US,40.83242,-115.76312,1551.0
+region-3201,3201,Nevada: Northwestern,Nevada,NV,Northwestern,Fernley,United States,US,39.60797,-119.25183,1270.0
+region-3204,3204,Nevada: Extreme Southern,Nevada,NV,Extreme Southern,Las Vegas,United States,US,36.17497,-115.13722,613.0
+region-5601,5601,Wyoming: Yellowstone Drainage,Wyoming,WY,Yellowstone Drainage,,United States,US,44.47716,-110.40163,2357.0
+region-5602,5602,Wyoming: Snake Drainage,Wyoming,WY,Snake Drainage,Jackson,United States,US,43.47993,-110.76243,1904.0
+region-5604,5604,Wyoming: Big Horn,Wyoming,WY,Big Horn,Worland,United States,US,44.0169,-107.95537,1240.0
+region-5605,5605,"Wyoming: Powder, Little Missouri, Tongu",Wyoming,WY,"Powder, Little Missouri, Tongu",Sheridan,United States,US,44.79719,-106.95618,1147.0
+region-5606,5606,Wyoming: Belle Fourche Drainage,Wyoming,WY,Belle Fourche Drainage,Gillette,United States,US,44.29109,-105.50222,1393.0
+region-5607,5607,Wyoming: Cheyenne & Niobrara Drainage,Wyoming,WY,Cheyenne & Niobrara Drainage,,United States,US,43.31018,-105.04738,1471.0
+region-5603,5603,Wyoming: Green And Bear Drainage,Wyoming,WY,Green And Bear Drainage,Rock Springs,United States,US,41.58746,-109.2029,1954.0
+region-5610,5610,Wyoming: Upper Platte,Wyoming,WY,Upper Platte,Laramie,United States,US,41.31137,-105.5911,2190.0
+region-5608,5608,Wyoming: Lower Platte,Wyoming,WY,Lower Platte,Cheyenne,United States,US,41.13998,-104.82025,1866.0
+region-5609,5609,Wyoming: Wind River,Wyoming,WY,Wind River,Riverton,United States,US,43.02496,-108.3801,1512.0
+region-4901,4901,Utah: Western,Utah,UT,Western,,United States,US,39.62588,-113.1928,1491.0
+region-4903,4903,Utah: North Central,Utah,UT,North Central,Riverton,United States,US,40.52189,-111.9391,1357.0
+region-4905,4905,Utah: Northern Mountains,Utah,UT,Northern Mountains,Heber City,United States,US,40.5069,-111.41324,1710.0
+region-4906,4906,Utah: Uinta Basin,Utah,UT,Uinta Basin,Vernal,United States,US,40.45552,-109.52875,1628.0
+region-4907,4907,Utah: Southeast,Utah,UT,Southeast,Moab,United States,US,38.57332,-109.54984,1233.0
+region-4904,4904,Utah: South Central,Utah,UT,South Central,Richfield,United States,US,38.77247,-112.08409,1636.0
+region-4902,4902,Utah: Dixie,Utah,UT,Dixie,Saint George,United States,US,37.10415,-113.58412,825.0
+region-4109,4109,Oregon: Southeast,Oregon,OR,Southeast,Ontario,United States,US,44.02655,-116.96294,655.0
+region-4107,4107,Oregon: South Central,Oregon,OR,South Central,Bend,United States,US,44.05817,-121.31531,1106.0
+region-4105,4105,Oregon: High Plateau,Oregon,OR,High Plateau,,United States,US,43.01627,-121.47842,1404.0
+region-4103,4103,Oregon: Southwestern Valleys,Oregon,OR,Southwestern Valleys,Medford,United States,US,42.32652,-122.87559,422.0
+region-4104,4104,Oregon: Northern Cascades,Oregon,OR,Northern Cascades,,United States,US,44.54459,-122.10407,947.0
+region-4106,4106,Oregon: North Central,Oregon,OR,North Central,Pendleton,United States,US,45.67207,-118.7886,327.0
+region-4108,4108,Oregon: Northeast,Oregon,OR,Northeast,La Grande,United States,US,45.32458,-118.08772,844.0
+region-4101,4101,Oregon: Coastal Area,Oregon,OR,Coastal Area,Coos Bay,United States,US,43.3665,-124.21789,6.0
+region-4102,4102,Oregon: Willamette Valley,Oregon,OR,Willamette Valley,Eugene,United States,US,44.05207,-123.08675,132.0
+region-3503,3503,New Mexico: Northeastern Plains,New Mexico,NM,Northeastern Plains,Portales,United States,US,34.18619,-103.3344,1227.0
+region-3507,3507,New Mexico: Southeastern Plains,New Mexico,NM,Southeastern Plains,Roswell,United States,US,33.39437,-104.52491,1093.0
+region-3501,3501,New Mexico: Northwestern Plateau,New Mexico,NM,Northwestern Plateau,Farmington,United States,US,36.72806,-108.21869,1614.0
+region-3502,3502,New Mexico: Northern Mountains,New Mexico,NM,Northern Mountains,Santa Fe,United States,US,35.68698,-105.9378,2137.0
+region-3508,3508,New Mexico: Southern Desert,New Mexico,NM,Southern Desert,Las Cruces,United States,US,32.31232,-106.77834,1189.0
+region-3504,3504,New Mexico: Southwestern Mountains,New Mexico,NM,Southwestern Mountains,Grants,United States,US,35.1476,-107.85261,1970.0

@@ -50,7 +50,10 @@
     <section class="explore">
       <div class="map-card card">
         <div id="map" role="application" aria-label="Map of cities. Click a US city to pick it, or a world city to compare."></div>
-        <p class="map-hint">Click a <span class="key key-us"></span> US city to pick it, or any <span class="key key-world"></span> world city to compare.</p>
+        <div class="map-foot">
+          <div id="heat-legend" class="heat-legend" aria-label="Map legend: how closely each world city matches your city"></div>
+          <p class="map-hint">Click a <span class="key key-us"></span> US city to pick it, or any world city to compare.</p>
+        </div>
       </div>
       <div class="results card">
         <h2 id="results-title">Closest weather twins</h2>
@@ -76,11 +79,22 @@
       <div id="table-wrap" class="table-wrap" hidden></div>
     </section>
 
+    <section id="regions" class="regions card" hidden>
+      <div class="regions-head">
+        <h2>The whole US, mapped to its weather twins</h2>
+        <p class="muted">Each of NOAA's 344 climate regions in the lower 48 states, colored by where its closest twin is. Labels name the twin city. Point at or tap a region for details. The settings above apply here too.</p>
+      </div>
+      <div id="region-legend" class="legend region-legend"></div>
+      <div id="region-map" role="application" aria-label="Map of US climate regions colored by the location of their closest world weather twin"></div>
+      <div id="region-info" class="region-info" aria-live="polite"></div>
+    </section>
+
     <section class="about card">
       <h2>How it works</h2>
       <p>Each city gets a "typical year": twelve monthly averages of daily highs and lows, dew point (how muggy it feels), rain, rainy days, cloud cover, snowfall, wind, and how much temperatures swing from day to day. These come from <span id="period">2016–2025</span> hourly weather data. Cities are compared month by month. Temperature counts most, then humidity, rain and sky. Use <em>What matters to you?</em> above to change that. The match percentage is a friendly score: 100% would be an identical climate.</p>
       <p>Temperature, humidity, cloud and wind come from the ERA5 and ERA5-Land reanalysis (Copernicus, via <a href="https://open-meteo.com/">Open-Meteo</a> open data). Rainfall is corrected against nearby rain gauges (NOAA GHCN-Daily and GSOD). Where no reliable gauge exists, it is scaled to WorldClim 2.1 normals. Reanalysis smooths over very local climates, like San Francisco's fog belt or a city's hillside suburbs.</p>
-      <p class="muted small">Data: Copernicus ERA5 / ERA5-Land (CC BY 4.0) via Open-Meteo · NOAA NCEI GHCN-Daily &amp; GSOD · WorldClim 2.1 (Fick &amp; Hijmans, 2017) · City locations from GeoNames · Country shapes from Natural Earth.</p>
+      <p>The region map uses NOAA's climate divisions, which group each state into areas with similar climate. Each division's weather is measured at the largest town in its central part, so a city on its edge, like Manhattan in the Hudson Valley division, doesn't speak for the whole area.</p>
+      <p class="muted small">Data: Copernicus ERA5 / ERA5-Land (CC BY 4.0) via Open-Meteo · NOAA NCEI GHCN-Daily &amp; GSOD · WorldClim 2.1 (Fick &amp; Hijmans, 2017) · City locations from GeoNames · NOAA NCEI climate divisions · Country shapes from Natural Earth.</p>
     </section>
   </main>
 

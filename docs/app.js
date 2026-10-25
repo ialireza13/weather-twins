@@ -97,15 +97,19 @@ function rolled(values, shift) {
 
 // ---------------------------------------------------------------- scoring
 
-function prepare(data) {
-  for (const c of data.cities) {
-    c.z = {};
-    for (const f of data.features) {
-      const [mu, sd] = data.stats[f];
-      const log = data.log_features.includes(f);
-      c.z[f] = c.p[f].map((v) => ((log ? Math.log1p(v) : v) - mu) / sd);
-    }
+// z-scores against the cities' statistics, exactly as climate.standardize() does.
+function zScores(profile) {
+  const z = {};
+  for (const f of DATA.features) {
+    const [mu, sd] = DATA.stats[f];
+    const log = DATA.log_features.includes(f);
+    z[f] = profile[f].map((v) => ((log ? Math.log1p(v) : v) - mu) / sd);
   }
+  return z;
+}
+
+function prepare(data) {
+  for (const c of data.cities) c.z = zScores(c.p);
 }
 
 function weights() {
@@ -132,10 +136,20 @@ function distance(q, c, w) {
 
 const matchPct = (d) => Math.round(100 * Math.exp(-d));
 
+// Fixed match-score bins for coloring world cities, so colors mean the same for every
+// US city (Fairbanks honestly shows no deep blue anywhere). Chosen from the spread of
+// all US x world scores: median ~31%, top decile above ~51%.
+const HEAT_BINS = [0, 25, 40, 50, 60];
+const HEAT_RADIUS = [2.5, 3.5, 4.5, 5.5, 7];
+const HEAT_LABELS = ["under 25%", "25–40%", "40–50%", "50–60%", "60%+"];
+const heatBin = (pct) => HEAT_BINS.filter((b) => pct >= b).length - 1;
+let distById = {};
+
 function rank() {
   const q = BY_ID[state.query], w = weights();
   const all = WORLD.map((c) => ({ c, d: distance(q, c, w) })).sort((a, b) => a.d - b.d);
   all.forEach((r, i) => (r.overall = i + 1));
+  distById = Object.fromEntries(all.map((r) => [r.c.id, r.d]));
   const perCountry = {};
   const top = [];
   for (const r of all) {
@@ -223,18 +237,18 @@ function initMap(countries) {
 
   for (const c of WORLD) {
     worldMarkers[c.id] = L.circleMarker([c.lat, c.lon], { radius: 3.5, className: "dot-world" })
-      .bindTooltip(`${c.name}, ${c.country}`, { direction: "top", offset: [0, -4] })
+      .bindTooltip(() => `${c.name}, ${c.country}: ${matchPct(distById[c.id])}% match`, { direction: "top", offset: [0, -4] })
       .on("click", (e) => { L.DomEvent.stopPropagation(e); selectTwin(c.id); })
       .addTo(map);
   }
   for (const c of US) {
-    usMarkers[c.id] = L.circleMarker([c.lat, c.lon], { radius: 5, className: "dot-us" })
+    usMarkers[c.id] = L.circleMarker([c.lat, c.lon], { radius: 3.5, className: "dot-us" })
       .bindTooltip(c.name, { direction: "top", offset: [0, -5] })
       .on("click", (e) => { L.DomEvent.stopPropagation(e); selectQuery(c.id); })
       .addTo(map);
   }
   rankLayer = L.layerGroup().addTo(map);
-  new ResizeObserver(() => map.invalidateSize()).observe(map.getContainer());
+  new ResizeObserver(() => { map.invalidateSize(); if (pendingFit) fitMap(); }).observe(map.getContainer());
 
   // Small dots are hard to hit: a click near a city counts, and a click elsewhere
   // in the US picks the nearest US city.
@@ -264,29 +278,59 @@ function nearestUS(point) {
 function renderMap(fit) {
   for (const [id, m] of Object.entries(usMarkers)) {
     const on = id === state.query;
-    m.setRadius(on ? 8 : 5);
+    m.setRadius(on ? 7 : 3.5);
     m.getElement()?.classList.toggle("selected", on);
     if (on) m.bringToFront();
   }
+  // Every world city, colored and sized by how well it matches; best matches drawn on top.
+  for (const r of [...ranking.all].reverse()) {
+    const m = worldMarkers[r.c.id];
+    const bin = heatBin(matchPct(r.d));
+    m.setRadius(HEAT_RADIUS[bin]);
+    const path = m.getElement();
+    if (path) {
+      path.classList.remove("h1", "h2", "h3", "h4");
+      if (bin > 0) path.classList.add(`h${bin}`);
+    }
+    m.bringToFront();
+  }
+  renderHeatLegend();
+
   rankLayer.clearLayers();
   ranking.top.forEach((r, i) => {
     const icon = L.divIcon({
       className: "",
       html: `<div class="rank-icon${r.c.id === state.twin ? " selected" : ""}" data-id="${r.c.id}">${i + 1}</div>`,
-      iconSize: [22, 22],
-      iconAnchor: [11, 11],
+      iconSize: [18, 18],
+      iconAnchor: [9, 9],
     });
     L.marker([r.c.lat, r.c.lon], { icon, zIndexOffset: 1000 - i, keyboard: false })
       .bindTooltip(`${i + 1}. ${r.c.name}: ${matchPct(r.d)}% match`, { direction: "top", offset: [0, -12] })
       .on("click", () => selectTwin(r.c.id))
       .addTo(rankLayer);
   });
-  if (fit) {
-    map.invalidateSize();  // the container may have changed size since Leaflet last measured it
-    const q = BY_ID[state.query];
-    const pts = [[q.lat, q.lon], ...ranking.top.map((r) => [r.c.lat, r.c.lon])];
-    map.fitBounds(L.latLngBounds(pts), { padding: [30, 30], maxZoom: 4 });
-  }
+  if (fit) fitMap();
+}
+
+let pendingFit = false;
+
+function fitMap() {
+  map.invalidateSize();  // the container may have changed size since Leaflet last measured it
+  // A page loaded in a background tab has no size yet; fit once it does (see initMap).
+  pendingFit = map.getSize().x === 0;
+  if (pendingFit) return;
+  const q = BY_ID[state.query];
+  const pts = [[q.lat, q.lon], ...ranking.top.map((r) => [r.c.lat, r.c.lon])];
+  map.fitBounds(L.latLngBounds(pts), { padding: [30, 30], maxZoom: 4 });
+}
+
+function renderHeatLegend() {
+  const items = HEAT_LABELS.map((label, bin) => {
+    const size = 2 * HEAT_RADIUS[bin];
+    const swatch = el("i", { style: `width:${size}px;height:${size}px;background:${bin ? `var(--heat-${bin})` : "var(--world-dot)"}` });
+    return el("span", { class: "swatch" }, swatch, label);
+  });
+  $("#heat-legend").replaceChildren(el("span", { text: `Match with ${BY_ID[state.query].name}:` }), ...items);
 }
 
 // ---------------------------------------------------------------- results list
@@ -491,6 +535,142 @@ function renderTable() {
   $("#table-wrap").replaceChildren(el("table", {}, el("thead", {}, head1, head2), body));
 }
 
+// ---------------------------------------------------------------- twin-region map
+
+// Each NOAA climate division gets its single closest world twin. Regions are colored by
+// where that twin is (DATA.groups; 3 colors + neutral is all a map can keep apart), and
+// each patch of touching regions sharing a twin gets one name label.
+let REGIONS = null, regionMap, labelLayer, clusters = [], activeRegion = null;
+
+function initRegions(geo, countries) {
+  REGIONS = geo.features.map((f) => f.properties);
+  for (const r of REGIONS) {
+    r.z = zScores(r.p);
+    r.lat = r.label[0];
+    r.name = `${r.state}: ${r.division}`;
+  }
+  $("#regions").hidden = false;
+  $("#region-info").replaceChildren(el("span", { class: "muted", text: "Point at or tap a region to see its closest twins." }));
+
+  regionMap = L.map("region-map", { zoomSnap: 0.25, minZoom: 3, maxZoom: 8, scrollWheelZoom: false });
+  regionMap.on("click focus", () => regionMap.scrollWheelZoom.enable());
+  regionMap.getContainer().addEventListener("mouseleave", () => regionMap.scrollWheelZoom.disable());
+  regionMap.attributionControl.setPrefix(false);
+  regionMap.attributionControl.addAttribution(
+    '<a href="https://www.ncei.noaa.gov/access/monitoring/climate-divisions/">NOAA climate divisions</a> · <a href="https://www.naturalearthdata.com/">Natural Earth</a>');
+  L.geoJSON(topoFeatures(countries, "countries"), { interactive: false, style: { className: "context", weight: 0.75 } })
+    .addTo(regionMap);
+  L.geoJSON(geo, {
+    style: { className: "region", weight: 0.75 },
+    onEachFeature: (feature, layer) => {
+      const r = feature.properties;
+      r.layer = layer;
+      layer.bindTooltip(() => `${r.name}: ${r.twin.name} (${matchPct(r.d)}%)`, { sticky: true, direction: "top" });
+      layer.on({ mouseover: () => showRegion(r), click: () => showRegion(r) });
+    },
+  }).addTo(regionMap);
+  labelLayer = L.layerGroup().addTo(regionMap);
+  regionMap.on("zoomend moveend", placeLabels);
+  // Fit once the map has a real size: a page loaded in a background tab has none yet,
+  // and fitting a 0x0 box zooms all the way in.
+  let fitted = false;
+  const onResize = () => {
+    regionMap.invalidateSize();
+    if (!fitted && regionMap.getSize().x > 0) {
+      regionMap.fitBounds([[24.5, -124.8], [49.4, -66.9]], { padding: [8, 8] });
+      fitted = true;
+    }
+    placeLabels();
+  };
+  if (regionMap.getSize().x > 0) onResize(); else regionMap.setView([38, -96], 4);
+  new ResizeObserver(onResize).observe(regionMap.getContainer());
+}
+
+function renderRegions() {
+  if (!REGIONS) return;
+  const w = weights();
+  const counts = DATA.groups.map(() => 0);
+  for (const r of REGIONS) {
+    let best = null, bestD = Infinity;
+    for (const c of WORLD) {
+      const d = distance(r, c, w);
+      if (d < bestD) { bestD = d; best = c; }
+    }
+    r.twin = best;
+    r.d = bestD;
+    r.g = DATA.groups.indexOf(best.group);
+    counts[r.g]++;
+    const path = r.layer.getElement();
+    path.classList.remove("g0", "g1", "g2", "g3");
+    path.classList.add(`g${r.g}`);
+  }
+
+  $("#region-legend").replaceChildren(...DATA.groups.map((g, i) =>
+    el("span", {}, el("i", { style: `background: var(--group-${i + 1})` }), `Twin in ${g} `,
+      el("span", { class: "count", text: `(${counts[i]})` }))));
+
+  // Patches of touching regions that share a twin, labeled once, biggest first.
+  const index = new Map(REGIONS.map((r, i) => [r.id, i]));
+  const parent = REGIONS.map((_, i) => i);
+  const find = (i) => (parent[i] === i ? i : (parent[i] = find(parent[i])));
+  REGIONS.forEach((r, i) => {
+    for (const n of r.neighbors) {
+      const j = index.get(n);
+      if (j !== undefined && REGIONS[j].twin === r.twin) parent[find(i)] = find(j);
+    }
+  });
+  const groups = new Map();
+  REGIONS.forEach((r, i) => {
+    const root = find(i);
+    const g = groups.get(root) || { twin: r.twin, area: 0, anchor: r };
+    g.area += r.area;
+    if (r.area > g.anchor.area) g.anchor = r;
+    groups.set(root, g);
+  });
+  clusters = [...groups.values()].sort((a, b) => b.area - a.area);
+  placeLabels();
+  if (activeRegion) showRegion(activeRegion);
+}
+
+function placeLabels() {
+  if (!labelLayer) return;
+  labelLayer.clearLayers();
+  const size = regionMap.getSize();
+  const pxPerDeg = (256 * 2 ** regionMap.getZoom()) / 360;
+  const placed = [];
+  for (const c of clusters) {
+    const name = c.twin.name.replace(/ \(.*\)$/, "");
+    const w = name.length * 6.6 + 16, h = 18;
+    // Only label patches big enough on screen to hold their label.
+    const pxArea = c.area * pxPerDeg ** 2 * Math.cos((c.anchor.label[0] * Math.PI) / 180);
+    if (pxArea < w * h * 0.8) continue;
+    const pt = regionMap.latLngToContainerPoint(c.anchor.label);
+    const box = [pt.x - w / 2 - 3, pt.y - h / 2 - 3, pt.x + w / 2 + 3, pt.y + h / 2 + 3];
+    if (box[0] < 0 || box[1] < 0 || box[2] > size.x || box[3] > size.y) continue;
+    if (placed.some((b) => box[0] < b[2] && box[2] > b[0] && box[1] < b[3] && box[3] > b[1])) continue;
+    placed.push(box);
+    const label = el("span", { class: "twin-label", text: name });
+    L.marker(c.anchor.label, {
+      icon: L.divIcon({ className: "twin-label-wrap", html: label, iconSize: [0, 0] }),
+      interactive: false, keyboard: false,
+    }).addTo(labelLayer);
+  }
+}
+
+function showRegion(r) {
+  if (activeRegion && activeRegion !== r) activeRegion.layer.getElement()?.classList.remove("active");
+  activeRegion = r;
+  r.layer.getElement()?.classList.add("active");
+  r.layer.bringToFront();
+  const w = weights();
+  const next = WORLD.map((c) => ({ c, d: distance(r, c, w) })).sort((a, b) => a.d - b.d).slice(1, 4);
+  const where = r.town ? ` (weather in ${r.town})` : "";
+  $("#region-info").replaceChildren(
+    el("div", {}, el("strong", { text: r.name }), where + " · closest twin: ",
+      el("strong", { text: `${r.twin.name}, ${r.twin.country}` }), ` · ${matchPct(r.d)}% match`),
+    el("div", { class: "alts", text: `Next closest: ${next.map((x) => `${x.c.name} ${matchPct(x.d)}%`).join(" · ")}` }));
+}
+
 // ---------------------------------------------------------------- state + controls
 
 function readHash() {
@@ -515,12 +695,15 @@ function writeHash() {
   history.replaceState(null, "", `#${h}`);
 }
 
+let regionsStale = true;  // region twins depend on weights and seasons, not on the chosen city
+
 function update({ fit = false, keepTwin = true } = {}) {
   ranking = rank();
   if (!keepTwin || !state.twin || !BY_ID[state.twin]) state.twin = ranking.top[0].c.id;
   renderResults();
   renderMap(fit);
   renderDetail();
+  if (regionsStale) { renderRegions(); regionsStale = false; }
   writeHash();
 }
 
@@ -553,7 +736,7 @@ function initControls() {
   const seasons = $("#seasons"), varied = $("#varied");
   seasons.checked = state.seasons;
   varied.checked = state.varied;
-  seasons.addEventListener("change", () => { state.seasons = seasons.checked; update({ fit: true }); });
+  seasons.addEventListener("change", () => { state.seasons = seasons.checked; regionsStale = true; update({ fit: true }); });
   varied.addEventListener("change", () => { state.varied = varied.checked; update({ fit: true }); });
 
   const segs = document.querySelectorAll(".seg");
@@ -570,7 +753,7 @@ function initControls() {
     const out = el("output", { for: id });
     const input = el("input", { type: "range", id, min: "0", max: "2", step: "0.5", value: String(state.mult[g.key]) });
     const sync = () => { out.textContent = WEIGHT_STEPS[input.value] ?? input.value; };
-    input.addEventListener("input", () => { state.mult[g.key] = parseFloat(input.value); sync(); update(); });
+    input.addEventListener("input", () => { state.mult[g.key] = parseFloat(input.value); sync(); regionsStale = true; update(); });
     input.addEventListener("change", () => renderMap(true));
     sync();
     inputs[g.key] = { input, sync };
@@ -578,6 +761,7 @@ function initControls() {
   }
   $("#reset-weights").addEventListener("click", () => {
     for (const g of GROUPS) { state.mult[g.key] = 1; inputs[g.key].input.value = "1"; inputs[g.key].sync(); }
+    regionsStale = true;
     update({ fit: true });
   });
 
@@ -615,8 +799,11 @@ function initControls() {
 }
 
 async function main() {
-  const [cities, countries] = await Promise.all(
-    ["data/cities.json", "data/countries-50m.json"].map((u) => fetch(u).then((r) => r.json())));
+  const [cities, countries, regions] = await Promise.all([
+    fetch("data/cities.json").then((r) => r.json()),
+    fetch("data/countries-50m.json").then((r) => r.json()),
+    fetch("data/regions.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
+  ]);
   DATA = cities;
   prepare(DATA);
   BY_ID = Object.fromEntries(DATA.cities.map((c) => [c.id, c]));
@@ -626,6 +813,7 @@ async function main() {
   readHash();
   initControls();
   initMap(countries);
+  if (regions) initRegions(regions, countries);
   update({ fit: true });
   // A pasted or edited link (only the hash changes) should show what it describes.
   window.addEventListener("hashchange", () => location.reload());

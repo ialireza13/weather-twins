@@ -49,6 +49,11 @@ def all_cities() -> pd.DataFrame:
                       load_cities(DATA_DIR / "world_cities.csv")], ignore_index=True)
 
 
+def load_regions() -> pd.DataFrame:
+    """NOAA climate divisions (built by regions.py), shaped like the city lists."""
+    return pd.read_csv(DATA_DIR / "us_regions.csv", dtype={"id": str})
+
+
 def slugify(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
 

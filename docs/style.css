@@ -14,6 +14,14 @@
   --series-2: #eb6834;   /* the twin */
   --world-dot: #898781;
   --ocean: #e6ebee;
+  --heat-1: #6da7ec;
+  --heat-2: #3987e5;
+  --heat-3: #256abf;
+  --heat-4: #104281;
+  --group-1: #2a78d6;
+  --group-2: #eb6834;
+  --group-3: #1baf7a;
+  --group-4: #c9c7bf;
   --land: #fcfcfb;
   --land-border: #d6d5ce;
   --accent: #2a78d6;
@@ -38,6 +46,14 @@
     --series-2: #d95926;
     --world-dot: #77756f;
     --ocean: #0f1113;
+    --heat-1: #256abf;
+    --heat-2: #3987e5;
+    --heat-3: #6da7ec;
+    --heat-4: #b7d3f6;
+    --group-1: #3987e5;
+    --group-2: #d95926;
+    --group-3: #199e70;
+    --group-4: #5f5e59;
     --land: #2b2b29;
     --land-border: #4a4a45;
     --accent: #5598e7;
@@ -61,6 +77,14 @@
   --series-2: #d95926;
   --world-dot: #77756f;
   --ocean: #0f1113;
+  --heat-1: #256abf;
+  --heat-2: #3987e5;
+  --heat-3: #6da7ec;
+  --heat-4: #b7d3f6;
+  --group-1: #3987e5;
+  --group-2: #d95926;
+  --group-3: #199e70;
+  --group-4: #5f5e59;
   --land: #2b2b29;
   --land-border: #4a4a45;
   --accent: #5598e7;
@@ -148,8 +172,14 @@ button.link {
 #map { height: 520px; background: var(--surface-2); }
 .map-hint { margin: 0; padding: 8px 12px; font-size: 0.8125rem; color: var(--text-2); border-top: 1px solid var(--border); }
 .key { display: inline-block; width: 9px; height: 9px; border-radius: 50%; vertical-align: 0; }
-.key-us { background: var(--series-1); }
+.key-us { background: var(--text-2); width: 7px; height: 7px; }
 .key-world { background: var(--world-dot); width: 7px; height: 7px; }
+.map-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; align-items: center;
+  padding: 8px 12px; border-top: 1px solid var(--border); font-size: 0.8125rem; color: var(--text-2); }
+.map-foot .map-hint { padding: 0; border: 0; }
+.heat-legend { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
+.heat-legend .swatch { display: inline-flex; align-items: center; gap: 4px; }
+.heat-legend i { display: inline-block; border-radius: 50%; border: 1.5px solid var(--surface); box-shadow: 0 0 0 1px var(--border); }
 
 .results { padding: 16px 8px 8px 16px; display: flex; flex-direction: column; min-height: 0; max-height: 562px; }
 .results h2 { margin-bottom: 8px; padding-right: 8px; }
@@ -172,13 +202,17 @@ button.link {
 .result-why { grid-column: 2 / -1; font-size: 0.8125rem; color: var(--text-2); }
 
 /* Leaflet markers (CSS beats Leaflet's SVG presentation attributes, so tokens apply) */
-.leaflet-interactive.dot-world { fill: var(--world-dot); fill-opacity: 0.9; stroke: var(--surface); stroke-width: 1.5; stroke-opacity: 1; }
-.leaflet-interactive.dot-world:hover { fill: var(--series-2); }
-.leaflet-interactive.dot-us { fill: var(--series-1); fill-opacity: 1; stroke: var(--surface); stroke-width: 2; stroke-opacity: 1; }
-.leaflet-interactive.dot-us.selected { stroke-width: 3; filter: drop-shadow(0 0 0 var(--series-1)); }
+.leaflet-interactive.dot-world { fill: var(--world-dot); fill-opacity: 0.7; stroke: var(--surface); stroke-width: 1.5; stroke-opacity: 1; }
+.leaflet-interactive.dot-world.h1 { fill: var(--heat-1); fill-opacity: 1; }
+.leaflet-interactive.dot-world.h2 { fill: var(--heat-2); fill-opacity: 1; }
+.leaflet-interactive.dot-world.h3 { fill: var(--heat-3); fill-opacity: 1; }
+.leaflet-interactive.dot-world.h4 { fill: var(--heat-4); fill-opacity: 1; }
+.leaflet-interactive.dot-world:hover { stroke: var(--text); }
+.leaflet-interactive.dot-us { fill: var(--text-2); fill-opacity: 0.8; stroke: var(--surface); stroke-width: 1; stroke-opacity: 1; }
+.leaflet-interactive.dot-us.selected { fill: var(--text); fill-opacity: 1; stroke-width: 3; }
 .rank-icon {
-  display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%;
-  background: var(--series-2); color: #fff; font: 700 11px/1 system-ui, sans-serif;
+  display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%;
+  background: var(--series-2); color: #fff; font: 700 10px/1 system-ui, sans-serif;
   box-shadow: 0 0 0 2px var(--surface);
 }
 .rank-icon.selected { transform: scale(1.25); box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--series-2); }
@@ -259,3 +293,30 @@ thead th { color: var(--text-2); font-weight: 600; }
 .leaflet-control-attribution.leaflet-control { background: color-mix(in srgb, var(--surface) 80%, transparent); color: var(--text-2); }
 .leaflet-tooltip { background: var(--surface); color: var(--text); border-color: var(--border); }
 .leaflet-tooltip-top:before { border-top-color: var(--surface); }
+
+/* ---------------------------------------------------------------- twin-region map */
+.regions { padding: 20px; margin-bottom: 16px; }
+.regions-head p { margin: 4px 0 12px; max-width: 52rem; }
+.region-legend i { width: 12px; height: 12px; border-radius: 3px; }
+.region-legend .count { color: var(--text-2); }
+#region-map { height: 560px; border-radius: 8px; border: 1px solid var(--border); background: var(--ocean); }
+.leaflet-interactive.region { stroke: var(--surface); stroke-width: 0.75; stroke-opacity: 1; fill-opacity: 1; }
+.leaflet-interactive.region.g0 { fill: var(--group-1); }
+.leaflet-interactive.region.g1 { fill: var(--group-2); }
+.leaflet-interactive.region.g2 { fill: var(--group-3); }
+.leaflet-interactive.region.g3 { fill: var(--group-4); }
+.leaflet-interactive.region.active { stroke: var(--text); stroke-width: 2; }
+path.context { fill: var(--land); fill-opacity: 1; stroke: var(--land-border); stroke-opacity: 1; }
+.twin-label {
+  display: inline-block; transform: translate(-50%, -50%); white-space: nowrap;
+  background: var(--surface); color: var(--text); border-radius: 999px;
+  padding: 1px 7px; font: 600 11px/1.5 system-ui, sans-serif;
+  box-shadow: 0 0 0 1px var(--border), 0 1px 3px rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+}
+.twin-label-wrap { pointer-events: none; }
+.region-info { min-height: 3em; margin-top: 12px; font-size: 0.9375rem; }
+.region-info strong { font-weight: 600; }
+.region-info .alts { color: var(--text-2); font-size: 0.875rem; margin-top: 2px; }
+@media (max-width: 960px) { #region-map { height: 420px; } }
+@media (max-width: 600px) { .regions { padding: 16px; } #region-map { height: 320px; } }
