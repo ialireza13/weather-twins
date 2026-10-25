@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Twins</title>
+  <meta name="description" content="Pick your US city and find the famous world cities with the most similar weather, based on 10 years of climate data.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='11' cy='16' r='8' fill='%232a78d6'/%3E%3Ccircle cx='21' cy='16' r='8' fill='%23eb6834' fill-opacity='.85'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1>Weather Twins</h1>
+      <p class="lede">Pick your US city. See the famous cities around the world whose weather feels most like home, based on ten years of climate data.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="controls" aria-label="Options">
+      <div class="control city-control">
+        <label for="city">Your city</label>
+        <div class="city-row">
+          <select id="city"></select>
+          <button type="button" id="locate" class="ghost" title="Use my location">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="3.5" fill="currentColor"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            <span>Near me</span>
+          </button>
+        </div>
+      </div>
+      <div class="control toggles">
+        <label class="switch" title="Compare Sydney's July with your January">
+          <input type="checkbox" id="seasons"><span>Line up Southern Hemisphere seasons</span>
+        </label>
+        <label class="switch" title="Show at most 2 cities per country">
+          <input type="checkbox" id="varied" checked><span>At most 2 per country</span>
+        </label>
+      </div>
+      <div class="control units" role="group" aria-label="Units">
+        <button type="button" data-units="us" class="seg">°F</button><button type="button" data-units="metric" class="seg">°C</button>
+      </div>
+      <details class="control weights">
+        <summary>What matters to you?</summary>
+        <div id="weights" class="weights-grid"></div>
+        <button type="button" id="reset-weights" class="link">Reset to defaults</button>
+      </details>
+    </section>
+
+    <section class="explore">
+      <div class="map-card card">
+        <div id="map" role="application" aria-label="Map of cities. Click a US city to pick it, or a world city to compare."></div>
+        <p class="map-hint">Click a <span class="key key-us"></span> US city to pick it, or any <span class="key key-world"></span> world city to compare.</p>
+      </div>
+      <div class="results card">
+        <h2 id="results-title">Closest weather twins</h2>
+        <ol id="results" class="results-list"></ol>
+      </div>
+    </section>
+
+    <section id="detail" class="detail card" aria-live="polite">
+      <div class="detail-head">
+        <div>
+          <h2 id="detail-title"></h2>
+          <p id="detail-sub" class="muted"></p>
+        </div>
+        <div id="detail-score" class="score-badge"></div>
+      </div>
+      <ul id="detail-chips" class="chips"></ul>
+      <div class="legend" id="legend"></div>
+      <div id="charts" class="charts"></div>
+      <div class="detail-foot">
+        <button type="button" id="table-toggle" class="link" aria-expanded="false">Show as table</button>
+        <p id="detail-note" class="muted small"></p>
+      </div>
+      <div id="table-wrap" class="table-wrap" hidden></div>
+    </section>
+
+    <section class="about card">
+      <h2>How it works</h2>
+      <p>Each city gets a "typical year": twelve monthly averages of daily highs and lows, dew point (how muggy it feels), rain, rainy days, cloud cover, snowfall, wind, and how much temperatures swing from day to day. These come from <span id="period">2016–2025</span> hourly weather data. Cities are compared month by month. Temperature counts most, then humidity, rain and sky. Use <em>What matters to you?</em> above to change that. The match percentage is a friendly score: 100% would be an identical climate.</p>
+      <p>Temperature, humidity, cloud and wind come from the ERA5 and ERA5-Land reanalysis (Copernicus, via <a href="https://open-meteo.com/">Open-Meteo</a> open data). Rainfall is corrected against nearby rain gauges (NOAA GHCN-Daily and GSOD). Where no reliable gauge exists, it is scaled to WorldClim 2.1 normals. Reanalysis smooths over very local climates, like San Francisco's fog belt or a city's hillside suburbs.</p>
+      <p class="muted small">Data: Copernicus ERA5 / ERA5-Land (CC BY 4.0) via Open-Meteo · NOAA NCEI GHCN-Daily &amp; GSOD · WorldClim 2.1 (Fick &amp; Hijmans, 2017) · City locations from GeoNames · Country shapes from Natural Earth.</p>
+    </section>
+  </main>
+
+  <div id="tooltip" class="tooltip" role="status" hidden></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

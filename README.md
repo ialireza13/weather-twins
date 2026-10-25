@@ -11,6 +11,21 @@ python3 -m venv .venv && .venv/bin/pip install pandas numpy matplotlib jupyter o
 .venv/bin/jupyter lab explore.ipynb
 ```
 
+## Website
+
+`docs/` is a static site (GitHub Pages-ready): a map of all cities, the ranked twins for the chosen
+US city, and month-by-month comparison charts. Similarity is computed in the browser from
+`docs/data/cities.json`, using the same scoring as `climate.find_similar`, so the weight sliders and
+season toggle update instantly. Links are shareable (`#city=seattle-united-states&twin=...`).
+
+```bash
+.venv/bin/python export_site.py               # refresh docs/data/cities.json after changing data or weights
+python3 -m http.server 8765 --directory docs  # preview at http://localhost:8765
+```
+
+To publish: push to GitHub, then in the repo's **Settings → Pages** choose **Deploy from a branch**,
+branch `main`, folder `/docs`.
+
 ## Adding cities
 
 Add a row with `name,country,cc` to `data/us_cities.csv` or `data/world_cities.csv` (`cc` = ISO country code; optional `query` overrides the search name, `"Name|Region"` pins the admin region), then:
@@ -19,6 +34,7 @@ Add a row with `name,country,cc` to `data/us_cities.csv` or `data/world_cities.c
 .venv/bin/python geocode.py        # fills lat/lon/elevation
 .venv/bin/python era5.py           # fetches only cities without data
 .venv/bin/python rainfall.py       # re-runs the rain correction (cached gauges are reused)
+.venv/bin/python export_site.py    # updates the website data
 ```
 
 ## Files
@@ -28,6 +44,8 @@ Add a row with `name,country,cc` to `data/us_cities.csv` or `data/world_cities.c
 - `era5.py` — bulk ERA5 / ERA5-Land reader from Open-Meteo's AWS open data (`s3://openmeteo`, no API limits).
 - `rainfall.py` — rain-gauge bias correction of ERA5 precipitation; choices logged in `data/rain_stations.csv`.
 - `climate.py` — monthly profiles, similarity (`find_similar`) and default feature weights (`FEATURES`).
+- `export_site.py` — writes the website's data file, `docs/data/cities.json`.
+- `docs/` — the website (`index.html`, `app.js`, `style.css`; country shapes from Natural Earth via world-atlas).
 - `explore.ipynb` — results tables, match explanations, side-by-side climate charts.
 - `data/daily/` — one daily CSV per city; `_cells.csv` records which grid cells were used.
 
