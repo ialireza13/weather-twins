@@ -40,6 +40,9 @@ const state = {
   seasons: false,
   varied: true,
   units: "us",
+  ownCountry: false,
+  shade: true,
+  showCities: true,
   mult: Object.fromEntries(GROUPS.map((g) => [g.key, 1])),
 };
 
@@ -145,9 +148,17 @@ const HEAT_LABELS = ["under 25%", "25–40%", "40–50%", "50–60%", "60%+"];
 const heatBin = (pct) => HEAT_BINS.filter((b) => pct >= b).length - 1;
 let distById = {};
 
+// Twins are looked for among all famous cities, except the place itself (and anything
+// within 25 km of it) and, unless asked, cities in its own country. For a US city that
+// is exactly the original "US city -> world" search.
+function isCandidate(q, c) {
+  return c.id !== q.id && (state.ownCountry || !q.country || c.country !== q.country) && haversineKm(q, c) > 25;
+}
+
 function rank() {
   const q = BY_ID[state.query], w = weights();
-  const all = WORLD.map((c) => ({ c, d: distance(q, c, w) })).sort((a, b) => a.d - b.d);
+  const all = DATA.cities.filter((c) => isCandidate(q, c))
+    .map((c) => ({ c, d: distance(q, c, w) })).sort((a, b) => a.d - b.d);
   all.forEach((r, i) => (r.overall = i + 1));
   distById = Object.fromEntries(all.map((r) => [r.c.id, r.d]));
   const perCountry = {};
@@ -197,9 +208,80 @@ function explain(a, b) {
   return chips;
 }
 
+// ---------------------------------------------------------------- global grid
+
+// 16,288 land cells of 1° (export_site.export_grid). Any place on Earth snaps to its
+// nearest cell; the same cells shade the map by how well they match the chosen place.
+let GRID = null, gridPromise = null;
+const LAPSE_RATE = 0.0065;  // °C per metre, as in era5.py
+const ELEVATION_FEATURES = new Set(["tmax", "tmin", "dewpoint"]);
+
+function loadGrid() {
+  gridPromise ??= (async () => {
+    const [meta, buf] = await Promise.all([
+      fetch("data/grid.json").then((r) => r.json()),
+      fetch("data/grid.bin").then((r) => r.arrayBuffer()),
+    ]);
+    const n = meta.n, F = DATA.features.length * 12;
+    const lat = new Int16Array(buf, 0, n), lon = new Int16Array(buf, 2 * n, n), elev = new Int16Array(buf, 4 * n, n);
+    const q = new Uint8Array(buf, 6 * n, n * F);
+    const t = new Float32Array(n * F), z = new Float32Array(n * F);  // t: stored scale (log1p for rain/snow)
+    DATA.features.forEach((f, k) => {
+      const [lo, hi] = meta.ranges[f], [mu, sd] = DATA.stats[f];
+      for (let i = 0; i < n; i++) {
+        for (let m = 0; m < 12; m++) {
+          const j = i * F + k * 12 + m;
+          t[j] = lo + (q[j] / 255) * (hi - lo);
+          z[j] = (t[j] - mu) / sd;
+        }
+      }
+    });
+    GRID = { n, F, lat: Float32Array.from(lat, (v) => v / 100), lon: Float32Array.from(lon, (v) => v / 100), elev, t, z };
+    return GRID;
+  })();
+  return gridPromise;
+}
+
+function nearestCell(lat, lon) {
+  const c = Math.cos((lat * Math.PI) / 180);
+  let best = -1, bestD = Infinity;
+  for (let i = 0; i < GRID.n; i++) {
+    const dlon = ((GRID.lon[i] - lon + 540) % 360) - 180;
+    const d = (GRID.lat[i] - lat) ** 2 + (dlon * c) ** 2;
+    if (d < bestD) { bestD = d; best = i; }
+  }
+  return best;
+}
+
+// A place that isn't one of the famous cities: its grid cell's typical year, with
+// temperatures moved to the place's own elevation.
+function gridPlace({ name, country = "", where = "", lat, lon, elevation }) {
+  const i = nearestCell(lat, lon);
+  const cell = { lat: GRID.lat[i], lon: GRID.lon[i] };
+  const shift = Number.isFinite(elevation) ? (GRID.elev[i] - elevation) * LAPSE_RATE : 0;
+  const p = {};
+  DATA.features.forEach((f, k) => {
+    p[f] = Array.from({ length: 12 }, (_, m) => {
+      let v = GRID.t[i * GRID.F + k * 12 + m];
+      if (DATA.log_features.includes(f)) v = Math.expm1(v);
+      return ELEVATION_FEATURES.has(f) ? v + shift : v;
+    });
+  });
+  return {
+    id: `geo:${lat.toFixed(3)},${lon.toFixed(3)}`, name, country, where, lat, lon, elevation,
+    approx: true, cellKm: Math.round(haversineKm({ lat, lon }, cell)),
+    rain: "the nearest 1° grid cell (rain scaled to WorldClim normals)", p, z: zScores(p),
+  };
+}
+
+function registerPlace(place) {
+  BY_ID[place.id] = place;
+  return place.id;
+}
+
 // ---------------------------------------------------------------- map
 
-let map, usMarkers = {}, worldMarkers = {}, rankLayer;
+let map, cityMarkers = {}, cityLayer, rankLayer, queryMarker, heatLayer, heatBins = null;
 
 // Decode Natural Earth TopoJSON (world-atlas) into GeoJSON features. The basemap is
 // drawn from these shapes instead of map tiles: no API key, and it follows the theme.
@@ -230,70 +312,166 @@ function initMap(countries) {
   map.getContainer().addEventListener("mouseleave", () => map.scrollWheelZoom.disable());
   map.attributionControl.setPrefix(false);
   map.attributionControl.addAttribution('<a href="https://www.naturalearthdata.com/">Natural Earth</a>');
+  // Land, then the match shading, then the city dots.
+  map.createPane("base").style.zIndex = 250;
+  map.createPane("heat").style.zIndex = 300;
   L.geoJSON(topoFeatures(countries, "countries"), {
-    interactive: false,
-    style: { className: "land", weight: 0.75 },
+    pane: "base", interactive: false, style: { className: "land", weight: 0.75 },
   }).addTo(map);
+  heatLayer = new HeatLayer({ pane: "heat", opacity: 0.85 });
+  if (state.shade) heatLayer.addTo(map);
 
-  for (const c of WORLD) {
-    worldMarkers[c.id] = L.circleMarker([c.lat, c.lon], { radius: 3.5, className: "dot-world" })
-      .bindTooltip(() => `${c.name}, ${c.country}: ${matchPct(distById[c.id])}% match`, { direction: "top", offset: [0, -4] })
-      .on("click", (e) => { L.DomEvent.stopPropagation(e); selectTwin(c.id); })
-      .addTo(map);
+  // The famous-city dots can be hidden to see the shading; the numbered twins and the
+  // chosen place stay.
+  cityLayer = L.layerGroup();
+  for (const c of DATA.cities) {
+    cityMarkers[c.id] = L.circleMarker([c.lat, c.lon], { radius: 3.5, className: "dot-world" })
+      .bindTooltip(() => cityTooltip(c), { direction: "top", offset: [0, -4] })
+      .on("click", (e) => { L.DomEvent.stopPropagation(e); cityPopup(c, e.latlng); })
+      .addTo(cityLayer);
   }
-  for (const c of US) {
-    usMarkers[c.id] = L.circleMarker([c.lat, c.lon], { radius: 3.5, className: "dot-us" })
-      .bindTooltip(c.name, { direction: "top", offset: [0, -5] })
-      .on("click", (e) => { L.DomEvent.stopPropagation(e); selectQuery(c.id); })
-      .addTo(map);
-  }
+  if (state.showCities) cityLayer.addTo(map);
+  queryMarker = L.circleMarker([0, 0], { radius: 7, className: "query-dot", interactive: false }).addTo(map);
   rankLayer = L.layerGroup().addTo(map);
   new ResizeObserver(() => { map.invalidateSize(); if (pendingFit) fitMap(); }).observe(map.getContainer());
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => heatLayer.redraw());
 
-  // Small dots are hard to hit: a click near a city counts, and a click elsewhere
-  // in the US picks the nearest US city.
+  // Small dots are hard to hit: a click near a city counts as clicking it; a click
+  // anywhere else offers that spot's twins.
   map.on("click", (e) => {
     const pt = map.latLngToContainerPoint(e.latlng);
     let best = null;
-    for (const c of DATA.cities) {
+    for (const c of state.showCities ? DATA.cities : []) {
       const d = pt.distanceTo(map.latLngToContainerPoint([c.lat, c.lon]));
       if (d <= 18 && (!best || d < best.d)) best = { c, d };
     }
-    if (best) return best.c.us ? selectQuery(best.c.id) : selectTwin(best.c.id);
-    const here = { lat: e.latlng.lat, lon: e.latlng.lng };
-    const near = nearestUS(here);
-    if (near.km <= 400) selectQuery(near.city.id);
+    if (best) return cityPopup(best.c, L.latLng(best.c.lat, best.c.lon));
+    spotPopup(e.latlng.wrap());
   });
 }
 
-function nearestUS(point) {
-  let best = null;
-  for (const c of US) {
-    const km = haversineKm(point, c);
-    if (!best || km < best.km) best = { city: c, km };
+function cityTooltip(c) {
+  if (c.id === state.query) return `${c.name}, ${c.country}: your city`;
+  const d = distById[c.id];
+  return d === undefined ? `${c.name}, ${c.country}` : `${c.name}, ${c.country}: ${matchPct(d)}% match`;
+}
+
+function cityPopup(c, latlng) {
+  const q = BY_ID[state.query];
+  const box = el("div", { class: "map-popup" }, el("strong", { text: `${c.name}, ${c.country}` }));
+  if (distById[c.id] !== undefined) {
+    const cmp = el("button", { type: "button", text: `Compare with ${q.name} (${matchPct(distById[c.id])}%)` });
+    cmp.addEventListener("click", () => { map.closePopup(); selectTwin(c.id); });
+    box.append(cmp);
   }
-  return best;
+  if (c.id !== state.query) {
+    const go = el("button", { type: "button", text: `Find ${c.name}'s twins` });
+    go.addEventListener("click", () => { map.closePopup(); selectQuery(c.id); });
+    box.append(go);
+  }
+  L.popup({ offset: [0, -4] }).setLatLng(latlng).setContent(box).openOn(map);
+}
+
+function spotPopup(latlng) {
+  const label = `${Math.abs(latlng.lat).toFixed(1)}°${latlng.lat >= 0 ? "N" : "S"}, ${Math.abs(latlng.lng).toFixed(1)}°${latlng.lng >= 0 ? "E" : "W"}`;
+  const go = el("button", { type: "button", text: "Find this spot's twins" });
+  go.addEventListener("click", async () => {
+    map.closePopup();
+    const elevation = await fetchElevation(latlng.lat, latlng.lng);
+    await loadGrid();
+    selectPlace(gridPlace({ name: label, lat: latlng.lat, lon: latlng.lng, elevation }));
+  });
+  L.popup().setLatLng(latlng).setContent(el("div", { class: "map-popup" }, el("strong", { text: label }), go)).openOn(map);
+}
+
+async function fetchElevation(lat, lon) {
+  try {
+    const r = await fetch(`https://api.open-meteo.com/v1/elevation?latitude=${lat.toFixed(4)}&longitude=${lon.toFixed(4)}`);
+    const v = (await r.json()).elevation?.[0];
+    return Number.isFinite(v) ? v : undefined;
+  } catch {
+    return undefined;  // no elevation: the cell's own is used
+  }
+}
+
+// Every land cell colored by its match with the chosen place, drawn tile by tile so
+// it lines up with the map's projection at every zoom.
+const HeatLayer = L.GridLayer.extend({
+  createTile(coords) {
+    const tile = document.createElement("canvas");
+    const size = this.getTileSize();
+    tile.width = size.x;
+    tile.height = size.y;
+    if (!GRID || !heatBins) return tile;
+    const ctx = tile.getContext("2d");
+    const styles = getComputedStyle(document.documentElement);
+    const colors = [null, 1, 2, 3, 4].map((k) => k && styles.getPropertyValue(`--heat-${k}`).trim());
+    const origin = coords.scaleBy(size);
+    const z = coords.z;
+    const nw = map.unproject(origin, z), se = map.unproject(origin.add(size), z);
+    const wrap = (lon) => lon + 360 * Math.round((((nw.lng + se.lng) / 2) - lon) / 360);
+    for (let i = 0; i < GRID.n; i++) {
+      const bin = heatBins[i];
+      if (!bin) continue;
+      const lat0 = Math.floor(GRID.lat[i]);
+      if (lat0 > nw.lat || lat0 + 1 < se.lat) continue;
+      const lon0 = wrap(Math.floor(GRID.lon[i]) + 0.5) - 0.5;
+      if (lon0 > se.lng || lon0 + 1 < nw.lng) continue;
+      const a = map.project([lat0 + 1, lon0], z).subtract(origin);
+      const b = map.project([lat0, lon0 + 1], z).subtract(origin);
+      ctx.fillStyle = colors[bin];
+      ctx.fillRect(Math.floor(a.x), Math.floor(a.y), Math.ceil(b.x - a.x) + 1, Math.ceil(b.y - a.y) + 1);
+    }
+    return tile;
+  },
+});
+
+function computeHeat() {
+  if (!GRID) return;
+  const q = BY_ID[state.query], w = weights();
+  const feats = DATA.features.map((f, k) => [k, w[f]]).filter(([, wf]) => wf > 0);
+  const wsum = feats.reduce((a, [, wf]) => a + wf, 0);
+  const sq = shiftOf(q);
+  heatBins = new Uint8Array(GRID.n);
+  for (let i = 0; i < GRID.n; i++) {
+    const sc = state.seasons && GRID.lat[i] < 0 ? 6 : 0;
+    let total = 0;
+    for (const [k, wf] of feats) {
+      const a = q.z[DATA.features[k]], base = i * GRID.F + k * 12;
+      for (let m = 0; m < 12; m++) {
+        const d = GRID.z[base + ((m + sc) % 12)] - a[(m + sq) % 12];
+        total += wf * d * d;
+      }
+    }
+    heatBins[i] = heatBin(matchPct(Math.sqrt(total / (12 * wsum))));
+  }
+  heatLayer.redraw();
 }
 
 function renderMap(fit) {
-  for (const [id, m] of Object.entries(usMarkers)) {
-    const on = id === state.query;
-    m.setRadius(on ? 7 : 3.5);
-    m.getElement()?.classList.toggle("selected", on);
-    if (on) m.bringToFront();
+  const q = BY_ID[state.query];
+  queryMarker.setLatLng([q.lat, q.lon]).bringToFront();
+  // Every famous city, colored and sized by how well it matches; best matches on top.
+  // Cities that aren't candidates (the place itself, its own country) stay muted.
+  for (const c of DATA.cities) {
+    if (distById[c.id] !== undefined) continue;
+    const m = cityMarkers[c.id];
+    m.setRadius(2.5);
+    m.getElement()?.classList.remove("h1", "h2", "h3", "h4");
+    m.getElement()?.classList.add("off");
   }
-  // Every world city, colored and sized by how well it matches; best matches drawn on top.
   for (const r of [...ranking.all].reverse()) {
-    const m = worldMarkers[r.c.id];
+    const m = cityMarkers[r.c.id];
     const bin = heatBin(matchPct(r.d));
     m.setRadius(HEAT_RADIUS[bin]);
     const path = m.getElement();
     if (path) {
-      path.classList.remove("h1", "h2", "h3", "h4");
+      path.classList.remove("h1", "h2", "h3", "h4", "off");
       if (bin > 0) path.classList.add(`h${bin}`);
     }
     m.bringToFront();
   }
+  queryMarker.bringToFront();
   renderHeatLegend();
 
   rankLayer.clearLayers();
@@ -369,7 +547,7 @@ function renderDetail() {
   const inTop = ranking.top.findIndex((x) => x.c.id === b.id);
   $("#detail-sub").textContent = inTop >= 0
     ? `#${inTop + 1} closest weather twin`
-    : `#${r.overall} of ${WORLD.length} world cities`;
+    : `#${r.overall} of ${ranking.all.length} cities`;
   const score = $("#detail-score");
   score.replaceChildren(el("strong", { text: `${matchPct(r.d)}%` }), el("span", { text: "climate match" }));
 
@@ -386,6 +564,14 @@ function renderDetail() {
   if (shiftOf(b)) notes.push(`${b.name}'s months are shifted by six so its seasons line up with ${a.name}'s.`);
   notes.push(`Rainfall: ${a.name} from ${a.rain}; ${b.name} from ${b.rain}.`);
   $("#detail-note").textContent = notes.join(" ");
+  const approx = $("#approx-note");
+  approx.hidden = !a.approx;
+  if (a.approx) {
+    const km = state.units === "us" ? `${Math.round(a.cellKm / 1.609)} mi` : `${a.cellKm} km`;
+    approx.textContent = `${a.name} isn't on our list of famous cities, so its weather comes from the nearest cell of a ` +
+      `global 1° grid (about 100 km across; its sample point is ${km} away), adjusted to ${a.name}'s elevation. ` +
+      `Treat it as approximate, especially on coasts and in mountains.`;
+  }
 
   renderCharts();
   if (!$("#table-wrap").hidden) renderTable();
@@ -675,10 +861,20 @@ function showRegion(r) {
 
 function readHash() {
   const h = new URLSearchParams(location.hash.slice(1));
-  if (BY_ID[h.get("city")]?.us) state.query = h.get("city");
-  if (BY_ID[h.get("twin")] && !BY_ID[h.get("twin")].us) state.twin = h.get("twin");
+  if (BY_ID[h.get("city")]) state.query = h.get("city");
+  if (h.get("place")) {
+    const [lat, lon, elevation] = h.get("place").split(",").map(Number);
+    if (Number.isFinite(lat) && Number.isFinite(lon)) {
+      state.pendingPlace = { name: h.get("pname") || "This place", country: h.get("pcountry") || "",
+                             lat, lon, elevation: Number.isFinite(elevation) ? elevation : undefined };
+    }
+  }
+  if (BY_ID[h.get("twin")]) state.twin = h.get("twin");
   state.seasons = h.get("seasons") === "1";
   state.varied = h.get("varied") !== "0";
+  state.ownCountry = h.get("own") === "1";
+  state.shade = h.get("shade") !== "0";
+  state.showCities = h.get("cities") !== "0";
   if (h.get("units") === "metric") state.units = "metric";
   for (const g of GROUPS) {
     const v = parseFloat(h.get(`w_${g.key}`));
@@ -687,9 +883,21 @@ function readHash() {
 }
 
 function writeHash() {
-  const h = new URLSearchParams({ city: state.query, twin: state.twin });
+  const q = BY_ID[state.query];
+  const h = new URLSearchParams();
+  if (q.approx) {
+    h.set("place", [q.lat.toFixed(3), q.lon.toFixed(3), Number.isFinite(q.elevation) ? Math.round(q.elevation) : ""].join(","));
+    h.set("pname", q.name);
+    if (q.country) h.set("pcountry", q.country);
+  } else {
+    h.set("city", state.query);
+  }
+  h.set("twin", state.twin);
   if (state.seasons) h.set("seasons", "1");
   if (!state.varied) h.set("varied", "0");
+  if (state.ownCountry) h.set("own", "1");
+  if (!state.shade) h.set("shade", "0");
+  if (!state.showCities) h.set("cities", "0");
   if (state.units !== "us") h.set("units", state.units);
   for (const g of GROUPS) if (state.mult[g.key] !== 1) h.set(`w_${g.key}`, state.mult[g.key]);
   history.replaceState(null, "", `#${h}`);
@@ -699,20 +907,42 @@ let regionsStale = true;  // region twins depend on weights and seasons, not on 
 
 function update({ fit = false, keepTwin = true } = {}) {
   ranking = rank();
-  if (!keepTwin || !state.twin || !BY_ID[state.twin]) state.twin = ranking.top[0].c.id;
+  const twinOk = state.twin && ranking.all.some((r) => r.c.id === state.twin);
+  if (!keepTwin || !twinOk) state.twin = ranking.top[0].c.id;
   renderResults();
   renderMap(fit);
   renderDetail();
+  computeHeat();
   if (regionsStale) { renderRegions(); regionsStale = false; }
+  showQueryName();
   writeHash();
 }
 
 function selectQuery(id) {
   if (id === state.query) return;
   state.query = id;
-  $("#city").value = id;
   update({ fit: true, keepTwin: false });
 }
+
+function selectPlace(place) {
+  // A searched place that is really one of the famous cities uses that city's own data.
+  const famous = DATA.cities.find((c) => haversineKm(c, place) < 15 && sameName(c.name, place.name));
+  if (famous) return selectQuery(famous.id);
+  state.query = registerPlace(place);
+  update({ fit: true, keepTwin: false });
+}
+
+function showQueryName() {
+  const q = BY_ID[state.query];
+  const input = $("#city-search");
+  if (document.activeElement !== input) input.value = q.country ? `${q.name}, ${q.country}` : q.name;
+}
+
+const fold = (t) => t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+const sameName = (a, b) => {
+  const x = fold(a).replace(/ \(.*\)$/, ""), y = fold(b);
+  return x === y || x.startsWith(y) || y.startsWith(x);
+};
 
 function selectTwin(id) {
   state.twin = id;
@@ -726,16 +956,31 @@ function selectTwin(id) {
 }
 
 function initControls() {
-  const select = $("#city");
-  for (const c of [...US].sort((a, b) => a.name.localeCompare(b.name))) {
-    select.append(el("option", { value: c.id, text: c.name }));
-  }
-  select.value = state.query;
-  select.addEventListener("change", () => selectQuery(select.value));
+  initSearch();
 
-  const seasons = $("#seasons"), varied = $("#varied");
+  const seasons = $("#seasons"), varied = $("#varied"), own = $("#own-country"), shade = $("#shade");
   seasons.checked = state.seasons;
   varied.checked = state.varied;
+  own.checked = state.ownCountry;
+  shade.checked = state.shade;
+  own.addEventListener("change", () => { state.ownCountry = own.checked; update({ fit: true }); });
+  const cities = $("#show-cities");
+  cities.checked = state.showCities;
+  cities.addEventListener("change", () => {
+    state.showCities = cities.checked;
+    if (state.showCities) {
+      cityLayer.addTo(map);
+      renderMap(false);  // re-added dots are new elements: restore their match colors
+    } else {
+      cityLayer.remove();
+    }
+    writeHash();
+  });
+  shade.addEventListener("change", () => {
+    state.shade = shade.checked;
+    if (state.shade) heatLayer.addTo(map); else heatLayer.remove();
+    writeHash();
+  });
   seasons.addEventListener("change", () => { state.seasons = seasons.checked; regionsStale = true; update({ fit: true }); });
   varied.addEventListener("change", () => { state.varied = varied.checked; update({ fit: true }); });
 
@@ -781,13 +1026,15 @@ function initControls() {
   if (!("geolocation" in navigator)) locate.hidden = true;
   locate.addEventListener("click", () => {
     msg.textContent = "Finding you…";
-    navigator.geolocation.getCurrentPosition((pos) => {
-      const near = nearestUS({ lat: pos.coords.latitude, lon: pos.coords.longitude });
-      msg.textContent = near.km > 150
-        ? `Closest city on the list: ${near.city.name} (${Math.round(state.units === "us" ? near.km / 1.609 : near.km)} ${state.units === "us" ? "mi" : "km"} away).`
-        : "";
-      selectQuery(near.city.id);
-    }, () => { msg.textContent = "Couldn't get your location. Pick a city from the list instead."; },
+    navigator.geolocation.getCurrentPosition(async (pos) => {
+      const here = { lat: pos.coords.latitude, lon: pos.coords.longitude };
+      const near = DATA.cities.map((c) => ({ c, km: haversineKm(here, c) })).sort((a, b) => a.km - b.km)[0];
+      msg.textContent = "";
+      if (near.km <= 25) return selectQuery(near.c.id);
+      const elevation = Number.isFinite(pos.coords.altitude) ? pos.coords.altitude : await fetchElevation(here.lat, here.lon);
+      await loadGrid();
+      selectPlace(gridPlace({ name: "Your location", ...here, elevation }));
+    }, () => { msg.textContent = "Couldn't get your location. Search for your city instead."; },
     { timeout: 10000, maximumAge: 600000 });
   });
 
@@ -796,6 +1043,84 @@ function initControls() {
     cancelAnimationFrame(pending);
     pending = requestAnimationFrame(renderCharts);
   }).observe($("#charts"));
+}
+
+// Search: famous cities first (instant), then any place from the Open-Meteo geocoder.
+function initSearch() {
+  const input = $("#city-search"), list = $("#city-options");
+  let items = [], active = -1, timer = 0, seq = 0;
+
+  const close = () => { list.hidden = true; input.setAttribute("aria-expanded", "false"); active = -1; };
+  const render = (note) => {
+    list.replaceChildren(...items.map((it, i) => {
+      const li = el("li", { role: "option", id: `opt-${i}`, "aria-selected": String(i === active) },
+        el("span", { class: "opt-name", text: it.name }), el("span", { class: "opt-where", text: it.where }));
+      if (it.city) li.append(el("span", { class: "opt-tag", text: "on our list" }));
+      li.addEventListener("mousedown", (e) => { e.preventDefault(); choose(it); });
+      return li;
+    }));
+    if (note) list.append(el("li", { class: "opt-note", text: note }));
+    list.hidden = !items.length && !note;
+    input.setAttribute("aria-expanded", String(!list.hidden));
+    input.setAttribute("aria-activedescendant", active >= 0 ? `opt-${active}` : "");
+  };
+  const choose = async (it) => {
+    close();
+    input.blur();
+    if (it.city) return selectQuery(it.city.id);
+    input.value = `${it.name}, ${it.country}`;
+    await loadGrid();
+    selectPlace(gridPlace(it));
+  };
+  const search = async (text) => {
+    const mine = ++seq;
+    const f = fold(text);
+    const local = DATA.cities.filter((c) => fold(c.name).includes(f)).slice(0, 5)
+      .map((c) => ({ city: c, name: c.name, where: c.country }));
+    items = local;
+    active = items.length ? 0 : -1;
+    render(text.length >= 2 ? "Searching…" : "");
+    if (text.length < 2) return;
+    try {
+      const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(text)}&count=8&language=en&format=json`;
+      const res = (await (await fetch(url)).json()).results || [];
+      if (mine !== seq) return;
+      const remote = res
+        .filter((r) => !local.some((l) => haversineKm(l.city, { lat: r.latitude, lon: r.longitude }) < 15))
+        .map((r) => ({
+          name: r.name, country: r.country || "", lat: r.latitude, lon: r.longitude, elevation: r.elevation,
+          where: [r.admin1, r.country].filter(Boolean).join(", "),
+        }));
+      items = [...local, ...remote];
+      active = items.length ? 0 : -1;
+      render(items.length ? "" : "No places found");
+    } catch {
+      if (mine === seq) render(items.length ? "" : "Search is unavailable right now");
+    }
+  };
+
+  input.addEventListener("input", () => {
+    clearTimeout(timer);
+    const text = input.value.trim();
+    if (!text) { items = []; close(); return; }
+    timer = setTimeout(() => search(text), 250);
+  });
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      if (!items.length) return;
+      e.preventDefault();
+      active = (active + (e.key === "ArrowDown" ? 1 : -1) + items.length) % items.length;
+      render();
+    } else if (e.key === "Enter" && active >= 0 && items[active]) {
+      e.preventDefault();
+      choose(items[active]);
+    } else if (e.key === "Escape") {
+      close();
+      input.blur();
+    }
+  });
+  input.addEventListener("focus", () => input.select());
+  input.addEventListener("blur", () => { close(); showQueryName(); });
 }
 
 async function main() {
@@ -814,7 +1139,10 @@ async function main() {
   initControls();
   initMap(countries);
   if (regions) initRegions(regions, countries);
+  const grid = loadGrid().catch((err) => { console.error("grid", err); return null; });
+  if (state.pendingPlace && await grid) state.query = registerPlace(gridPlace(state.pendingPlace));
   update({ fit: true });
+  grid.then((g) => g && computeHeat());
   // A pasted or edited link (only the hash changes) should show what it describes.
   window.addEventListener("hashchange", () => location.reload());
 }

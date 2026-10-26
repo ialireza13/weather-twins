@@ -320,3 +320,36 @@ path.context { fill: var(--land); fill-opacity: 1; stroke: var(--land-border); s
 .region-info .alts { color: var(--text-2); font-size: 0.875rem; margin-top: 2px; }
 @media (max-width: 960px) { #region-map { height: 420px; } }
 @media (max-width: 600px) { .regions { padding: 16px; } #region-map { height: 320px; } }
+
+/* ---------------------------------------------------------------- city search */
+.search { position: relative; }
+.search input {
+  width: 300px; max-width: 100%; padding: 8px 12px; border-radius: 8px; font: inherit; font-weight: 600;
+  border: 1px solid var(--border); background: var(--surface); color: var(--text);
+}
+.search input::placeholder { color: var(--muted); font-weight: 400; }
+.options {
+  position: absolute; z-index: 1100; top: calc(100% + 4px); left: 0; min-width: 100%; width: max-content; max-width: min(420px, 90vw);
+  margin: 0; padding: 4px; list-style: none; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14); max-height: 320px; overflow-y: auto;
+}
+.options li { padding: 8px 10px; border-radius: 6px; cursor: pointer; display: flex; gap: 8px; align-items: baseline; }
+.options li[aria-selected="true"], .options li:hover { background: var(--surface-2); }
+.options .opt-name { font-weight: 600; }
+.options .opt-where { color: var(--text-2); font-size: 0.875rem; }
+.options .opt-tag { margin-left: auto; font-size: 0.75rem; color: var(--text-2); border: 1px solid var(--border); border-radius: 999px; padding: 0 6px; white-space: nowrap; }
+.options .opt-note { color: var(--text-2); font-size: 0.875rem; cursor: default; }
+.switch.small { font-size: 0.8125rem; }
+.map-switches { display: inline-flex; flex-wrap: wrap; gap: 4px 14px; }
+.leaflet-interactive.dot-world.off { fill: var(--world-dot); fill-opacity: 0.35; }
+.leaflet-interactive.query-dot { fill: var(--text); fill-opacity: 1; stroke: var(--surface); stroke-width: 3; stroke-opacity: 1; }
+.map-popup { display: grid; gap: 6px; font: 0.875rem/1.4 system-ui, sans-serif; min-width: 180px; }
+.map-popup strong { font-weight: 600; }
+.map-popup button {
+  font: inherit; text-align: left; padding: 6px 10px; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--border); background: var(--surface); color: var(--text);
+}
+.map-popup button:hover { background: var(--surface-2); }
+.leaflet-popup-content-wrapper, .leaflet-popup-tip { background: var(--surface); color: var(--text); }
+.approx-note { margin: 8px 0 0; padding: 8px 12px; border-radius: 8px; background: var(--surface-2); font-size: 0.875rem; color: var(--text-2); }
+@media (max-width: 600px) { .search { flex: 1; } .search input { width: 100%; } }

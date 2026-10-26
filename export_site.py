@@ -136,6 +136,42 @@ def export_regions() -> None:
           f"{len(features)} regions")
 
 
+def export_grid() -> None:
+    """The global 1° grid (grid.py) as a compact binary file for looking up any city.
+
+    grid.bin, little-endian: N x int16 lat*100, N x int16 lon*100, N x int16 elevation (m),
+    then N x 108 uint8 values (feature-major, then month). Each feature is quantized to
+    0-255 over its own range; rain and snow on the log1p scale the scoring uses, so dry
+    months keep their precision. grid.json holds N and each feature's range.
+    """
+    path = climate.DATA_DIR / "grid" / "profiles.csv"
+    if not path.exists():
+        print("no grid (run grid.py first)")
+        return
+    g = pd.read_csv(path)
+    n = len(g)
+    ranges, values = {}, []
+    for f in climate.FEATURES:
+        v = g[[f"{f}_{m}" for m in range(1, 13)]].to_numpy(dtype=float)
+        if f in climate.LOG_FEATURES:
+            v = np.log1p(np.maximum(v, 0))
+        lo, hi = float(np.nanmin(v)), float(np.nanmax(v))
+        ranges[f] = [round(lo, 4), round(hi, 4)]
+        values.append(np.clip(np.rint((v - lo) / (hi - lo) * 255), 0, 255).astype(np.uint8))
+    body = np.concatenate(values, axis=1)  # n x 108
+    blob = b"".join([
+        np.rint(g["lat"].to_numpy() * 100).astype("<i2").tobytes(),
+        np.rint(g["lon"].to_numpy() * 100).astype("<i2").tobytes(),
+        np.rint(g["cell_elevation"].to_numpy()).astype("<i2").tobytes(),
+        body.tobytes(),
+    ])
+    (OUT / "grid.bin").write_bytes(blob)
+    write(OUT / "grid.json", {"n": n, "step": 1.0, "features": list(climate.FEATURES),
+                              "ranges": ranges, "log_features": sorted(climate.LOG_FEATURES)},
+          "grid metadata")
+    print(f"wrote {n} grid cells to docs/data/grid.bin ({len(blob) / 1024:.0f} KB)")
+
+
 def write(path, data, what: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")))
@@ -145,3 +181,4 @@ def write(path, data, what: str) -> None:
 if __name__ == "__main__":
     export_cities()
     export_regions()
+    export_grid()

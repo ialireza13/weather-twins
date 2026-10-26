@@ -1,0 +1,1 @@
+{"n":16288,"step":1.0,"features":["tmax","tmin","dewpoint","precip","rain_days","cloud","snow","wind","tmax_sd"],"ranges":{"tmax":[-39.53,47.87],"tmin":[-45.31,33.41],"dewpoint":[-46.31,26.44],"precip":[0.0,7.7622],"rain_days":[0.0,31.0],"cloud":[0.26,98.34],"snow":[0.0,5.2864],"wind":[0.77,41.31],"tmax_sd":[0.29,10.39]},"log_features":["precip","snow"]}

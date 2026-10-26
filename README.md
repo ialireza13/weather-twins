@@ -10,6 +10,12 @@ python3 -m venv .venv && .venv/bin/pip install pandas numpy matplotlib jupyter o
 .venv/bin/python rainfall.py       # bias-corrects rain/snow against nearby rain gauges (~15 min)
 .venv/bin/jupyter lab explore.ipynb
 
+# optional: the global 1° grid behind any-city search and the shaded map (~16k cells;
+# hours of downloading; best run on an AWS machine in us-west-2, next to the data)
+.venv/bin/python grid.py --prepare
+.venv/bin/python grid.py --aws --shard 0 --shards 3   # and shards 1, 2 in parallel
+.venv/bin/python grid.py --combine
+
 # optional: the US twin-region map
 .venv/bin/python regions.py        # NOAA climate divisions + a representative town for each
 .venv/bin/python -c "import climate, era5; era5.fetch_missing(climate.load_regions())"   # ~2 h
@@ -19,8 +25,11 @@ python3 -m venv .venv && .venv/bin/pip install pandas numpy matplotlib jupyter o
 
 ## Website
 
-`docs/` is a static site (GitHub Pages-ready): a map of all cities, the ranked twins for the chosen
-US city, and month-by-month comparison charts. Similarity is computed in the browser from
+`docs/` is a static site (GitHub Pages-ready). Search any city in the world (Open-Meteo geocoder):
+the famous cities use their own data, anywhere else uses the nearest cell of the global 1° grid with
+temperatures adjusted to the place's elevation. It shows the ranked twins among the famous cities
+(own country excluded unless asked), a world map shading every land cell by its match, and
+month-by-month comparison charts. Clicking any spot on the map finds that spot's twins. Similarity is computed in the browser from
 `docs/data/cities.json`, using the same scoring as `climate.find_similar`, so the weight sliders and
 season toggle update instantly. Links are shareable (`#city=seattle-united-states&twin=...`).
 
@@ -56,6 +65,7 @@ Add a row with `name,country,cc` to `data/us_cities.csv` or `data/world_cities.c
 - `era5.py` — bulk ERA5 / ERA5-Land reader from Open-Meteo's AWS open data (`s3://openmeteo`, no API limits).
 - `rainfall.py` — rain-gauge bias correction of ERA5 precipitation; choices logged in `data/rain_stations.csv`.
 - `climate.py` — monthly profiles, similarity (`find_similar`) and default feature weights (`FEATURES`).
+- `grid.py` — the global 1° land grid (16,288 cells): same ERA5 pipeline, rain scaled to WorldClim; resumable batches and parallel shards (`data/grid/profiles.csv`).
 - `regions.py` — NOAA climate divisions for the region map: representative towns (`data/us_regions.csv`) and simplified shapes with neighbors (`data/us_regions.geojson`).
 - `export_site.py` — writes the website's data file, `docs/data/cities.json`.
 - `docs/` — the website (`index.html`, `app.js`, `style.css`; country shapes from Natural Earth via world-atlas).
@@ -65,7 +75,7 @@ Add a row with `name,country,cc` to `data/us_cities.csv` or `data/world_cities.c
 ## Method
 
 - 2016–2025 hourly reanalysis, aggregated to local days. Temperature and dew point from ERA5-Land (0.1°, nearest land cell); rain, snow, cloud and wind from ERA5 (0.25°). Temperatures are corrected for grid-vs-city elevation (6.5 °C/km).
-- ERA5 rain drizzles too often and over-rains near mountains, so it is corrected per calendar month with local intensity scaling (LOCI) against the nearest trustworthy rain gauge: NOAA GHCN-Daily first, then GSOD, WMO stations preferred, within 50 km and 500 m of elevation. Gauges disagreeing >2x with both ERA5 and WorldClim are rejected; cities without a usable gauge (26 of 268) are scaled to WorldClim 2.1 monthly normals. Snowfall gets the same monthly factor.
+- ERA5 rain drizzles too often and over-rains near mountains, so it is corrected per calendar month with local intensity scaling (LOCI) against the nearest trustworthy rain gauge: NOAA GHCN-Daily first, then GSOD, WMO stations preferred, within 50 km and 500 m of elevation. Gauges disagreeing >2x with both ERA5 and WorldClim, or reading 1.4x below (1.6x above) all of ERA5, WorldClim and the grid cell, are rejected (the low check is skipped for towns 500 m+ below their grid cell, where every reference sees the surrounding mountains); cities without a usable gauge (33 of 273) are scaled to WorldClim 2.1 monthly normals. Snowfall gets the same monthly factor.
 - Each city becomes a "typical year": 12 monthly averages of high, low, dew point, rain total, rainy days, cloud cover, snowfall, wind and day-to-day swing in highs.
 - Features are z-scored over all city-months, weighted, and compared month by month (weighted RMS). Lower distance = more similar.
 - `seasons=True` shifts Southern Hemisphere cities by 6 months so seasons line up.

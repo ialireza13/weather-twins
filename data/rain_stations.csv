@@ -1,274 +1,274 @@
-slug,name,era5_mm,worldclim_mm,rejected,source,station,station_name,km,station_elev,complete,gauge_mm,corrected_mm
-new-york-united-states,New York,1153.1,1211.0,,ghcn,USW00094728,NY CITY CNTRL PARK,7.8,42.7,1.0,1276.6,1279.7
-los-angeles-united-states,Los Angeles,364.8,400.0,,ghcn,USW00023174,LOS ANGELES INTL AP,18.3,29.6,1.0,333.0,332.1
-chicago-united-states,Chicago,1061.2,942.0,,ghcn,USW00014819,CHICAGO MIDWAY AP,11.4,185.9,1.0,907.8,903.2
-houston-united-states,Houston,1429.3,1216.0,,ghcn,USW00012918,HOUSTON WILLIAM P HOBBY AP,15.2,13.1,1.0,1319.8,1324.9
-phoenix-united-states,Phoenix,243.4,204.0,,ghcn,USW00023183,PHOENIX AP,6.9,339.2,1.0,156.0,153.9
-philadelphia-united-states,Philadelphia,1158.7,1133.0,,ghcn,USW00013739,PHILA INTL AP,10.3,2.1,1.0,1108.6,1111.0
-san-antonio-united-states,San Antonio,765.3,796.0,,ghcn,USW00012921,SAN ANTONIO INTL AP,13.4,243.5,1.0,691.7,691.9
-san-diego-united-states,San Diego,275.0,280.0,,ghcn,USW00023188,SAN DIEGO INTL AP,2.6,4.6,1.0,248.9,246.4
-dallas-united-states,Dallas,1056.0,934.0,,ghcn,USW00013960,DALLAS FAA AP,6.7,147.5,1.0,1054.2,1051.8
-austin-united-states,Austin,914.1,831.0,,ghcn,USW00013958,AUSTIN-CAMP MABRY,6.2,204.2,1.0,826.4,819.5
-san-francisco-united-states,San Francisco,477.8,850.0,,ghcn,USW00023230,OAKLAND INTL AP,17.6,1.5,1.0,442.2,442.4
-seattle-united-states,Seattle,1323.3,986.0,,ghcn,USW00024233,SEATTLE TACOMA AP,18.0,112.5,1.0,989.0,979.7
-portland-united-states,Portland,1227.0,1139.0,,ghcn,USW00024229,PORTLAND INTL AP,9.6,6.7,1.0,920.8,914.2
-denver-united-states,Denver,488.6,424.0,,ghcn,USW00023062,DENVER-STAPLETON,10.2,1611.2,1.0,334.9,329.8
-las-vegas-united-states,Las Vegas,161.3,112.0,,ghcn,USW00023169,MCCARRAN INTL AP,11.7,662.9,1.0,91.7,88.6
-salt-lake-city-united-states,Salt Lake City,486.2,518.0,,ghcn,USW00024127,SALT LAKE CITY INTL AP,6.3,1288.4,1.0,376.0,369.0
-boise-united-states,Boise,330.9,338.0,,ghcn,USW00024131,BOISE AIR TERMINAL,6.0,860.5,1.0,325.8,314.6
-albuquerque-united-states,Albuquerque,167.8,245.0,,ghcn,USW00023050,ALBUQUERQUE INTL AP,5.7,1618.5,1.0,183.1,181.6
-tucson-united-states,Tucson,233.0,309.0,,ghcn,USW00023160,TUCSON INTL AP,10.4,777.5,1.0,267.9,267.3
-el-paso-united-states,El Paso,172.7,238.0,,ghcn,USW00023044,EL PASO INTL AP,11.9,1202.1,1.0,203.4,201.1
-sacramento-united-states,Sacramento,632.2,469.0,,ghcn,USW00023232,SACRAMENTO AP ASOS,8.3,5.8,1.0,458.8,464.0
-palm-springs-united-states,Palm Springs,220.5,189.0,,ghcn,USC00046635,PALM SPRINGS,3.3,129.5,1.0,142.3,141.0
-minneapolis-united-states,Minneapolis,914.6,753.0,,ghcn,USW00014922,MINNEAPOLIS-ST PAUL INTL AP,10.8,254.5,1.0,824.4,820.2
-detroit-united-states,Detroit,877.1,883.0,,ghcn,USW00094847,DETROIT METRO AP,26.0,192.0,1.0,895.8,885.8
-cleveland-united-states,Cleveland,1144.3,942.0,,ghcn,USW00014820,CLEVELAND,16.7,262.1,1.0,1084.5,1076.2
-columbus-united-states,Columbus,1152.0,965.0,,ghcn,USW00014821,JOHN GLENN INTL AP,10.9,246.9,1.0,1105.1,1102.5
-indianapolis-united-states,Indianapolis,1101.5,1016.0,,ghcn,USW00093819,INDIANAPOLIS,12.5,270.4,1.0,1089.7,1084.5
-st-louis-united-states,St. Louis,1119.0,976.0,,ghcn,USW00013994,ST LOUIS LAMBERT INTL AP,20.6,161.8,1.0,1112.1,1104.5
-kansas-city-united-states,Kansas City,1026.9,1007.0,,ghcn,USW00003947,KANSAS CITY INTL AP,25.6,307.2,1.0,1029.6,1022.5
-omaha-united-states,Omaha,880.5,774.0,,ghcn,USW00014942,OMAHA EPPLEY AIRFIELD,7.0,298.7,1.0,746.9,747.6
-oklahoma-city-united-states,Oklahoma City,876.5,910.0,,ghcn,USW00013967,OKLAHOMA CY WILL ROGERS WORLD,11.6,389.8,1.0,919.3,916.7
-nashville-united-states,Nashville,1462.7,1267.0,,ghcn,USW00013897,NASHVILLE INTL AP,10.6,178.9,1.0,1335.1,1331.1
-memphis-united-states,Memphis,1342.8,1338.0,,ghcn,USW00013893,MEMPHIS INTL AP,11.8,76.5,1.0,1489.0,1492.1
-new-orleans-united-states,New Orleans,1506.3,1595.0,,ghcn,USW00012916,NEW ORLEANS AP,20.1,-0.9,1.0,1689.0,1688.8
-atlanta-united-states,Atlanta,1266.7,1286.0,,ghcn,USW00013874,ATLANTA HARTSFIELD-JACKSON INT,14.2,308.2,1.0,1320.3,1318.5
-charlotte-united-states,Charlotte,1150.4,1150.0,,ghcn,USW00013881,CHARLOTTE DOUGLAS AP,10.1,222.5,1.0,1172.6,1169.3
-raleigh-united-states,Raleigh,1229.2,1147.0,,ghcn,USW00013722,RALEIGH AP,18.6,120.4,1.0,1231.6,1237.3
-washington-dc-united-states,Washington DC,1170.2,1041.0,,ghcn,USW00013743,WASHINGTON REAGAN NATL AP,5.3,4.0,1.0,1092.3,1082.4
-baltimore-united-states,Baltimore,1289.9,1117.0,,ghcn,USW00093721,BALTIMORE-WASHINGTON INTL AP,14.4,42.1,1.0,1142.1,1137.2
-pittsburgh-united-states,Pittsburgh,1321.1,972.0,,ghcn,USW00094823,PITTSBURGH ASOS,19.1,341.1,1.0,1071.4,1065.8
-boston-united-states,Boston,1134.1,1121.0,,ghcn,USW00014739,BOSTON,4.1,3.4,1.0,1102.0,1090.9
-burlington-united-states,Burlington,1016.0,860.0,,ghcn,USW00014742,BURLINGTON INTL AP,5.0,101.2,1.0,958.8,949.8
-buffalo-united-states,Buffalo,1010.6,970.0,,ghcn,USW00014733,BUFFALO,13.5,240.8,1.0,1032.3,1024.8
-miami-united-states,Miami,1308.4,1502.0,,ghcn,USW00012839,MIAMI INTL AP,12.4,1.5,1.0,1796.0,1811.8
-orlando-united-states,Orlando,1285.3,1229.0,,ghcn,USW00012815,ORLANDO INTL AP,14.4,27.1,1.0,1291.0,1285.0
-tampa-united-states,Tampa,1284.2,1267.0,,ghcn,USW00012842,TAMPA INTL AP,8.2,1.8,1.0,1355.2,1363.4
-jacksonville-united-states,Jacksonville,1117.7,1295.0,,ghcn,USW00053860,JACKSONVILLE CRAIG MUNI AP,13.7,11.9,1.0,1345.0,1338.1
-key-west-united-states,Key West,890.2,1019.0,,ghcn,USW00012836,KEY W INTL AP,2.7,0.3,1.0,1000.3,1000.7
-charleston-united-states,Charleston,1274.7,1275.0,,ghcn,USW00013782,DWTN CHARLESTON,0.8,3.0,1.0,1170.9,1165.4
-anchorage-united-states,Anchorage,1084.2,883.0,,ghcn,USW00026451,ANCHORAGE TED STEVENS INTL AP,8.7,38.1,1.0,485.8,473.2
-fairbanks-united-states,Fairbanks,392.8,315.0,,ghcn,USW00026411,FAIRBANKS INTL AP,8.5,131.1,1.0,362.4,347.4
-honolulu-united-states,Honolulu,424.0,1350.0,,ghcn,USW00022521,HONOLULU INTL AP,8.6,1.8,1.0,397.3,389.1
-billings-united-states,Billings,426.6,365.0,,ghcn,USW00024033,BILLINGS INTL AP,4.4,1094.2,1.0,399.5,393.2
-fargo-united-states,Fargo,643.1,538.0,,ghcn,USW00014914,FARGO HECTOR INTL AP,5.5,272.8,1.0,549.5,537.8
-spokane-united-states,Spokane,555.2,444.0,,ghcn,USW00024157,SPOKANE INTL AP,8.5,717.8,1.0,411.9,406.4
-san-juan-united-states,San Juan,979.9,1656.0,,ghcn,RQW00011641,SAN JUAN L M MARIN INTL AP,10.7,3.0,1.0,1624.2,1637.0
-london-united-kingdom,London,685.9,641.0,,ghcn,UKE00107650,HEATHROW,39.9,25.0,1.0,626.6,610.4
-paris-france,Paris,755.6,658.0,,ghcn,FRM00007149,ORLY,15.4,89.0,1.0,654.2,637.4
-berlin-germany,Berlin,596.8,571.0,,ghcn,GME00111445,BERLIN-TEMPELHOF,6.3,48.0,1.0,531.3,518.8
-madrid-spain,Madrid,448.5,401.0,,ghcn,SP000003195,MADRID - RETIRO,2.1,667.0,1.0,454.2,474.4
-rome-italy,Rome,848.5,761.0,,ghcn,IT000162240,VIGNA DI VALLE,32.3,266.0,0.9,854.0,881.6
-barcelona-spain,Barcelona,608.2,642.0,,ghcn,SP000008181,BARCELONA/AEROPUERTO,13.0,4.0,1.0,560.3,562.9
-lisbon-portugal,Lisbon,523.4,708.0,,gsod,08534099999,MONTIJO,10.1,14.0,0.9,427.9,459.8
-porto-portugal,Porto,1289.9,1237.0,,gsod,08544099999,OVAR/MACEDA,25.8,22.0,0.9,977.6,1044.1
-amsterdam-netherlands,Amsterdam,818.2,852.0,,ghcn,NLM00006260,DE BILT,36.4,2.0,1.0,874.5,866.7
-brussels-belgium,Brussels,792.3,796.0,,ghcn,NLE00102061,KAPELLEBRUG,48.6,3.0,1.0,840.0,839.9
-vienna-austria,Vienna,663.4,582.0,,ghcn,AU000005901,WIEN,3.2,199.0,0.9,680.8,655.3
-prague-czechia,Prague,679.6,499.0,,ghcn,EZM00011518,RUZYNE,11.6,380.1,0.9,595.4,557.7
-budapest-hungary,Budapest,634.1,531.0,,ghcn,HUE00100247,BUDAPEST,2.0,153.0,1.0,506.8,497.3
-warsaw-poland,Warsaw,646.5,514.0,,ghcn,PLM00012375,OKECIE,7.7,110.3,0.9,606.3,560.7
-krakow-poland,Krakow,825.8,686.0,,ghcn,PLM00012566,BALICE,11.0,241.1,1.0,701.8,681.3
-athens-greece,Athens,356.3,401.0,,ghcn,GR000016716,HELLINIKON,9.5,10.0,0.8,321.7,339.1
-istanbul-turkey,Istanbul,627.8,716.0,,ghcn,TUM00017064,ISTANBUL BOLGE (KARTAL),21.1,18.0,0.6,898.0,693.0
-moscow-russia,Moscow,637.6,685.0,,worldclim,,,,,,,685.0
-saint-petersburg-russia,Saint Petersburg,706.1,648.0,,ghcn,RSM00026063,ST. PETERSBURG,3.2,3.0,1.0,721.1,704.0
-stockholm-sweden,Stockholm,547.1,574.0,,ghcn,SWE00138834,NORSBORG_11,17.6,15.0,1.0,514.5,506.2
-oslo-norway,Oslo,1016.3,703.0,,ghcn,NOM00001492,OSLO BLINDERN,3.6,94.0,1.0,867.3,852.7
-copenhagen-denmark,Copenhagen,687.3,619.0,,ghcn,SWE00137592,LANDSKRONA_D,28.5,9.0,1.0,530.2,519.0
-helsinki-finland,Helsinki,733.9,646.0,,ghcn,FIE00142080,VANTAA HELSINKI-VANTAAN LENTOA,17.6,51.0,1.0,746.2,726.2
-reykjavik-iceland,Reykjavik,1227.3,962.0,,ghcn,IC000004030,REYKJAVIK,1.0,52.0,0.7,1265.4,946.9
-dublin-ireland,Dublin,897.1,784.0,,ghcn,EI000003969,DUBLIN PHOENIX PARK,5.8,49.0,1.0,757.4,739.6
-edinburgh-united-kingdom,Edinburgh,813.1,647.0,,ghcn,UKE00105888,EDINBURGH: ROYAL BOTANIC GARDE,1.8,26.0,1.0,733.3,711.8
-manchester-united-kingdom,Manchester,1069.7,850.0,,ghcn,UKE00105905,BUXTON,32.9,307.0,1.0,1418.8,1416.4
-munich-germany,Munich,972.9,963.0,,ghcn,GM000004199,MUNCHEN-NYMPHENBURG,6.3,515.0,1.0,952.7,944.1
-hamburg-germany,Hamburg,761.2,752.0,,ghcn,GM000010147,HAMBURG FUHLSBUETTEL,9.4,11.0,1.0,771.6,765.9
-frankfurt-germany,Frankfurt,707.6,661.0,,ghcn,GME00121246,OFFENBACH-WETTERPARK,7.9,119.0,1.0,680.1,666.7
-zurich-switzerland,Zurich,1363.5,1107.0,,ghcn,SZ000003700,ZUERICH/FLUNTERN,2.2,555.0,1.0,1069.4,1069.2
-geneva-switzerland,Geneva,1450.7,971.0,,ghcn,SZ000008440,GENEVE COINTRIN,5.4,420.0,1.0,842.5,834.9
-milan-italy,Milan,1204.3,973.0,,gsod,16080099999,MILANO LINATE,7.2,107.6,1.0,793.5,789.6
-venice-italy,Venice,1045.1,760.0,,ghcn,ITM00016098,ISTRANA,33.7,41.8,0.7,893.9,914.7
-florence-italy,Florence,972.3,835.0,,gsod,16170099999,FIRENZE,4.8,43.9,1.0,776.7,774.4
-naples-italy,Naples,1085.8,976.0,,ghcn,ITM00016253,GRAZZANISE,28.0,8.8,0.9,803.2,868.9
-palermo-italy,Palermo,631.8,469.0,,gsod,16405099999,PALERMO,24.7,19.8,0.9,407.4,434.1
-seville-spain,Seville,431.6,540.0,,ghcn,SPE00120512,SEVILLA/SAN PABLO,9.1,34.0,1.0,476.2,463.8
-valencia-spain,Valencia,485.1,440.0,,ghcn,SPM00008284,VALENCIA,8.9,68.6,1.0,433.9,443.7
-malaga-spain,Malaga,433.5,539.0,,ghcn,SP000006155,MALAGA AEROPUERTO,8.5,7.0,1.0,427.8,423.4
-palma-de-mallorca-spain,Palma de Mallorca,403.0,445.0,,ghcn,SPE00119882,PALMA DE MALLORCA CMT,2.6,3.0,1.0,460.1,455.8
-nice-france,Nice,838.0,800.0,,ghcn,FRE00104120,NICE,7.6,2.0,1.0,665.0,662.0
-marseille-france,Marseille,659.9,575.0,,ghcn,FR000007650,MARSEILLES-MARIGNANE,20.6,9.0,1.0,500.7,493.0
-lyon-france,Lyon,960.0,832.0,,ghcn,FR069029001,LYON - ST EXUPERY,18.0,235.0,1.0,814.3,806.0
-bordeaux-france,Bordeaux,854.2,923.0,,gsod,07510099999,BORDEAUX MERIGNAC,10.8,49.4,0.9,864.8,872.0
-dubrovnik-croatia,Dubrovnik,1547.7,1179.0,,gsod,14472099999,DUBROVNIK/GORICA,2.3,53.0,1.0,988.6,1000.5
-split-croatia,Split,1206.8,814.0,,gsod,14445099999,SPLIT/MARJAN,1.0,128.0,1.0,747.1,751.7
-belgrade-serbia,Belgrade,654.0,670.0,,gsod,13274099999,BEOGRAD,0.5,132.0,1.0,689.0,684.2
-bucharest-romania,Bucharest,612.0,581.0,,ghcn,ROE00108889,BUCURESTI-BANEASA,9.6,90.0,1.0,625.5,617.8
-sofia-bulgaria,Sofia,611.8,617.0,,ghcn,BUM00015614,SOFIA,6.7,531.0,1.0,637.0,651.7
-kyiv-ukraine,Kyiv,596.4,607.0,,gsod,33345099999,ZHULIANY INTL,7.8,178.6,0.9,625.5,591.0
-riga-latvia,Riga,752.4,658.0,,worldclim,,,,,,,658.0
-tallinn-estonia,Tallinn,692.4,672.0,,ghcn,ENE00175051,TALLINN,9.6,33.0,1.0,721.7,715.1
-vilnius-lithuania,Vilnius,730.8,650.0,,gsod,26730099999,VILNIUS INTL,6.1,196.9,0.9,669.8,644.7
-tbilisi-georgia,Tbilisi,666.6,528.0,gsod:TBILISI / LOCHINI AIRPORT; gsod:BOLNISI,worldclim,,,,,,,528.0
-valletta-malta,Valletta,377.2,529.0,,ghcn,MT000016597,LUQA,6.2,91.0,0.9,333.2,382.1
-tromso-norway,Tromso,1307.8,973.0,,ghcn,NO000001026,TROMSO,1.2,100.0,1.0,1172.5,1156.3
-bergen-norway,Bergen,2720.1,2275.0,,ghcn,NO000050540,BERGEN FLORIDA,1.2,12.0,1.0,2549.0,2543.4
-tenerife-spain,Tenerife,220.8,326.0,,ghcn,SPE00120458,STA. CRUZ DE TENERIFE,0.6,35.0,0.9,193.5,183.1
-madeira-funchal-portugal,Madeira (Funchal),450.6,634.0,,gsod,08522099999,FUNCHAL,4.3,56.0,1.0,516.7,547.8
-salzburg-austria,Salzburg,1823.1,1222.0,,ghcn,GME00132274,PIDING,10.5,458.0,1.0,1317.4,1307.8
-innsbruck-austria,Innsbruck,1734.0,1119.0,,ghcn,AU000011801,INNSBRUCK,0.6,577.0,0.9,927.3,881.6
-dubai-united-arab-emirates,Dubai,72.3,111.0,,ghcn,AEM00041194,DUBAI INTL,20.5,10.4,0.8,93.4,92.9
-abu-dhabi-united-arab-emirates,Abu Dhabi,49.4,62.0,,gsod,41216099999,AL BATEEN EXECUTIVE,6.7,4.9,0.9,68.6,44.7
-doha-qatar,Doha,60.4,84.0,,gsod,41170099999,DOHA INTL,4.4,10.7,0.9,84.2,112.0
-riyadh-saudi-arabia,Riyadh,53.1,123.0,,gsod,40437099999,KING KHALED INTL,30.1,624.5,0.9,90.5,97.1
-jeddah-saudi-arabia,Jeddah,52.4,84.0,,gsod,41024099999,KING ABDULAZIZ INTL,21.3,14.6,1.0,58.8,68.1
-kuwait-city-kuwait,Kuwait City,114.3,113.0,,worldclim,,,,,,,113.1
-muscat-oman,Muscat,76.8,89.0,,gsod,41256099999,SEEB INTL / MUSCAT INTL,12.7,14.6,1.0,64.5,70.9
-tehran-iran,Tehran,317.6,246.0,,ghcn,IR000407540,TEHRAN-MEHRABAD,9.5,1191.0,1.0,212.0,206.1
-tabriz-iran,Tabriz,376.0,259.0,,ghcn,IR000040706,TABRIZ,1.0,1361.0,0.9,261.7,258.3
-mashhad-iran,Mashhad,257.4,274.0,,ghcn,IR000040745,MASHHAD,4.2,999.0,0.9,220.5,217.9
-zanjan-iran,Zanjan,454.9,301.0,,ghcn,IRM00040729,ZANJAN,16.4,1640.4,1.0,270.7,259.4
-yazd-iran,Yazd,90.7,109.0,,ghcn,IRM00040821,YAZD SHAHID SADOOGHI,8.6,1235.7,1.0,62.5,57.5
-bandar-abbas-iran,Bandar Abbas,176.4,200.0,,ghcn,IRM00040875,BANDAR ABBASS INTL,10.2,6.7,0.9,128.1,140.5
-baghdad-iraq,Baghdad,174.9,162.0,,gsod,40650099999,BAGHDAD INTL AIRPORT,17.6,34.7,1.0,142.4,145.1
-jerusalem-israel,Jerusalem,334.3,439.0,,gsod,40183099999,JERUSALEM CENTER,0.2,815.0,1.0,270.4,278.7
-tel-aviv-israel,Tel Aviv,379.3,556.0,,gsod,40179099999,BET DAGAN,9.6,35.0,0.9,367.0,397.7
-amman-jordan,Amman,170.4,299.0,,gsod,40270099999,MARKA INTL,4.9,778.8,1.0,269.5,271.9
-beirut-lebanon,Beirut,673.2,850.0,gsod:RAFIC HARIRI INTL,worldclim,,,,,,,850.0
-damascus-syria,Damascus,181.2,315.0,gsod:DAMASCUS INTL,worldclim,,,,,,,315.2
-baku-azerbaijan,Baku,194.7,244.0,gsod:HEYDAR ALIYEV,worldclim,,,,,,,244.0
-cairo-egypt,Cairo,23.1,25.0,,gsod,62366099999,CAIRO INTL,16.4,116.4,1.0,57.6,53.9
-alexandria-egypt,Alexandria,83.3,173.0,,gsod,62318099999,ALEXANDRIA INTL,3.7,-1.8,0.8,309.7,292.4
-marrakech-morocco,Marrakech,229.9,256.0,,ghcn,MOM00060230,MENARA,4.6,467.9,0.8,162.7,157.4
-casablanca-morocco,Casablanca,256.4,402.0,,ghcn,MOM00060155,ANFA,5.7,61.9,0.7,425.9,399.1
-tunis-tunisia,Tunis,375.0,487.0,,ghcn,TSM00060715,CARTHAGE,6.5,6.7,0.9,426.1,387.7
-algiers-algeria,Algiers,542.0,653.0,,worldclim,,,,,,,653.0
-lagos-nigeria,Lagos,1601.6,1534.0,,gsod,65201099999,MURTALA MUHAMMED,15.9,41.1,0.9,1460.0,1527.8
-accra-ghana,Accra,956.6,883.0,,gsod,65472099999,KOTOKA INTL,6.4,62.5,0.9,788.3,844.4
-dakar-senegal,Dakar,324.2,374.0,,gsod,61641099999,LEOPOLD SEDAR SENGHOR INTL,7.1,25.9,0.9,459.7,468.6
-abidjan-ivory-coast,Abidjan,1828.4,1701.0,,gsod,65578099999,ABIDJAN FELIX HOUPHOUET BOIGNY INTL,13.3,6.4,0.9,1827.8,1823.7
-addis-ababa-ethiopia,Addis Ababa,1873.5,1101.0,,gsod,63450099999,BOLE INTL,7.7,2325.6,0.8,848.1,998.1
-nairobi-kenya,Nairobi,624.5,1007.0,,gsod,63740099999,JKIA / NAIROBI JOMO KENYATTA INTL,13.0,1623.7,0.8,618.4,684.6
-zanzibar-tanzania,Zanzibar,1058.5,1629.0,,gsod,63870099999,ZANZIBAR / ABEID AMANI KARUME INTL,7.1,16.5,0.9,1613.8,1591.6
-dar-es-salaam-tanzania,Dar es Salaam,1192.6,1118.0,,gsod,63894099999,MWALIMU JULIUS K NYERERE INTL,9.5,55.5,0.9,1374.4,1359.0
-kampala-uganda,Kampala,1531.6,1314.0,,gsod,63705099999,ENTEBBE INTL,34.2,1152.8,0.7,1143.7,1486.0
-kigali-rwanda,Kigali,1012.7,1062.0,,gsod,64387099999,KIGALI INTL,9.2,1481.0,0.9,1294.5,1369.8
-kinshasa-dr-congo,Kinshasa,1070.2,1429.0,,gsod,64450099999,MAYA MAYA,10.8,319.4,0.9,1622.0,1690.5
-luanda-angola,Luanda,400.0,490.0,,gsod,66160099999,LUANDA 4 DE FEVEREIRO,2.4,74.1,0.7,301.4,387.5
-johannesburg-south-africa,Johannesburg,794.9,750.0,,gsod,68361099999,JOHANNESBURG BOT. GARDENS,7.3,1626.0,0.7,669.6,807.9
-cape-town-south-africa,Cape Town,526.6,592.0,,gsod,68819099999,MOLTENO RESERVIOR,1.0,97.0,0.9,688.9,660.9
-durban-south-africa,Durban,968.8,1012.0,,gsod,68583099999,MOUNT EDGECOMBE,17.7,94.0,0.9,877.9,860.5
-windhoek-namibia,Windhoek,439.2,343.0,gsod:HOSEA KUTAKO INTL,gsod,68110099999,WINDHOEK/EROS(SAAF),1.9,1725.0,0.9,315.1,331.5
-antananarivo-madagascar,Antananarivo,1032.0,1255.0,,gsod,67083099999,IVATO,14.3,1279.6,0.9,1373.0,1422.0
-mauritius-port-louis-mauritius,Mauritius (Port Louis),964.7,1613.0,,ghcn,MP000061995,VACOAS (MAURITIUS),15.4,425.0,0.9,2093.2,2140.8
-khartoum-sudan,Khartoum,52.2,123.0,,worldclim,,,,,,,123.0
-timbuktu-mali,Timbuktu,97.1,167.0,,worldclim,,,,,,,166.0
-tokyo-japan,Tokyo,1418.6,1466.0,,ghcn,JA000047662,TOKYO,6.8,36.0,0.9,1649.3,1634.0
-osaka-japan,Osaka,1565.6,1390.0,,ghcn,JA000047780,NARA,30.4,106.0,0.9,1392.7,1472.9
-kyoto-japan,Kyoto,1710.3,1646.0,,ghcn,JA000047780,NARA,36.4,106.0,0.9,1392.7,1458.7
-sapporo-japan,Sapporo,1243.1,1226.0,,ghcn,JA000047412,SAPPORO,1.4,26.0,0.9,1086.1,1122.0
-okinawa-naha-japan,Okinawa (Naha),1962.2,2118.0,,ghcn,JA000047936,NAHA,1.5,53.0,0.9,2440.3,2441.3
-seoul-south-korea,Seoul,1187.3,1339.0,,gsod,47108099999,SEOUL CITY,1.0,87.0,0.8,1376.2,1490.1
-busan-south-korea,Busan,1366.2,1453.0,,gsod,47159099999,BUSAN,0.3,71.0,0.9,1741.2,1623.9
-pyongyang-north-korea,Pyongyang,1094.6,1072.0,,gsod,47058099999,PYONGYANG INTL,22.4,35.7,0.9,1134.7,1102.9
-beijing-china,Beijing,567.4,578.0,,ghcn,CHM00054511,BEIJING,10.1,55.0,0.7,967.3,692.2
-shanghai-china,Shanghai,1335.1,1061.0,,gsod,58362099999,SHANGHAI,19.8,4.0,0.9,1504.0,1470.2
-hong-kong-china,Hong Kong,1788.7,2166.0,,gsod,45039099999,SHA TIN,13.8,8.0,1.0,2343.1,2359.7
-guangzhou-china,Guangzhou,1848.6,1692.0,,ghcn,CHM00059287,GUANGZHOU,26.3,71.0,0.8,2727.9,2241.9
-chengdu-china,Chengdu,1077.6,928.0,,gsod,56187099999,WENJIANG,21.2,541.0,0.9,1189.8,1171.8
-chongqing-china,Chongqing,1194.2,1142.0,,ghcn,CHM00057516,CHONGQING,9.1,416.0,0.8,1429.8,1253.2
-xi-an-china,Xi'an,881.5,624.0,,gsod,57131099999,JINGHE,19.7,411.0,1.0,658.1,689.0
-harbin-china,Harbin,702.4,542.0,,gsod,50953099999,HARBIN,21.3,117.7,0.9,700.5,663.3
-lhasa-china,Lhasa,944.8,403.0,,ghcn,CHM00055591,LHASA,3.7,3650.0,0.7,692.4,494.1
-kunming-china,Kunming,1408.5,938.0,,ghcn,CHM00056778,KUNMING,4.3,1892.0,0.7,1454.2,1187.2
-taipei-taiwan,Taipei,2074.6,2849.0,gsod:TAIBEI,worldclim,,,,,,,2849.0
-ulaanbaatar-mongolia,Ulaanbaatar,319.0,276.0,,gsod,44291099999,SONGIIN,11.8,1272.0,0.9,315.2,301.8
-hanoi-vietnam,Hanoi,1851.8,1621.0,,gsod,48825099999,HA DONG,10.0,7.9,0.9,1832.2,1836.9
-ho-chi-minh-city-vietnam,Ho Chi Minh City,1887.2,1862.0,,gsod,48894099999,NHA BE,21.5,3.6,1.0,1714.9,1742.1
-da-nang-vietnam,Da Nang,2667.4,2034.0,,ghcn,VMM00048855,DANANG INTL,3.5,10.1,0.7,3471.0,2827.7
-bangkok-thailand,Bangkok,1243.8,1299.0,,gsod,48455099999,BANGKOK METROPOLIS,7.5,4.0,1.0,2005.4,2019.4
-chiang-mai-thailand,Chiang Mai,1126.7,1056.0,,gsod,48327099999,CHIANG MAI INTL,3.5,315.8,0.9,1374.0,1364.3
-phuket-thailand,Phuket,2373.7,2390.0,,ghcn,TH000048565,PHUKET AIRPORT,28.3,9.0,0.6,4542.6,3230.6
-phnom-penh-cambodia,Phnom Penh,1466.6,1352.0,,gsod,48991099999,PHNOM PENH INTL,8.0,12.2,0.7,819.5,1247.9
-yangon-myanmar,Yangon,2401.1,2567.0,,gsod,48097099999,YANGON INTL,11.6,33.2,0.8,2300.4,2532.7
-kuala-lumpur-malaysia,Kuala Lumpur,2902.7,2379.0,,ghcn,MYM00048647,SULTAN ABDUL AZIZ SHAH INTL,15.3,27.4,0.8,3171.6,3063.8
-singapore-singapore,Singapore,2793.9,2384.0,,ghcn,SNM00048698,SINGAPORE CHANGI INTL,17.3,6.7,0.9,2323.0,2280.5
-jakarta-indonesia,Jakarta,2044.2,2052.0,,gsod,96749099999,SOEKARNO HATTA INTL,23.1,10.4,0.8,1493.2,1454.5
-bali-denpasar-indonesia,Bali (Denpasar),2490.5,1852.0,,gsod,97230099999,DENPASAR NGURAH RAI,12.3,1.0,0.9,1280.4,1282.5
-manila-philippines,Manila,1816.6,2348.0,,gsod,98430099999,SCIENCE GARDEN,8.9,46.0,0.9,2638.6,2699.1
-cebu-philippines,Cebu,2684.2,1559.0,,gsod,98646099999,MACTAN CEBU INTL,9.7,9.4,0.9,1767.2,1828.9
-mumbai-india,Mumbai,2233.2,2143.0,,gsod,43003099999,CHHATRAPATI SHIVAJI MAHARAJ INTL,2.4,11.3,0.9,3212.2,3105.8
-delhi-india,Delhi,759.9,724.0,,gsod,42182099999,SAFDARJUNG,4.1,214.9,1.0,873.2,873.6
-bengaluru-india,Bengaluru,1019.0,810.0,,gsod,43295099999,BANGALORE,1.3,921.0,0.9,1263.2,1260.4
-kolkata-india,Kolkata,1683.8,1643.0,,gsod,42807099999,BEHALA,9.6,2.4,0.9,1759.2,1711.3
-chennai-india,Chennai,1138.5,1232.0,,gsod,43278099999,NUMGAMBAKKAM,8.8,7.0,0.9,1461.4,1495.2
-goa-panaji-india,Goa (Panaji),3344.5,2931.0,,gsod,43192099999,GOA/PANJIM,1.7,58.4,0.9,3328.5,3245.0
-jaipur-india,Jaipur,595.2,630.0,,gsod,42348099999,JAIPUR,10.9,385.0,0.9,804.5,782.5
-kathmandu-nepal,Kathmandu,3061.3,1674.0,,ghcn,NP000444540,KATHMANDU AIRPORT,4.6,1337.0,0.8,1555.4,1575.4
-colombo-sri-lanka,Colombo,2317.6,2445.0,,gsod,43450099999,BANDARANAIKE INTL COLOMBO,27.4,8.8,0.9,1984.6,2230.0
-maldives-male-maldives,Maldives (Male),1782.8,1945.0,ghcn:MALE; gsod:MALE INTL / VELANA INTL,worldclim,,,,,,,1945.0
-dhaka-bangladesh,Dhaka,1864.3,2133.0,,ghcn,BGM00041923,TEJGAON,8.0,7.3,0.7,2229.0,1956.6
-karachi-pakistan,Karachi,211.3,142.0,,ghcn,PKM00041780,JINNAH INTL,16.0,30.5,0.9,343.2,389.9
-lahore-pakistan,Lahore,582.4,521.0,,ghcn,PK000041640,LAHORE CITY,1.9,215.0,0.8,972.7,1005.7
-islamabad-pakistan,Islamabad,841.1,1012.0,gsod:CHAKLALA,worldclim,,,,,,,1012.0
-kabul-afghanistan,Kabul,405.8,331.0,,worldclim,,,,,,,331.0
-tashkent-uzbekistan,Tashkent,552.3,463.0,,gsod,38457099999,YUZHNY / TASHKENT ISLAM KARIMOV INTL,5.5,431.9,0.9,439.4,420.4
-samarkand-uzbekistan,Samarkand,482.2,403.0,,gsod,38696099999,SAMARKAND,5.4,677.9,0.9,352.4,337.2
-almaty-kazakhstan,Almaty,823.8,515.0,,worldclim,,,,,,,515.0
-astana-kazakhstan,Astana,378.1,300.0,,worldclim,,,,,,,300.0
-vladivostok-russia,Vladivostok,805.0,716.0,,ghcn,RSM00031960,VLADIVOSTOK,5.0,187.0,0.8,970.0,929.9
-yakutsk-russia,Yakutsk,222.7,253.0,,ghcn,RSM00024959,JAKUTSK,1.6,98.0,0.9,244.9,213.0
-sydney-australia,Sydney,794.0,1243.0,,ghcn,ASN00066037,SYDNEY AIRPORT AMO,9.3,6.0,1.0,1204.8,1203.4
-melbourne-australia,Melbourne,650.1,651.0,,ghcn,ASN00086038,ESSENDON AIRPORT,10.8,78.4,1.0,569.7,555.9
-brisbane-australia,Brisbane,1022.8,1280.0,,ghcn,ASN00040913,BRISBANE,1.8,8.1,1.0,1183.1,1179.6
-perth-australia,Perth,568.0,759.0,,ghcn,ASN00009225,PERTH METRO,3.8,24.9,1.0,718.5,728.3
-adelaide-australia,Adelaide,473.3,635.0,,ghcn,ASN00023031,ADELAIDE (WAITE INSTITUTE),5.5,115.0,0.9,414.9,394.7
-darwin-australia,Darwin,1872.1,1794.0,,ghcn,ASN00014040,DARWIN AIRPORT COMPARISON,6.3,30.0,1.0,1723.2,1790.6
-cairns-australia,Cairns,1685.0,2242.0,,ghcn,ASN00031011,CAIRNS AERO,6.0,2.2,0.9,2080.8,2125.1
-hobart-australia,Hobart,596.0,772.0,,ghcn,ASN00094029,HOBART (ELLERSLIE ROAD),1.2,50.5,1.0,558.9,545.1
-alice-springs-australia,Alice Springs,226.8,325.0,,ghcn,ASN00015590,ALICE SPRINGS AIRPORT,10.9,546.0,1.0,284.5,291.0
-auckland-new-zealand,Auckland,1104.0,1378.0,,ghcn,NZM00093110,AUCKLAND AERO AWS,17.2,7.0,0.9,1141.4,1145.1
-wellington-new-zealand,Wellington,951.5,1257.0,,ghcn,NZ000093417,PARAPARAUMU AWS,46.4,7.0,0.9,1102.5,1089.4
-queenstown-new-zealand,Queenstown,1380.5,1278.0,,gsod,93831099999,QUEENSTOWN AERODROME,5.7,358.0,1.0,732.2,741.8
-fiji-nadi-fiji,Fiji (Nadi),2324.9,1770.0,,ghcn,FJM00091680,Nadi Airport,5.7,22.0,1.0,2325.9,2316.0
-tahiti-papeete-french-polynesia,Tahiti (Papeete),2172.8,1779.0,,ghcn,FP000091938,TAHITI-FAAA,5.4,3.0,0.9,1490.2,1482.1
-toronto-canada,Toronto,822.3,835.0,,ghcn,CAN06158355,TORONTO CITY,4.4,112.5,1.0,814.0,789.7
-vancouver-canada,Vancouver,2307.1,1496.0,,ghcn,CAN01108446,VANCOUVER HARBOUR CS,5.1,2.5,1.0,1462.6,1477.6
-montreal-canada,Montreal,1194.2,1015.0,,ghcn,CAN07024745,MCTAVISH,0.8,72.8,1.0,1134.1,1112.9
-quebec-city-canada,Quebec City,1294.4,1236.0,,ghcn,CAN07010565,BEAUPORT,3.0,10.0,0.9,1218.9,1199.5
-calgary-canada,Calgary,461.8,426.0,,ghcn,CAN03031094,CALGARY INT'L CS,8.9,1081.9,1.0,372.5,353.2
-ottawa-canada,Ottawa,1106.7,915.0,,ghcn,CAN06105978,OTTAWA CDA RCS,3.4,79.2,1.0,952.0,933.3
-halifax-canada,Halifax,1225.0,1409.0,,ghcn,CAN08205092,SHEARWATER RCS,5.0,45.3,1.0,1340.9,1331.4
-winnipeg-canada,Winnipeg,570.4,556.0,,ghcn,CAN05023262,WINNIPEG THE FORKS,1.3,230.0,1.0,499.5,488.6
-mexico-city-mexico,Mexico City,946.8,673.0,,gsod,76680099999,MEXICO (CENTRAL)   D.F.,6.6,2303.0,0.8,607.6,592.4
-cancun-mexico,Cancun,1130.4,1235.0,,worldclim,,,,,,,1235.0
-guadalajara-mexico,Guadalajara,827.2,908.0,,gsod,76612099999,GUADALAJARA  JAL.,3.9,1551.0,0.9,774.2,774.4
-monterrey-mexico,Monterrey,504.4,659.0,gsod:DEL NORTE INTL,gsod,76393099999,MONTERREY  N.L.,5.7,515.0,0.7,642.2,647.7
-cabo-san-lucas-mexico,Cabo San Lucas,390.6,258.0,,worldclim,,,,,,,259.8
-puerto-vallarta-mexico,Puerto Vallarta,1464.3,1203.0,,worldclim,,,,,,,1203.0
-havana-cuba,Havana,780.7,1281.0,,worldclim,,,,,,,1281.0
-nassau-bahamas,Nassau,969.6,1294.0,,ghcn,BF1NP000001,NASSAU 14.4 SW,12.7,5.8,0.9,1480.1,1511.0
-kingston-jamaica,Kingston,877.6,1064.0,,ghcn,JMM00078397,NORMAN MANLEY INTL,6.8,3.0,0.8,699.5,797.6
-santo-domingo-dominican-republic,Santo Domingo,1014.3,1627.0,,gsod,78486099999,SANTO DOMINGO,4.4,14.0,0.8,1212.4,1431.8
-aruba-oranjestad-aruba,Aruba (Oranjestad),352.5,410.0,,gsod,78982000411,QUEEN BEATRIX INTERNATIONAL AIRPORT,2.9,18.3,1.0,400.4,391.4
-panama-city-panama,Panama City,2098.2,2178.0,,worldclim,,,,,,,2178.0
-san-jose-costa-rica,San Jose,2973.0,2963.0,,gsod,78764099999,TOBIAS BOLANOS INTL,6.6,994.0,0.9,1777.3,1770.5
-guatemala-city-guatemala,Guatemala City,614.2,1250.0,gsod:LA AURORA,worldclim,,,,,,,1250.0
-bogota-colombia,Bogota,1204.2,1330.0,,gsod,80222099999,EL DORADO INTL,12.6,2548.4,0.7,887.1,1121.5
-medellin-colombia,Medellin,2732.8,2401.0,,gsod,80110099999,OLAYA HERRERA,3.5,1505.7,0.8,1434.5,1776.5
-cartagena-colombia,Cartagena,1511.0,1124.0,,gsod,80022099999,RAFAEL NUNEZ,5.3,1.2,0.9,803.2,1052.8
-caracas-venezuela,Caracas,1498.3,960.0,,worldclim,,,,,,,960.0
-quito-ecuador,Quito,3116.8,1066.0,,worldclim,,,,,,,1066.0
-lima-peru,Lima,133.6,26.0,,gsod,84628099999,JORGE CHAVEZ INTL,9.6,34.4,0.9,16.0,9.1
-cusco-peru,Cusco,1180.1,702.0,,gsod,84686099999,TENIENTE ALEJANDRO VELASCO ASTETE INTL,3.1,3310.1,0.9,659.0,661.5
-la-paz-bolivia,La Paz,719.6,560.0,,gsod,85201099999,EL ALTO INTL,4.7,4061.5,0.9,658.2,658.6
-santiago-chile,Santiago,426.4,407.0,ghcn:QUINTA NORMAL; ghcn:ARTURO MERINO BENITEZ INTL; gsod:QUINTA NORMAL; gsod:ARTURO MERINO BENITEZ INTL,worldclim,,,,,,,407.0
-valparaiso-chile,Valparaiso,273.9,401.0,,worldclim,,,,,,,401.0
-buenos-aires-argentina,Buenos Aires,801.1,1113.0,,gsod,87585099999,BUENOS AIRES (OBS),10.2,25.0,0.9,1127.1,1161.7
-montevideo-uruguay,Montevideo,934.2,923.0,,ghcn,UYM00086580,CARRASCO INTL,16.1,32.0,0.8,1122.4,1032.0
-sao-paulo-brazil,Sao Paulo,1158.4,1485.0,,ghcn,BR00E3-0520,SAO PAULO (AEROPORT,7.9,802.0,0.8,1020.9,896.4
-rio-de-janeiro-brazil,Rio de Janeiro,1098.1,1211.0,,gsod,83746099999,GALEAO ANTONIO CARLOS JOBIM,12.5,8.5,0.9,762.1,843.4
-brasilia-brazil,Brasilia,1222.8,1508.0,,gsod,83378099999,PRESIDENTE JUSCELINO KUBITSCHEK,9.4,1060.4,1.0,757.2,752.9
-salvador-brazil,Salvador,1340.4,2036.0,,gsod,83248099999,DEPUTADO LUIS EDUARDO MAGALHAES,18.8,19.5,1.0,870.7,876.7
-manaus-brazil,Manaus,2524.9,2280.0,,gsod,82332099999,CAMPO PONTA PELADA,6.5,81.4,0.8,1499.9,1673.3
-ushuaia-argentina,Ushuaia,845.2,505.0,,ghcn,ARM00087938,USHUAIA MALVINAS ARGENTINAS,3.8,21.6,0.7,528.5,418.5
+slug,name,era5_mm,worldclim_mm,grid_mm,rejected,source,station,station_name,km,station_elev,complete,gauge_mm,corrected_mm
+new-york-united-states,New York,1153.1,1211.0,1068.0,,ghcn,USW00094728,NY CITY CNTRL PARK,7.8,42.7,1.0,1276.6,1279.7
+los-angeles-united-states,Los Angeles,364.8,400.0,422.0,,ghcn,USW00023174,LOS ANGELES INTL AP,18.3,29.6,1.0,333.0,332.1
+chicago-united-states,Chicago,1061.2,942.0,978.0,,ghcn,USW00014819,CHICAGO MIDWAY AP,11.4,185.9,1.0,907.8,903.2
+houston-united-states,Houston,1429.3,1216.0,1215.0,,ghcn,USW00012918,HOUSTON WILLIAM P HOBBY AP,15.2,13.1,1.0,1319.8,1324.9
+phoenix-united-states,Phoenix,243.4,204.0,281.0,,ghcn,USW00023183,PHOENIX AP,6.9,339.2,1.0,156.0,153.9
+philadelphia-united-states,Philadelphia,1158.7,1133.0,1165.0,,ghcn,USW00013739,PHILA INTL AP,10.3,2.1,1.0,1108.6,1111.0
+san-antonio-united-states,San Antonio,765.3,796.0,755.0,,ghcn,USW00012921,SAN ANTONIO INTL AP,13.4,243.5,1.0,691.7,691.9
+san-diego-united-states,San Diego,275.0,280.0,259.0,,ghcn,USW00023188,SAN DIEGO INTL AP,2.6,4.6,1.0,248.9,246.4
+dallas-united-states,Dallas,1056.0,934.0,956.0,,ghcn,USW00013960,DALLAS FAA AP,6.7,147.5,1.0,1054.2,1051.8
+austin-united-states,Austin,914.1,831.0,841.0,,ghcn,USW00013958,AUSTIN-CAMP MABRY,6.2,204.2,1.0,826.4,819.5
+san-francisco-united-states,San Francisco,477.8,850.0,677.1,,ghcn,USW00023230,OAKLAND INTL AP,17.6,1.5,1.0,442.2,442.4
+seattle-united-states,Seattle,1323.3,986.0,1191.0,,ghcn,USW00024233,SEATTLE TACOMA AP,18.0,112.5,1.0,989.0,979.7
+portland-united-states,Portland,1227.0,1139.0,1182.0,,ghcn,USW00024229,PORTLAND INTL AP,9.6,6.7,1.0,920.8,914.2
+denver-united-states,Denver,488.6,424.0,402.0,,ghcn,USW00023062,DENVER-STAPLETON,10.2,1611.2,1.0,334.9,329.8
+las-vegas-united-states,Las Vegas,161.3,112.0,319.0,,ghcn,USW00023169,MCCARRAN INTL AP,11.7,662.9,1.0,91.7,88.6
+salt-lake-city-united-states,Salt Lake City,486.2,518.0,524.0,,ghcn,USW00024127,SALT LAKE CITY INTL AP,6.3,1288.4,1.0,376.0,369.0
+boise-united-states,Boise,330.9,338.0,245.0,,ghcn,USW00024131,BOISE AIR TERMINAL,6.0,860.5,1.0,325.8,314.6
+albuquerque-united-states,Albuquerque,167.8,245.0,279.0,,ghcn,USW00023050,ALBUQUERQUE INTL AP,5.7,1618.5,1.0,183.1,181.6
+tucson-united-states,Tucson,233.0,309.0,513.0,,ghcn,USW00023160,TUCSON INTL AP,10.4,777.5,1.0,267.9,267.3
+el-paso-united-states,El Paso,172.7,238.0,227.0,,ghcn,USW00023044,EL PASO INTL AP,11.9,1202.1,1.0,203.4,201.1
+sacramento-united-states,Sacramento,632.2,469.0,449.8,,ghcn,USW00023232,SACRAMENTO AP ASOS,8.3,5.8,1.0,458.8,464.0
+palm-springs-united-states,Palm Springs,220.5,189.0,582.0,,ghcn,USC00046635,PALM SPRINGS,3.3,129.5,1.0,142.3,141.0
+minneapolis-united-states,Minneapolis,914.6,753.0,745.0,,ghcn,USW00014922,MINNEAPOLIS-ST PAUL INTL AP,10.8,254.5,1.0,824.4,820.2
+detroit-united-states,Detroit,877.1,883.0,871.0,,ghcn,USW00094847,DETROIT METRO AP,26.0,192.0,1.0,895.8,885.8
+cleveland-united-states,Cleveland,1144.3,942.0,960.0,,ghcn,USW00014820,CLEVELAND,16.7,262.1,1.0,1084.5,1076.2
+columbus-united-states,Columbus,1152.0,965.0,1022.0,,ghcn,USW00014821,JOHN GLENN INTL AP,10.9,246.9,1.0,1105.1,1102.5
+indianapolis-united-states,Indianapolis,1101.5,1016.0,1083.0,,ghcn,USW00093819,INDIANAPOLIS,12.5,270.4,1.0,1089.7,1084.5
+st-louis-united-states,St. Louis,1119.0,976.0,985.0,,ghcn,USW00013994,ST LOUIS LAMBERT INTL AP,20.6,161.8,1.0,1112.1,1104.5
+kansas-city-united-states,Kansas City,1026.9,1007.0,959.0,,ghcn,USW00003947,KANSAS CITY INTL AP,25.6,307.2,1.0,1029.6,1022.5
+omaha-united-states,Omaha,880.5,774.0,817.0,,ghcn,USW00014942,OMAHA EPPLEY AIRFIELD,7.0,298.7,1.0,746.9,747.6
+oklahoma-city-united-states,Oklahoma City,876.5,910.0,888.0,,ghcn,USW00013967,OKLAHOMA CY WILL ROGERS WORLD,11.6,389.8,1.0,919.3,916.7
+nashville-united-states,Nashville,1462.7,1267.0,1275.0,,ghcn,USW00013897,NASHVILLE INTL AP,10.6,178.9,1.0,1335.1,1331.1
+memphis-united-states,Memphis,1342.8,1338.0,1327.0,,ghcn,USW00013893,MEMPHIS INTL AP,11.8,76.5,1.0,1489.0,1492.1
+new-orleans-united-states,New Orleans,1506.3,1595.0,1581.0,,ghcn,USW00012916,NEW ORLEANS AP,20.1,-0.9,1.0,1689.0,1688.8
+atlanta-united-states,Atlanta,1266.7,1286.0,1309.0,,ghcn,USW00013874,ATLANTA HARTSFIELD-JACKSON INT,14.2,308.2,1.0,1320.3,1318.5
+charlotte-united-states,Charlotte,1150.4,1150.0,1156.0,,ghcn,USW00013881,CHARLOTTE DOUGLAS AP,10.1,222.5,1.0,1172.6,1169.3
+raleigh-united-states,Raleigh,1229.2,1147.0,1202.0,,ghcn,USW00013722,RALEIGH AP,18.6,120.4,1.0,1231.6,1237.3
+washington-dc-united-states,Washington DC,1170.2,1041.0,1106.0,,ghcn,USW00013743,WASHINGTON REAGAN NATL AP,5.3,4.0,1.0,1092.3,1082.4
+baltimore-united-states,Baltimore,1289.9,1117.0,1138.0,,ghcn,USW00093721,BALTIMORE-WASHINGTON INTL AP,14.4,42.1,1.0,1142.1,1137.2
+pittsburgh-united-states,Pittsburgh,1321.1,972.0,1024.0,,ghcn,USW00094823,PITTSBURGH ASOS,19.1,341.1,1.0,1071.4,1065.8
+boston-united-states,Boston,1134.1,1121.0,1107.0,,ghcn,USW00014739,BOSTON,4.1,3.4,1.0,1102.0,1090.9
+burlington-united-states,Burlington,1016.0,860.0,999.0,,ghcn,USW00014742,BURLINGTON INTL AP,5.0,101.2,1.0,958.8,949.8
+buffalo-united-states,Buffalo,1010.6,970.0,882.0,,ghcn,USW00014733,BUFFALO,13.5,240.8,1.0,1032.3,1024.8
+miami-united-states,Miami,1308.4,1502.0,1378.0,,ghcn,USW00012839,MIAMI INTL AP,12.4,1.5,1.0,1796.0,1811.8
+orlando-united-states,Orlando,1285.3,1229.0,1227.0,,ghcn,USW00012815,ORLANDO INTL AP,14.4,27.1,1.0,1291.0,1285.0
+tampa-united-states,Tampa,1284.2,1267.0,1336.0,,ghcn,USW00012842,TAMPA INTL AP,8.2,1.8,1.0,1355.2,1363.4
+jacksonville-united-states,Jacksonville,1117.7,1295.0,1300.0,,ghcn,USW00053860,JACKSONVILLE CRAIG MUNI AP,13.7,11.9,1.0,1345.0,1338.1
+key-west-united-states,Key West,890.2,1019.0,1378.0,,ghcn,USW00012836,KEY W INTL AP,2.7,0.3,1.0,1000.3,1000.7
+charleston-united-states,Charleston,1274.7,1275.0,1265.0,,ghcn,USW00013782,DWTN CHARLESTON,0.8,3.0,1.0,1170.9,1165.4
+anchorage-united-states,Anchorage,1084.2,883.0,666.0,,ghcn,USW00026451,ANCHORAGE TED STEVENS INTL AP,8.7,38.1,1.0,485.8,473.2
+fairbanks-united-states,Fairbanks,392.8,315.0,332.0,,ghcn,USW00026411,FAIRBANKS INTL AP,8.5,131.1,1.0,362.4,347.4
+honolulu-united-states,Honolulu,424.0,1350.0,781.0,,ghcn,USW00022521,HONOLULU INTL AP,8.6,1.8,1.0,397.3,389.1
+billings-united-states,Billings,426.6,365.0,429.0,,ghcn,USW00024033,BILLINGS INTL AP,4.4,1094.2,1.0,399.5,393.2
+fargo-united-states,Fargo,643.1,538.0,542.0,,ghcn,USW00014914,FARGO HECTOR INTL AP,5.5,272.8,1.0,549.5,537.8
+spokane-united-states,Spokane,555.2,444.0,408.0,,ghcn,USW00024157,SPOKANE INTL AP,8.5,717.8,1.0,411.9,406.4
+san-juan-united-states,San Juan,979.9,1656.0,1868.0,,ghcn,RQW00011641,SAN JUAN L M MARIN INTL AP,10.7,3.0,1.0,1624.2,1637.0
+london-united-kingdom,London,685.9,641.0,672.0,,ghcn,UKE00107650,HEATHROW,39.9,25.0,1.0,626.6,610.4
+paris-france,Paris,755.6,658.0,632.0,,ghcn,FRM00007149,ORLY,15.4,89.0,1.0,654.2,637.4
+berlin-germany,Berlin,596.8,571.0,554.0,,ghcn,GME00111445,BERLIN-TEMPELHOF,6.3,48.0,1.0,531.3,518.8
+madrid-spain,Madrid,448.5,401.0,409.0,,ghcn,SP000003195,MADRID - RETIRO,2.1,667.0,1.0,454.2,474.4
+rome-italy,Rome,848.5,761.0,841.0,,ghcn,IT000162240,VIGNA DI VALLE,32.3,266.0,0.9,854.0,881.6
+barcelona-spain,Barcelona,608.2,642.0,608.0,,ghcn,SP000008181,BARCELONA/AEROPUERTO,13.0,4.0,1.0,560.3,562.9
+lisbon-portugal,Lisbon,523.4,708.0,636.0,,gsod,08534099999,MONTIJO,10.1,14.0,0.9,427.9,459.8
+porto-portugal,Porto,1289.9,1237.0,1415.0,,gsod,08544099999,OVAR/MACEDA,25.8,22.0,0.9,977.6,1044.1
+amsterdam-netherlands,Amsterdam,818.2,852.0,804.0,,ghcn,NLM00006260,DE BILT,36.4,2.0,1.0,874.5,866.7
+brussels-belgium,Brussels,792.3,796.0,809.0,,ghcn,NLE00102061,KAPELLEBRUG,48.6,3.0,1.0,840.0,839.9
+vienna-austria,Vienna,663.4,582.0,562.0,,ghcn,AU000005901,WIEN,3.2,199.0,0.9,680.8,655.3
+prague-czechia,Prague,679.6,499.0,541.0,,ghcn,EZM00011518,RUZYNE,11.6,380.1,0.9,595.4,557.7
+budapest-hungary,Budapest,634.1,531.0,516.0,,ghcn,HUE00100247,BUDAPEST,2.0,153.0,1.0,506.8,497.3
+warsaw-poland,Warsaw,646.5,514.0,481.0,,ghcn,PLM00012375,OKECIE,7.7,110.3,0.9,606.3,560.7
+krakow-poland,Krakow,825.8,686.0,686.0,,ghcn,PLM00012566,BALICE,11.0,241.1,1.0,701.8,681.3
+athens-greece,Athens,356.3,401.0,529.0,,ghcn,GR000016716,HELLINIKON,9.5,10.0,0.8,321.7,339.1
+istanbul-turkey,Istanbul,627.8,716.0,788.0,,ghcn,TUM00017064,ISTANBUL BOLGE (KARTAL),21.1,18.0,0.6,898.0,693.0
+moscow-russia,Moscow,637.6,685.0,629.0,,worldclim,,,,,,,685.0
+saint-petersburg-russia,Saint Petersburg,706.1,648.0,636.0,,ghcn,RSM00026063,ST. PETERSBURG,3.2,3.0,1.0,721.1,704.0
+stockholm-sweden,Stockholm,547.1,574.0,564.0,,ghcn,SWE00138834,NORSBORG_11,17.6,15.0,1.0,514.5,506.2
+oslo-norway,Oslo,1016.3,703.0,679.0,,ghcn,NOM00001492,OSLO BLINDERN,3.6,94.0,1.0,867.3,852.7
+copenhagen-denmark,Copenhagen,687.3,619.0,591.0,,ghcn,SWE00137592,LANDSKRONA_D,28.5,9.0,1.0,530.2,519.0
+helsinki-finland,Helsinki,733.9,646.0,677.0,,ghcn,FIE00142080,VANTAA HELSINKI-VANTAAN LENTOA,17.6,51.0,1.0,746.2,726.2
+reykjavik-iceland,Reykjavik,1227.3,962.0,938.0,,ghcn,IC000004030,REYKJAVIK,1.0,52.0,0.7,1265.4,946.9
+dublin-ireland,Dublin,897.1,784.0,852.0,,ghcn,EI000003969,DUBLIN PHOENIX PARK,5.8,49.0,1.0,757.4,739.6
+edinburgh-united-kingdom,Edinburgh,813.1,647.0,910.0,,ghcn,UKE00105888,EDINBURGH: ROYAL BOTANIC GARDE,1.8,26.0,1.0,733.3,711.8
+manchester-united-kingdom,Manchester,1069.7,850.0,793.0,,ghcn,UKE00105905,BUXTON,32.9,307.0,1.0,1418.8,1416.4
+munich-germany,Munich,972.9,963.0,871.0,,ghcn,GM000004199,MUNCHEN-NYMPHENBURG,6.3,515.0,1.0,952.7,944.1
+hamburg-germany,Hamburg,761.2,752.0,659.0,,ghcn,GM000010147,HAMBURG FUHLSBUETTEL,9.4,11.0,1.0,771.6,765.9
+frankfurt-germany,Frankfurt,707.6,661.0,739.0,,ghcn,GME00121246,OFFENBACH-WETTERPARK,7.9,119.0,1.0,680.1,666.7
+zurich-switzerland,Zurich,1363.5,1107.0,1187.0,,ghcn,SZ000003700,ZUERICH/FLUNTERN,2.2,555.0,1.0,1069.4,1069.2
+geneva-switzerland,Geneva,1450.7,971.0,1092.0,,ghcn,SZ000008440,GENEVE COINTRIN,5.4,420.0,1.0,842.5,834.9
+milan-italy,Milan,1204.3,973.0,889.0,,gsod,16080099999,MILANO LINATE,7.2,107.6,1.0,793.5,789.6
+venice-italy,Venice,1045.1,760.0,760.0,,ghcn,ITM00016098,ISTRANA,33.7,41.8,0.7,893.9,914.7
+florence-italy,Florence,972.3,835.0,815.0,,gsod,16170099999,FIRENZE,4.8,43.9,1.0,776.7,774.4
+naples-italy,Naples,1085.8,976.0,759.0,,ghcn,ITM00016253,GRAZZANISE,28.0,8.8,0.9,803.2,868.9
+palermo-italy,Palermo,631.8,469.0,454.0,,gsod,16405099999,PALERMO,24.7,19.8,0.9,407.4,434.1
+seville-spain,Seville,431.6,540.0,558.0,,ghcn,SPE00120512,SEVILLA/SAN PABLO,9.1,34.0,1.0,476.2,463.8
+valencia-spain,Valencia,485.1,440.0,398.0,,ghcn,SPM00008284,VALENCIA,8.9,68.6,1.0,433.9,443.7
+malaga-spain,Malaga,433.5,539.0,587.0,,ghcn,SP000006155,MALAGA AEROPUERTO,8.5,7.0,1.0,427.8,423.4
+palma-de-mallorca-spain,Palma de Mallorca,403.0,445.0,496.0,,ghcn,SPE00119882,PALMA DE MALLORCA CMT,2.6,3.0,1.0,460.1,455.8
+nice-france,Nice,838.0,800.0,758.0,,ghcn,FRE00104120,NICE,7.6,2.0,1.0,665.0,662.0
+marseille-france,Marseille,659.9,575.0,634.0,,ghcn,FR000007650,MARSEILLES-MARIGNANE,20.6,9.0,1.0,500.7,493.0
+lyon-france,Lyon,960.0,832.0,922.0,,ghcn,FR069029001,LYON - ST EXUPERY,18.0,235.0,1.0,814.3,806.0
+bordeaux-france,Bordeaux,854.2,923.0,902.0,,gsod,07510099999,BORDEAUX MERIGNAC,10.8,49.4,0.9,864.8,872.0
+dubrovnik-croatia,Dubrovnik,1547.7,1179.0,1260.0,,gsod,14472099999,DUBROVNIK/GORICA,2.3,53.0,1.0,988.6,1000.5
+split-croatia,Split,1206.8,814.0,842.0,,gsod,14445099999,SPLIT/MARJAN,1.0,128.0,1.0,747.1,751.7
+belgrade-serbia,Belgrade,654.0,670.0,716.0,,gsod,13274099999,BEOGRAD,0.5,132.0,1.0,689.0,684.2
+bucharest-romania,Bucharest,612.0,581.0,555.0,,ghcn,ROE00108889,BUCURESTI-BANEASA,9.6,90.0,1.0,625.5,617.8
+sofia-bulgaria,Sofia,611.8,617.0,626.0,,ghcn,BUM00015614,SOFIA,6.7,531.0,1.0,637.0,651.7
+kyiv-ukraine,Kyiv,596.4,607.0,613.0,,gsod,33345099999,ZHULIANY INTL,7.8,178.6,0.9,625.5,591.0
+riga-latvia,Riga,752.4,658.0,633.0,,worldclim,,,,,,,658.0
+tallinn-estonia,Tallinn,692.4,672.0,651.0,,ghcn,ENE00175051,TALLINN,9.6,33.0,1.0,721.7,715.1
+vilnius-lithuania,Vilnius,730.8,650.0,657.0,,gsod,26730099999,VILNIUS INTL,6.1,196.9,0.9,669.8,644.7
+tbilisi-georgia,Tbilisi,666.6,528.0,565.0,gsod:TBILISI / LOCHINI AIRPORT; gsod:BOLNISI,worldclim,,,,,,,528.0
+valletta-malta,Valletta,377.2,529.0,518.0,,ghcn,MT000016597,LUQA,6.2,91.0,0.9,333.2,382.1
+tromso-norway,Tromso,1307.8,973.0,862.0,,ghcn,NO000001026,TROMSO,1.2,100.0,1.0,1172.5,1156.3
+bergen-norway,Bergen,2720.1,2275.0,2754.0,,ghcn,NO000050540,BERGEN FLORIDA,1.2,12.0,1.0,2549.0,2543.4
+tenerife-spain,Tenerife,220.8,326.0,31.1,,ghcn,SPE00120458,STA. CRUZ DE TENERIFE,0.6,35.0,0.9,193.5,183.1
+madeira-funchal-portugal,Madeira (Funchal),450.6,634.0,290.0,,gsod,08522099999,FUNCHAL,4.3,56.0,1.0,516.7,547.8
+salzburg-austria,Salzburg,1823.1,1222.0,1272.0,,ghcn,GME00132274,PIDING,10.5,458.0,1.0,1317.4,1307.8
+innsbruck-austria,Innsbruck,1734.0,1119.0,1299.0,,ghcn,AU000011801,INNSBRUCK,0.6,577.0,0.9,927.3,881.6
+dubai-united-arab-emirates,Dubai,72.3,111.0,121.1,,ghcn,AEM00041194,DUBAI INTL,20.5,10.4,0.8,93.4,92.9
+abu-dhabi-united-arab-emirates,Abu Dhabi,49.4,62.0,62.2,,gsod,41216099999,AL BATEEN EXECUTIVE,6.7,4.9,0.9,68.6,44.7
+doha-qatar,Doha,60.4,84.0,83.1,,gsod,41170099999,DOHA INTL,4.4,10.7,0.9,84.2,112.0
+riyadh-saudi-arabia,Riyadh,53.1,123.0,125.1,,gsod,40437099999,KING KHALED INTL,30.1,624.5,0.9,90.5,97.1
+jeddah-saudi-arabia,Jeddah,52.4,84.0,83.1,,gsod,41024099999,KING ABDULAZIZ INTL,21.3,14.6,1.0,58.8,68.1
+kuwait-city-kuwait,Kuwait City,114.3,113.0,115.1,,worldclim,,,,,,,113.1
+muscat-oman,Muscat,76.8,89.0,166.7,,gsod,41256099999,SEEB INTL / MUSCAT INTL,12.7,14.6,1.0,64.5,70.9
+tehran-iran,Tehran,317.6,246.0,198.9,,ghcn,IR000407540,TEHRAN-MEHRABAD,9.5,1191.0,1.0,212.0,206.1
+tabriz-iran,Tabriz,376.0,259.0,312.0,,ghcn,IR000040706,TABRIZ,1.0,1361.0,0.9,261.7,258.3
+mashhad-iran,Mashhad,257.4,274.0,299.5,,ghcn,IR000040745,MASHHAD,4.2,999.0,0.9,220.5,217.9
+zanjan-iran,Zanjan,454.9,301.0,303.0,,ghcn,IRM00040729,ZANJAN,16.4,1640.4,1.0,270.7,259.4
+yazd-iran,Yazd,90.7,109.0,124.8,,ghcn,IRM00040821,YAZD SHAHID SADOOGHI,8.6,1235.7,1.0,62.5,57.5
+bandar-abbas-iran,Bandar Abbas,176.4,200.0,236.0,,ghcn,IRM00040875,BANDAR ABBASS INTL,10.2,6.7,0.9,128.1,140.5
+baghdad-iraq,Baghdad,174.9,162.0,162.0,,gsod,40650099999,BAGHDAD INTL AIRPORT,17.6,34.7,1.0,142.4,145.1
+jerusalem-israel,Jerusalem,334.3,439.0,98.0,,gsod,40183099999,JERUSALEM CENTER,0.2,815.0,1.0,270.4,278.7
+tel-aviv-israel,Tel Aviv,379.3,556.0,519.3,,gsod,40179099999,BET DAGAN,9.6,35.0,0.9,367.0,397.7
+amman-jordan,Amman,170.4,299.0,193.2,,gsod,40270099999,MARKA INTL,4.9,778.8,1.0,269.5,271.9
+beirut-lebanon,Beirut,673.2,850.0,794.5,gsod:RAFIC HARIRI INTL,worldclim,,,,,,,850.0
+damascus-syria,Damascus,181.2,315.0,229.2,gsod:DAMASCUS INTL,worldclim,,,,,,,315.2
+baku-azerbaijan,Baku,194.7,244.0,286.0,gsod:HEYDAR ALIYEV,worldclim,,,,,,,244.0
+cairo-egypt,Cairo,23.1,25.0,27.0,,gsod,62366099999,CAIRO INTL,16.4,116.4,1.0,57.6,53.9
+alexandria-egypt,Alexandria,83.3,173.0,185.0,gsod:ALEXANDRIA INTL,worldclim,,,,,,,173.0
+marrakech-morocco,Marrakech,229.9,256.0,517.0,,ghcn,MOM00060230,MENARA,4.6,467.9,0.8,162.7,157.4
+casablanca-morocco,Casablanca,256.4,402.0,383.8,,ghcn,MOM00060155,ANFA,5.7,61.9,0.7,425.9,399.1
+tunis-tunisia,Tunis,375.0,487.0,450.0,,ghcn,TSM00060715,CARTHAGE,6.5,6.7,0.9,426.1,387.7
+algiers-algeria,Algiers,542.0,653.0,664.0,,worldclim,,,,,,,653.0
+lagos-nigeria,Lagos,1601.6,1534.0,1524.0,,gsod,65201099999,MURTALA MUHAMMED,15.9,41.1,0.9,1460.0,1527.8
+accra-ghana,Accra,956.6,883.0,1069.0,,gsod,65472099999,KOTOKA INTL,6.4,62.5,0.9,788.3,844.4
+dakar-senegal,Dakar,324.2,374.0,562.9,,gsod,61641099999,LEOPOLD SEDAR SENGHOR INTL,7.1,25.9,0.9,459.7,468.6
+abidjan-ivory-coast,Abidjan,1828.4,1701.0,1638.0,,gsod,65578099999,ABIDJAN FELIX HOUPHOUET BOIGNY INTL,13.3,6.4,0.9,1827.8,1823.7
+addis-ababa-ethiopia,Addis Ababa,1873.5,1101.0,1085.0,,gsod,63450099999,BOLE INTL,7.7,2325.6,0.8,848.1,998.1
+nairobi-kenya,Nairobi,624.5,1007.0,515.0,,gsod,63740099999,JKIA / NAIROBI JOMO KENYATTA INTL,13.0,1623.7,0.8,618.4,684.6
+zanzibar-tanzania,Zanzibar,1058.5,1629.0,1451.0,,gsod,63870099999,ZANZIBAR / ABEID AMANI KARUME INTL,7.1,16.5,0.9,1613.8,1591.6
+dar-es-salaam-tanzania,Dar es Salaam,1192.6,1118.0,1451.0,,gsod,63894099999,MWALIMU JULIUS K NYERERE INTL,9.5,55.5,0.9,1374.4,1359.0
+kampala-uganda,Kampala,1531.6,1314.0,1211.0,,gsod,63705099999,ENTEBBE INTL,34.2,1152.8,0.7,1143.7,1486.0
+kigali-rwanda,Kigali,1012.7,1062.0,904.0,,gsod,64387099999,KIGALI INTL,9.2,1481.0,0.9,1294.5,1369.8
+kinshasa-dr-congo,Kinshasa,1070.2,1429.0,1401.0,,gsod,64450099999,MAYA MAYA,10.8,319.4,0.9,1622.0,1690.5
+luanda-angola,Luanda,400.0,490.0,538.2,,gsod,66160099999,LUANDA 4 DE FEVEREIRO,2.4,74.1,0.7,301.4,387.5
+johannesburg-south-africa,Johannesburg,794.9,750.0,673.0,,gsod,68361099999,JOHANNESBURG BOT. GARDENS,7.3,1626.0,0.7,669.6,807.9
+cape-town-south-africa,Cape Town,526.6,592.0,465.0,,gsod,68819099999,MOLTENO RESERVIOR,1.0,97.0,0.9,688.9,660.9
+durban-south-africa,Durban,968.8,1012.0,1019.0,,gsod,68583099999,MOUNT EDGECOMBE,17.7,94.0,0.9,877.9,860.5
+windhoek-namibia,Windhoek,439.2,343.0,376.9,gsod:EROS; gsod:HOSEA KUTAKO INTL,gsod,68110099999,WINDHOEK/EROS(SAAF),1.9,1725.0,0.9,315.1,331.5
+antananarivo-madagascar,Antananarivo,1032.0,1255.0,1332.0,,gsod,67083099999,IVATO,14.3,1279.6,0.9,1373.0,1422.0
+mauritius-port-louis-mauritius,Mauritius (Port Louis),964.7,1613.0,2561.0,,ghcn,MP000061995,VACOAS (MAURITIUS),15.4,425.0,0.9,2093.2,2140.8
+khartoum-sudan,Khartoum,52.2,123.0,128.0,,worldclim,,,,,,,123.0
+timbuktu-mali,Timbuktu,97.1,167.0,204.3,,worldclim,,,,,,,166.0
+tokyo-japan,Tokyo,1418.6,1466.0,1678.0,,ghcn,JA000047662,TOKYO,6.8,36.0,0.9,1649.3,1634.0
+osaka-japan,Osaka,1565.6,1390.0,1457.0,,ghcn,JA000047780,NARA,30.4,106.0,0.9,1392.7,1472.9
+kyoto-japan,Kyoto,1710.3,1646.0,1767.0,,ghcn,JA000047780,NARA,36.4,106.0,0.9,1392.7,1458.7
+sapporo-japan,Sapporo,1243.1,1226.0,1227.0,,ghcn,JA000047412,SAPPORO,1.4,26.0,0.9,1086.1,1122.0
+okinawa-naha-japan,Okinawa (Naha),1962.2,2118.0,2243.0,,ghcn,JA000047936,NAHA,1.5,53.0,0.9,2440.3,2441.3
+seoul-south-korea,Seoul,1187.3,1339.0,1260.0,,gsod,47108099999,SEOUL CITY,1.0,87.0,0.8,1376.2,1490.1
+busan-south-korea,Busan,1366.2,1453.0,1288.0,,gsod,47159099999,BUSAN,0.3,71.0,0.9,1741.2,1623.9
+pyongyang-north-korea,Pyongyang,1094.6,1072.0,997.0,,gsod,47058099999,PYONGYANG INTL,22.4,35.7,0.9,1134.7,1102.9
+beijing-china,Beijing,567.4,578.0,502.0,ghcn:BEIJING,gsod,54511099999,BEIJING - CAPITAL INTERNATIONAL AIRPORT,25.0,35.4,0.9,699.9,683.4
+shanghai-china,Shanghai,1335.1,1061.0,1069.0,,gsod,58362099999,SHANGHAI,19.8,4.0,0.9,1504.0,1470.2
+hong-kong-china,Hong Kong,1788.7,2166.0,2105.0,,gsod,45039099999,SHA TIN,13.8,8.0,1.0,2343.1,2359.7
+guangzhou-china,Guangzhou,1848.6,1692.0,1686.0,,ghcn,CHM00059287,GUANGZHOU,26.3,71.0,0.8,2727.9,2241.9
+chengdu-china,Chengdu,1077.6,928.0,1041.0,,gsod,56187099999,WENJIANG,21.2,541.0,0.9,1189.8,1171.8
+chongqing-china,Chongqing,1194.2,1142.0,1121.0,,ghcn,CHM00057516,CHONGQING,9.1,416.0,0.8,1429.8,1253.2
+xi-an-china,Xi'an,881.5,624.0,628.0,,gsod,57131099999,JINGHE,19.7,411.0,1.0,658.1,689.0
+harbin-china,Harbin,702.4,542.0,537.0,,gsod,50953099999,HARBIN,21.3,117.7,0.9,700.5,663.3
+lhasa-china,Lhasa,944.8,403.0,341.0,,ghcn,CHM00055591,LHASA,3.7,3650.0,0.7,692.4,494.1
+kunming-china,Kunming,1408.5,938.0,858.0,,ghcn,CHM00056778,KUNMING,4.3,1892.0,0.7,1454.2,1187.2
+taipei-taiwan,Taipei,2074.6,2849.0,3104.0,gsod:TAIBEI,worldclim,,,,,,,2849.0
+ulaanbaatar-mongolia,Ulaanbaatar,319.0,276.0,298.0,,gsod,44291099999,SONGIIN,11.8,1272.0,0.9,315.2,301.8
+hanoi-vietnam,Hanoi,1851.8,1621.0,1711.0,,gsod,48825099999,HA DONG,10.0,7.9,0.9,1832.2,1836.9
+ho-chi-minh-city-vietnam,Ho Chi Minh City,1887.2,1862.0,1405.6,,gsod,48894099999,NHA BE,21.5,3.6,1.0,1714.9,1742.1
+da-nang-vietnam,Da Nang,2667.4,2034.0,1935.0,,ghcn,VMM00048855,DANANG INTL,3.5,10.1,0.7,3471.0,2827.7
+bangkok-thailand,Bangkok,1243.8,1299.0,1270.8,,gsod,48455099999,BANGKOK METROPOLIS,7.5,4.0,1.0,2005.4,2019.4
+chiang-mai-thailand,Chiang Mai,1126.7,1056.0,1036.0,,gsod,48327099999,CHIANG MAI INTL,3.5,315.8,0.9,1374.0,1364.3
+phuket-thailand,Phuket,2373.7,2390.0,2990.0,,ghcn,TH000048565,PHUKET AIRPORT,28.3,9.0,0.6,4542.6,3230.6
+phnom-penh-cambodia,Phnom Penh,1466.6,1352.0,1328.0,gsod:PHNOM PENH INTL,worldclim,,,,,,,1352.0
+yangon-myanmar,Yangon,2401.1,2567.0,2860.0,,gsod,48097099999,YANGON INTL,11.6,33.2,0.8,2300.4,2532.7
+kuala-lumpur-malaysia,Kuala Lumpur,2902.7,2379.0,2474.0,,ghcn,MYM00048647,SULTAN ABDUL AZIZ SHAH INTL,15.3,27.4,0.8,3171.6,3063.8
+singapore-singapore,Singapore,2793.9,2384.0,2298.0,,ghcn,SNM00048698,SINGAPORE CHANGI INTL,17.3,6.7,0.9,2323.0,2280.5
+jakarta-indonesia,Jakarta,2044.2,2052.0,4190.0,,gsod,96749099999,SOEKARNO HATTA INTL,23.1,10.4,0.8,1493.2,1454.5
+bali-denpasar-indonesia,Bali (Denpasar),2490.5,1852.0,1797.0,gsod:DENPASAR NGURAH RAI,worldclim,,,,,,,1852.0
+manila-philippines,Manila,1816.6,2348.0,2720.0,,gsod,98430099999,SCIENCE GARDEN,8.9,46.0,0.9,2638.6,2699.1
+cebu-philippines,Cebu,2684.2,1559.0,1757.0,,gsod,98646099999,MACTAN CEBU INTL,9.7,9.4,0.9,1767.2,1828.9
+mumbai-india,Mumbai,2233.2,2143.0,2934.0,,gsod,43003099999,CHHATRAPATI SHIVAJI MAHARAJ INTL,2.4,11.3,0.9,3212.2,3105.8
+delhi-india,Delhi,759.9,724.0,715.0,,gsod,42182099999,SAFDARJUNG,4.1,214.9,1.0,873.2,873.6
+bengaluru-india,Bengaluru,1019.0,810.0,737.0,,gsod,43295099999,BANGALORE,1.3,921.0,0.9,1263.2,1260.4
+kolkata-india,Kolkata,1683.8,1643.0,1698.0,,gsod,42807099999,BEHALA,9.6,2.4,0.9,1759.2,1711.3
+chennai-india,Chennai,1138.5,1232.0,1190.0,,gsod,43278099999,NUMGAMBAKKAM,8.8,7.0,0.9,1461.4,1495.2
+goa-panaji-india,Goa (Panaji),3344.5,2931.0,3143.4,,gsod,43192099999,GOA/PANJIM,1.7,58.4,0.9,3328.5,3245.0
+jaipur-india,Jaipur,595.2,630.0,473.0,,gsod,42348099999,JAIPUR,10.9,385.0,0.9,804.5,782.5
+kathmandu-nepal,Kathmandu,3061.3,1674.0,1865.0,,ghcn,NP000444540,KATHMANDU AIRPORT,4.6,1337.0,0.8,1555.4,1575.4
+colombo-sri-lanka,Colombo,2317.6,2445.0,2328.0,,gsod,43450099999,BANDARANAIKE INTL COLOMBO,27.4,8.8,0.9,1984.6,2230.0
+maldives-male-maldives,Maldives (Male),1782.8,1945.0,1288.0,ghcn:MALE; gsod:MALE INTL / VELANA INTL,worldclim,,,,,,,1945.0
+dhaka-bangladesh,Dhaka,1864.3,2133.0,2113.0,,ghcn,BGM00041923,TEJGAON,8.0,7.3,0.7,2229.0,1956.6
+karachi-pakistan,Karachi,211.3,142.0,150.0,ghcn:JINNAH INTL,gsod,41780099999,JINNAH INTL,16.0,30.5,1.0,326.4,365.7
+lahore-pakistan,Lahore,582.4,521.0,482.0,ghcn:LAHORE CITY; gsod:LAHORE CITY,gsod,42071099999,AMRITSAR,45.5,230.4,0.9,712.6,749.5
+islamabad-pakistan,Islamabad,841.1,1012.0,872.0,gsod:CHAKLALA,worldclim,,,,,,,1012.0
+kabul-afghanistan,Kabul,405.8,331.0,436.0,,worldclim,,,,,,,331.0
+tashkent-uzbekistan,Tashkent,552.3,463.0,503.0,,gsod,38457099999,YUZHNY / TASHKENT ISLAM KARIMOV INTL,5.5,431.9,0.9,439.4,420.4
+samarkand-uzbekistan,Samarkand,482.2,403.0,434.0,,gsod,38696099999,SAMARKAND,5.4,677.9,0.9,352.4,337.2
+almaty-kazakhstan,Almaty,823.8,515.0,467.0,,worldclim,,,,,,,515.0
+astana-kazakhstan,Astana,378.1,300.0,295.0,,worldclim,,,,,,,300.0
+vladivostok-russia,Vladivostok,805.0,716.0,678.0,,ghcn,RSM00031960,VLADIVOSTOK,5.0,187.0,0.8,970.0,929.9
+yakutsk-russia,Yakutsk,222.7,253.0,263.0,,ghcn,RSM00024959,JAKUTSK,1.6,98.0,0.9,244.9,213.0
+sydney-australia,Sydney,794.0,1243.0,1330.0,,ghcn,ASN00066037,SYDNEY AIRPORT AMO,9.3,6.0,1.0,1204.8,1203.4
+melbourne-australia,Melbourne,650.1,651.0,983.0,,ghcn,ASN00086038,ESSENDON AIRPORT,10.8,78.4,1.0,569.7,555.9
+brisbane-australia,Brisbane,1022.8,1280.0,1557.2,,ghcn,ASN00040913,BRISBANE,1.8,8.1,1.0,1183.1,1179.6
+perth-australia,Perth,568.0,759.0,717.0,,ghcn,ASN00009225,PERTH METRO,3.8,24.9,1.0,718.5,728.3
+adelaide-australia,Adelaide,473.3,635.0,443.0,,ghcn,ASN00023031,ADELAIDE (WAITE INSTITUTE),5.5,115.0,0.9,414.9,394.7
+darwin-australia,Darwin,1872.1,1794.0,1803.3,,ghcn,ASN00014040,DARWIN AIRPORT COMPARISON,6.3,30.0,1.0,1723.2,1790.6
+cairns-australia,Cairns,1685.0,2242.0,2512.0,,ghcn,ASN00031011,CAIRNS AERO,6.0,2.2,0.9,2080.8,2125.1
+hobart-australia,Hobart,596.0,772.0,648.0,,ghcn,ASN00094029,HOBART (ELLERSLIE ROAD),1.2,50.5,1.0,558.9,545.1
+alice-springs-australia,Alice Springs,226.8,325.0,349.0,,ghcn,ASN00015590,ALICE SPRINGS AIRPORT,10.9,546.0,1.0,284.5,291.0
+auckland-new-zealand,Auckland,1104.0,1378.0,1261.0,,ghcn,NZM00093110,AUCKLAND AERO AWS,17.2,7.0,0.9,1141.4,1145.1
+wellington-new-zealand,Wellington,951.5,1257.0,1218.0,,ghcn,NZ000093417,PARAPARAUMU AWS,46.4,7.0,0.9,1102.5,1089.4
+queenstown-new-zealand,Queenstown,1380.5,1278.0,3749.0,,gsod,93831099999,QUEENSTOWN AERODROME,5.7,358.0,1.0,732.2,741.8
+fiji-nadi-fiji,Fiji (Nadi),2324.9,1770.0,2415.0,,ghcn,FJM00091680,Nadi Airport,5.7,22.0,1.0,2325.9,2316.0
+tahiti-papeete-french-polynesia,Tahiti (Papeete),2172.8,1779.0,781.0,,ghcn,FP000091938,TAHITI-FAAA,5.4,3.0,0.9,1490.2,1482.1
+toronto-canada,Toronto,822.3,835.0,835.0,,ghcn,CAN06158355,TORONTO CITY,4.4,112.5,1.0,814.0,789.7
+vancouver-canada,Vancouver,2307.1,1496.0,2383.0,,ghcn,CAN01108446,VANCOUVER HARBOUR CS,5.1,2.5,1.0,1462.6,1477.6
+montreal-canada,Montreal,1194.2,1015.0,966.0,,ghcn,CAN07024745,MCTAVISH,0.8,72.8,1.0,1134.1,1112.9
+quebec-city-canada,Quebec City,1294.4,1236.0,1178.0,,ghcn,CAN07010565,BEAUPORT,3.0,10.0,0.9,1218.9,1199.5
+calgary-canada,Calgary,461.8,426.0,400.0,,ghcn,CAN03031094,CALGARY INT'L CS,8.9,1081.9,1.0,372.5,353.2
+ottawa-canada,Ottawa,1106.7,915.0,935.0,,ghcn,CAN06105978,OTTAWA CDA RCS,3.4,79.2,1.0,952.0,933.3
+halifax-canada,Halifax,1225.0,1409.0,1425.0,,ghcn,CAN08205092,SHEARWATER RCS,5.0,45.3,1.0,1340.9,1331.4
+winnipeg-canada,Winnipeg,570.4,556.0,515.0,,ghcn,CAN05023262,WINNIPEG THE FORKS,1.3,230.0,1.0,499.5,488.6
+mexico-city-mexico,Mexico City,946.8,673.0,885.0,,gsod,76680099999,MEXICO (CENTRAL)   D.F.,6.6,2303.0,0.8,607.6,592.4
+cancun-mexico,Cancun,1130.4,1235.0,997.0,,worldclim,,,,,,,1235.0
+guadalajara-mexico,Guadalajara,827.2,908.0,723.0,,gsod,76612099999,GUADALAJARA  JAL.,3.9,1551.0,0.9,774.2,774.4
+monterrey-mexico,Monterrey,504.4,659.0,550.0,gsod:DEL NORTE INTL,gsod,76393099999,MONTERREY  N.L.,5.7,515.0,0.7,642.2,647.7
+cabo-san-lucas-mexico,Cabo San Lucas,390.6,258.0,438.7,,worldclim,,,,,,,259.8
+puerto-vallarta-mexico,Puerto Vallarta,1464.3,1203.0,1104.0,,worldclim,,,,,,,1203.0
+havana-cuba,Havana,780.7,1281.0,1523.0,,worldclim,,,,,,,1281.0
+nassau-bahamas,Nassau,969.6,1294.0,1031.0,,ghcn,BF1NP000001,NASSAU 14.4 SW,12.7,5.8,0.9,1480.1,1511.0
+kingston-jamaica,Kingston,877.6,1064.0,1933.0,,ghcn,JMM00078397,NORMAN MANLEY INTL,6.8,3.0,0.8,699.5,797.6
+santo-domingo-dominican-republic,Santo Domingo,1014.3,1627.0,1368.0,,gsod,78486099999,SANTO DOMINGO,4.4,14.0,0.8,1212.4,1431.8
+aruba-oranjestad-aruba,Aruba (Oranjestad),352.5,410.0,636.0,,gsod,78982000411,QUEEN BEATRIX INTERNATIONAL AIRPORT,2.9,18.3,1.0,400.4,391.4
+panama-city-panama,Panama City,2098.2,2178.0,2712.0,,worldclim,,,,,,,2178.0
+san-jose-costa-rica,San Jose,2973.0,2963.0,2261.0,,gsod,78764099999,TOBIAS BOLANOS INTL,6.6,994.0,0.9,1777.3,1770.5
+guatemala-city-guatemala,Guatemala City,614.2,1250.0,1587.0,gsod:LA AURORA,worldclim,,,,,,,1250.0
+bogota-colombia,Bogota,1204.2,1330.0,2237.0,,gsod,80222099999,EL DORADO INTL,12.6,2548.4,0.7,887.1,1121.5
+medellin-colombia,Medellin,2732.8,2401.0,2358.0,,gsod,80110099999,OLAYA HERRERA,3.5,1505.7,0.8,1434.5,1776.5
+cartagena-colombia,Cartagena,1511.0,1124.0,1142.0,,gsod,80022099999,RAFAEL NUNEZ,5.3,1.2,0.9,803.2,1052.8
+caracas-venezuela,Caracas,1498.3,960.0,1196.0,,worldclim,,,,,,,960.0
+quito-ecuador,Quito,3116.8,1066.0,1144.0,,worldclim,,,,,,,1066.0
+lima-peru,Lima,133.6,26.0,622.2,,gsod,84628099999,JORGE CHAVEZ INTL,9.6,34.4,0.9,16.0,9.1
+cusco-peru,Cusco,1180.1,702.0,750.4,,gsod,84686099999,TENIENTE ALEJANDRO VELASCO ASTETE INTL,3.1,3310.1,0.9,659.0,661.5
+la-paz-bolivia,La Paz,719.6,560.0,682.0,,gsod,85201099999,EL ALTO INTL,4.7,4061.5,0.9,658.2,658.6
+santiago-chile,Santiago,426.4,407.0,482.0,ghcn:QUINTA NORMAL; ghcn:ARTURO MERINO BENITEZ INTL; gsod:QUINTA NORMAL; gsod:ARTURO MERINO BENITEZ INTL,worldclim,,,,,,,407.0
+valparaiso-chile,Valparaiso,273.9,401.0,345.0,,worldclim,,,,,,,401.0
+buenos-aires-argentina,Buenos Aires,801.1,1113.0,1061.0,,gsod,87585099999,BUENOS AIRES (OBS),10.2,25.0,0.9,1127.1,1161.7
+montevideo-uruguay,Montevideo,934.2,923.0,1039.0,,ghcn,UYM00086580,CARRASCO INTL,16.1,32.0,0.8,1122.4,1032.0
+sao-paulo-brazil,Sao Paulo,1158.4,1485.0,1484.0,,ghcn,BR00E3-0520,SAO PAULO (AEROPORT,7.9,802.0,0.8,1020.9,896.4
+rio-de-janeiro-brazil,Rio de Janeiro,1098.1,1211.0,1664.0,gsod:GALEAO ANTONIO CARLOS JOBIM,worldclim,,,,,,,1211.0
+brasilia-brazil,Brasilia,1222.8,1508.0,1468.7,gsod:PRESIDENTE JUSCELINO KUBITSCHEK,worldclim,,,,,,,1499.7
+salvador-brazil,Salvador,1340.4,2036.0,1746.0,gsod:DEPUTADO LUIS EDUARDO MAGALHAES,worldclim,,,,,,,2036.0
+manaus-brazil,Manaus,2524.9,2280.0,2239.0,gsod:CAMPO PONTA PELADA,worldclim,,,,,,,2280.0
+ushuaia-argentina,Ushuaia,845.2,505.0,590.0,,ghcn,ARM00087938,USHUAIA MALVINAS ARGENTINAS,3.8,21.6,0.7,528.5,418.5

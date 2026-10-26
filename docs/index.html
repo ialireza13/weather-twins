@@ -13,16 +13,21 @@
   <header class="site-header">
     <div class="wrap">
       <h1>Weather Twins</h1>
-      <p class="lede">Pick your US city. See the famous cities around the world whose weather feels most like home, based on ten years of climate data.</p>
+      <p class="lede">Search for your city, anywhere in the world. See the famous cities whose weather feels most like home, based on ten years of climate data.</p>
     </div>
   </header>
 
   <main class="wrap">
     <section class="controls" aria-label="Options">
       <div class="control city-control">
-        <label for="city">Your city</label>
+        <label for="city-search">Your city</label>
         <div class="city-row">
-          <select id="city"></select>
+          <div class="search">
+            <input id="city-search" type="search" role="combobox" autocomplete="off" spellcheck="false"
+              aria-autocomplete="list" aria-expanded="false" aria-controls="city-options"
+              placeholder="Search any city in the world">
+            <ul id="city-options" class="options" role="listbox" hidden></ul>
+          </div>
           <button type="button" id="locate" class="ghost" title="Use my location">
             <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="3.5" fill="currentColor"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
             <span>Near me</span>
@@ -35,6 +40,9 @@
         </label>
         <label class="switch" title="Show at most 2 cities per country">
           <input type="checkbox" id="varied" checked><span>At most 2 per country</span>
+        </label>
+        <label class="switch" title="Also look for twins in your own country">
+          <input type="checkbox" id="own-country"><span>Include my own country</span>
         </label>
       </div>
       <div class="control units" role="group" aria-label="Units">
@@ -52,7 +60,11 @@
         <div id="map" role="application" aria-label="Map of cities. Click a US city to pick it, or a world city to compare."></div>
         <div class="map-foot">
           <div id="heat-legend" class="heat-legend" aria-label="Map legend: how closely each world city matches your city"></div>
-          <p class="map-hint">Click a <span class="key key-us"></span> US city to pick it, or any world city to compare.</p>
+          <span class="map-switches">
+            <label class="switch small"><input type="checkbox" id="show-cities" checked><span>Show cities</span></label>
+            <label class="switch small"><input type="checkbox" id="shade" checked><span>Shade all land</span></label>
+          </span>
+          <p class="map-hint">Click a city to compare or explore it, or anywhere on land to find that spot's twins.</p>
         </div>
       </div>
       <div class="results card">
@@ -69,6 +81,7 @@
         </div>
         <div id="detail-score" class="score-badge"></div>
       </div>
+      <p id="approx-note" class="approx-note" hidden></p>
       <ul id="detail-chips" class="chips"></ul>
       <div class="legend" id="legend"></div>
       <div id="charts" class="charts"></div>
@@ -93,6 +106,7 @@
       <h2>How it works</h2>
       <p>Each city gets a "typical year": twelve monthly averages of daily highs and lows, dew point (how muggy it feels), rain, rainy days, cloud cover, snowfall, wind, and how much temperatures swing from day to day. These come from <span id="period">2016–2025</span> hourly weather data. Cities are compared month by month. Temperature counts most, then humidity, rain and sky. Use <em>What matters to you?</em> above to change that. The match percentage is a friendly score: 100% would be an identical climate.</p>
       <p>Temperature, humidity, cloud and wind come from the ERA5 and ERA5-Land reanalysis (Copernicus, via <a href="https://open-meteo.com/">Open-Meteo</a> open data). Rainfall is corrected against nearby rain gauges (NOAA GHCN-Daily and GSOD). Where no reliable gauge exists, it is scaled to WorldClim 2.1 normals. Reanalysis smooths over very local climates, like San Francisco's fog belt or a city's hillside suburbs.</p>
+      <p>Places that aren't on the list of famous cities use the nearest cell of a global 1° grid (about 100 km across), with temperatures adjusted to the place's elevation. The shaded map uses the same grid. These results are approximate: a coarse cell can't capture a coastline or a mountain valley. Place search uses the <a href="https://open-meteo.com/en/docs/geocoding-api">Open-Meteo geocoder</a>, which receives what you type.</p>
       <p>The region map uses NOAA's climate divisions, which group each state into areas with similar climate. Each division's weather is measured at the largest town in its central part, so a city on its edge, like Manhattan in the Hudson Valley division, doesn't speak for the whole area.</p>
       <p class="muted small">Data: Copernicus ERA5 / ERA5-Land (CC BY 4.0) via Open-Meteo · NOAA NCEI GHCN-Daily &amp; GSOD · WorldClim 2.1 (Fick &amp; Hijmans, 2017) · City locations from GeoNames · NOAA NCEI climate divisions · Country shapes from Natural Earth.</p>
     </section>

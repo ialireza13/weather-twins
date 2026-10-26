@@ -52,6 +52,9 @@ GOOD_COMPLETE = 0.9        # take the first (WMO-first, nearest) gauge at least 
 WET_MM = 1.0
 SPURIOUS_MM = 25.0         # gauge days this big need some ERA5 rain nearby to be believed
 MAX_RATIO = 2.0            # plausibility: gauge within 2x of ERA5 or of the WorldClim normal
+LOW_VS_ALL = 1.4           # ...and not this much lower than every reference (ERA5, WorldClim, grid)
+HIGH_VS_ALL = 1.6          # ...nor this much higher than all of them
+VALLEY_M = 500             # grid cell this far above the town: references see the mountains, skip the low check
 ARID_MM = 100.0            # below this, annual totals are too small to compare by ratio
 WORLDCLIM = "https://geodata.ucdavis.edu/climate/worldclim/2_1/base/wc2.1_5m_prec.zip"
 GSOD_REPORT_FLAGS = set("ABCDEFGH")  # some 6/12/24 h report (H = 0 with a trace)
@@ -149,21 +152,52 @@ def gauge_series(station: pd.Series, start: str, end: str) -> pd.Series:
     return pd.Series(value.to_numpy(), index=df["DATE"]).groupby(level=0).first().reindex(days)
 
 
-def plausible(gauge_mm: float, references: list[float]) -> bool:
-    """A gauge is rejected only if it disagrees with every reference by more than 2x.
+def plausible(gauge_mm: float, references: list[float], mountain_valley: bool = False) -> bool:
+    """Is a gauge's annual total believable next to independent references?
 
-    References are ERA5 and the WorldClim normal; each has its own failure modes
-    (ERA5 drizzle and mountains, WorldClim cells that include nearby mountains), but
-    a broken gauge (missing reports read as dry, garbage values) disagrees with both.
+    References: ERA5, the WorldClim normal at the city, and (when the global grid
+    exists) the 1° grid cell. Each has failure modes (ERA5 drizzle and mountains,
+    WorldClim and grid cells that include nearby mountains), but a broken gauge
+    disagrees with all of them:
+      - more than 2x off from both ERA5 and WorldClim (garbage values, missing
+        reports read as dry);
+      - 1.4x lower than every reference: stations that report partial totals as
+        full days (e.g. Salvador, Brasília, Rio at about half their real rain).
+        Skipped for towns well below their grid cell (Queenstown, Medellín,
+        Marrakech): there every reference sees the wetter mountains around them;
+      - 1.6x higher than every reference.
     Very dry places are always plausible: tiny totals have huge ratios.
     """
-    if gauge_mm < ARID_MM and min(references) < ARID_MM:
+    refs = [r for r in references if r and r > 0]
+    if gauge_mm < ARID_MM and min(refs) < ARID_MM:
         return True
-    return any(1 / MAX_RATIO <= gauge_mm / ref <= MAX_RATIO for ref in references if ref > 0)
+    if not any(1 / MAX_RATIO <= gauge_mm / ref <= MAX_RATIO for ref in refs[:2]):
+        return False
+    if gauge_mm * LOW_VS_ALL < min(refs) and not mountain_valley:
+        return False
+    if gauge_mm > HIGH_VS_ALL * max(refs):
+        return False
+    return True
+
+
+def grid_reference(cities: pd.DataFrame) -> pd.DataFrame:
+    """Annual rain and elevation of each place's nearest global grid cell (grid.py), if built."""
+    path = climate.DATA_DIR / "grid" / "profiles.csv"
+    out = pd.DataFrame(index=cities["slug"].to_numpy(), columns=["grid_mm", "grid_elev"], dtype=float)
+    if not path.exists():
+        return out
+    g = pd.read_csv(path)
+    g_rain = g[[f"precip_{m}" for m in range(1, 13)]].sum(axis=1).to_numpy()
+    for slug, lat, lon in zip(cities["slug"], cities["lat"], cities["lon"]):
+        d = (g["lat"] - lat) ** 2 + ((g["lon"] - lon) * np.cos(np.radians(lat))) ** 2
+        i = int(np.argmin(d.to_numpy()))
+        out.loc[slug] = g_rain[i], g["cell_elevation"].iloc[i]
+    return out
 
 
 def choose_gauge(city: pd.Series, catalogs: list[pd.DataFrame], start: str, end: str,
-                 model: pd.Series, references: list[float], rejected: list[str]):
+                 model: pd.Series, references: list[float], rejected: list[str],
+                 mountain_valley: bool = False):
     """First catalog with a gauge that is close, at a similar height, mostly complete
     and plausible.
 
@@ -178,7 +212,7 @@ def choose_gauge(city: pd.Series, catalogs: list[pd.DataFrame], start: str, end:
                 continue
             series = drop_spurious(gauge_series(st, start, end), model)
             complete = series.notna().mean()
-            if complete >= MIN_COMPLETE and not plausible(series.mean() * 365.25, references):
+            if complete >= MIN_COMPLETE and not plausible(series.mean() * 365.25, references, mountain_valley):
                 rejected.append(f"{st['source']}:{st['name'].strip()}")
                 continue
             if complete >= GOOD_COMPLETE:
@@ -270,6 +304,7 @@ def correct_all(cities: pd.DataFrame, log_path) -> None:
     catalogs = [ghcn_catalog(y0, y1), gsod_catalog(y0, y1)]
     cities = cities[[climate.daily_path(s).exists() for s in cities["slug"]]]
     normals = worldclim_normals(cities)
+    grid = grid_reference(cities)
 
     def work(city: pd.Series) -> dict:
         daily = climate.load_daily(city["slug"])
@@ -280,9 +315,12 @@ def correct_all(cities: pd.DataFrame, log_path) -> None:
         era5_mm = model.sum() / (y1 - y0 + 1)
         normal = normals.loc[city["slug"]].to_numpy()
         rejected: list[str] = []
-        found = choose_gauge(city, catalogs, start, end, model, [era5_mm, normal.sum()], rejected)
+        grid_mm, grid_elev = grid.loc[city["slug"]]
+        valley = bool(grid_elev - city["elevation"] > VALLEY_M) if pd.notna(grid_elev) and pd.notna(city["elevation"]) else False
+        refs = [era5_mm, normal.sum()] + ([grid_mm] if pd.notna(grid_mm) else [])
+        found = choose_gauge(city, catalogs, start, end, model, refs, rejected, valley)
         row = {"slug": city["slug"], "name": city["name"], "era5_mm": era5_mm,
-               "worldclim_mm": normal.sum(), "rejected": "; ".join(rejected)}
+               "worldclim_mm": normal.sum(), "grid_mm": grid_mm, "rejected": "; ".join(rejected)}
         if found is not None:
             st, gauge, complete = found
             corrected, factors = loci(model, gauge)
